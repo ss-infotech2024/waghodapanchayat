@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="mr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>गॅलरी - सावंगी देवळी ग्रामपंचायत</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2E7D32;
+            --secondary: #FF9800;
+            --accent: #2196F3;
+            --light: #F1F8E9;
+            --dark: #1B5E20;
+            --text: #212121;
+            --text-light: #757575;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --gradient: linear-gradient(135deg, var(--primary), var(--dark));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tiro Devanagari Marathi', serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 10px 0;
+            box-shadow: var(--shadow);
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            background-color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 24px;
+        }
+
+        .logo-text h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .logo-text p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .contact-item i {
+            color: var(--secondary);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            background-color: var(--light);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 200px;
+            box-shadow: var(--shadow);
+            z-index: 1;
+            border-radius: 0 0 5px 5px;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            padding: 12px 16px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #F57C00;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gallery Section */
+        .gallery-content {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .gallery-filter {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 20px;
+            background: var(--light);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 50px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .gallery-category {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Video Gallery */
+        .video-gallery {
+            background: var(--light);
+            padding: 60px 0;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .video-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .video-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .play-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+
+        .video-info {
+            padding: 15px;
+        }
+
+        .video-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .video-date {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Photo Stats */
+        .photo-stats {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--light);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .stat-icon {
+            font-size: 48px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--text);
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 800px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .modal-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .modal-info {
+            color: white;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .close:hover {
+            color: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 70px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .footer-links a i {
+            margin-right: 8px;
+            font-size: 14px;
+        }
+
+        .contact-details p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-details i {
+            margin-right: 10px;
+            color: var(--secondary);
+            width: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: var(--white);
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .gallery-filter {
+                gap: 10px;
+            }
+
+            .filter-btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 370px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .section-title h2 {
+                font-size: 26px;
+            }
+
+            .filter-btn {
+                padding: 6px 12px;
+                font-size: 13px;
+            }
+
+            .gallery-item {
+                aspect-ratio: 1/1;
+            }
+
+            .modal-content {
+                width: 95%;
+                padding: 10px;
+            }
+
+            .close {
+                font-size: 28px;
+                top: 10px;
+                right: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="top-bar">
+                <div class="logo">
+                    <div class="logo-img">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>सावंगी देवळी ग्रामपंचायत</h1>
+                        <p>विकास आणि प्रगतीचे प्रतीक</p>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>आपत्कालीन: १०८</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>sawangidevali@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>सावंगी देवळी, महाराष्ट्र</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">मुख्यपृष्ठ</a></li>
+                <li class="dropdown">
+                    <a href="#">आमच्याबद्दल <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="about.html">परिचय</a>
+                        <a href="team.html">पंचायत मंडळ</a>
+                    </div>
+                </li>
+                <!-- <li><a href="announcements.html">सूचना</a></li> -->
+                <li class="dropdown">
+                    <a href="#">सेवा <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="service.html">नागरिक सेवा</a>
+                        <a href="facilities.html">स्थानीय सुविधा</a>
+                        <a href="rti.html">माहिती अधिकार</a>
+                        <a href="govt-schemes.html">शासकीय योजना</a>
+                    </div>
+                </li>
+                <li><a href="gallery.html" class="active">गॅलरी</a></li>
+                <li><a href="contact.html">संपर्क</a></li>
+                <li class="dropdown">
+                    <a href="#">अधिक <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="work.html">कामांची माहिती</a>
+                        <a href="fund.html">आर्थिक माहिती</a>
+                        <a href="complaint.html">तक्रार / सूचना</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>फोटो गॅलरी</h1>
+            <p>सावंगी देवळी ग्रामपंचायतीच्या विविध कार्यक्रमांचे फोटो</p>
+        </div>
+    </section>
+
+    <!-- Gallery Content Section -->
+    <section class="gallery-content">
+        <div class="container">
+            <div class="section-title">
+                <h2>आमची गॅलरी</h2>
+                <p>ग्रामपंचायतीच्या विविध कार्यक्रम, विकास कामे आणि सामाजिक उपक्रमांचे फोटो</p>
+            </div>
+
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">सर्व फोटो</button>
+                <button class="filter-btn" data-filter="events">कार्यक्रम</button>
+                <button class="filter-btn" data-filter="development">विकास कामे</button>
+                <button class="filter-btn" data-filter="infrastructure">पायाभूत सुविधा</button>
+                <button class="filter-btn" data-filter="cultural">सांस्कृतिक</button>
+                <button class="filter-btn" data-filter="official">अधिकृत</button>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- All 23 Images with ./image/G1.jpg -->
+                <div class="gallery-item" data-category="official">
+                    <img src="./image/G1.jpg" alt="ग्रामसभा बैठक">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">ग्रामसभा बैठक</div>
+                        <div class="gallery-category">अधिकृत</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="events">
+                    <img src="./image/G2.jpg" alt="स्वच्छता अभियान">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">स्वच्छता अभियान</div>
+                        <div class="gallery-category">कार्यक्रम</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="development">
+                    <img src="./image/G3.jpg" alt="रस्ते बांधकाम">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">रस्ते बांधकाम</div>
+                        <div class="gallery-category">विकास कामे</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="cultural">
+                    <img src="./image/G4.jpg" alt="गणेशोत्सव">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">गणेशोत्सव समारंभ</div>
+                        <div class="gallery-category">सांस्कृतिक</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="infrastructure">
+                    <img src="./image/G5.jpg" alt="पाणी टाकी">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">नवीन पाणी टाकी</div>
+                        <div class="gallery-category">पायाभूत सुविधा</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="events">
+                    <img src="./image/G6.jpg" alt="शाळा कार्यक्रम">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">शाळा वार्षिकोत्सव</div>
+                        <div class="gallery-category">कार्यक्रम</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="development">
+                    <img src="./image/G7.jpg" alt="बाग निर्मिती">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">ग्रामीण उद्यान</div>
+                        <div class="gallery-category">विकास कामे</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="cultural">
+                    <img src="./image/G8.jpg" alt="स्वातंत्र्यदिन">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">स्वातंत्र्यदिन समारंभ</div>
+                        <div class="gallery-category">सांस्कृतिक</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="official">
+                    <img src="./image/G9.jpg" alt="पंचायत सभा">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">पंचायत सभा</div>
+                        <div class="gallery-category">अधिकृत</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="events">
+                    <img src="./image/G10.jpg" alt="आरोग्य शिबिर">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">आरोग्य शिबिर</div>
+                        <div class="gallery-category">कार्यक्रम</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="development">
+                    <img src="./image/G11.jpg" alt="नाली बांधकाम">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">नाली बांधकाम</div>
+                        <div class="gallery-category">विकास कामे</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="cultural">
+                    <img src="./image/G12.jpg" alt="नवरात्रौत्सव">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">नवरात्रौत्सव</div>
+                        <div class="gallery-category">सांस्कृतिक</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="infrastructure">
+                    <img src="./image/G13.jpg" alt="सौर दिवे">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">सौर दिवे बसवणे</div>
+                        <div class="gallery-category">पायाभूत सुविधा</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="events">
+                    <img src="./image/G14.jpg" alt="महिला दिन">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">जागतिक महिला दिन</div>
+                        <div class="gallery-category">कार्यक्रम</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="development">
+                    <img src="./image/G15.jpg" alt="शौचालय बांधकाम">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">स्वच्छ भारत शौचालय</div>
+                        <div class="gallery-category">विकास कामे</div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="gallery-item" data-category="events">
+                    <img src="./image/G18.jpg" alt="खेळ स्पर्धा">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">ग्राम खेळ स्पर्धा</div>
+                        <div class="gallery-category">कार्यक्रम</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="infrastructure">
+                    <img src="./image/G19.jpg" alt="पंप हाऊस">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">पाणी पंप हाऊस</div>
+                        <div class="gallery-category">पायाभूत सुविधा</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="development">
+                    <img src="./image/G20.jpg" alt="रस्ता दुरुस्ती">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">रस्ता दुरुस्ती</div>
+                        <div class="gallery-category">विकास कामे</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="cultural">
+                    <img src="./image/G21.jpg" alt="होळी सण">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">होळी उत्सव</div>
+                        <div class="gallery-category">सांस्कृतिक</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="events">
+                    <img src="./image/G22.jpg" alt="मतदान जनजागृती">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">मतदान जनजागृती</div>
+                        <div class="gallery-category">कार्यक्रम</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-category="official">
+                    <img src="./image/G23.jpg" alt="वार्षिक अहवाल सादरीकरण">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">वार्षिक अहवाल सादरीकरण</div>
+                        <div class="gallery-category">अधिकृत</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Gallery Section -->
+    <section class="video-gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>व्हिडिओ गॅलरी</h2>
+                <p>ग्रामपंचायतीच्या विविध कार्यक्रमांचे व्हिडिओ</p>
+            </div>
+
+            <div class="video-grid">
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="./image/G1.jpg" alt="ग्रामसभा">
+                        <div class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">ग्रामसभा बैठक - डिसेंबर २०२३</div>
+                        <div class="video-date">१५ डिसेंबर २०२३</div>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="./image/G2.jpg" alt="स्वच्छता अभियान">
+                        <div class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">स्वच्छता अभियान कार्यक्रम</div>
+                        <div class="video-date">१० डिसेंबर २०२३</div>
+                    </div>
+                </div>
+
+                <div class="video-item">
+                    <div class="video-thumbnail">
+                        <img src="./image/G4.jpg" alt="गणेशोत्सव">
+                        <div class="play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-title">गणेशोत्सव २०२३ विसर्जन</div>
+                        <div class="video-date">५ सप्टेंबर २०२३</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Stats Section -->
+    <section class="photo-stats">
+        <div class="container">
+            <div class="section-title">
+                <h2>गॅलरी आकडेवारी</h2>
+                <p>आमच्या गॅलरीची संपूर्ण माहिती</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <div class="stat-number">२३</div>
+                    <div class="stat-label">एकूण फोटो</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="stat-number">३</div>
+                    <div class="stat-label">व्हिडिओ</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="stat-number">१५</div>
+                    <div class="stat-label">कार्यक्रम</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="stat-number">२,५६७</div>
+                    <div class="stat-label">एकूण दर्शने</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">×</span>
+        <div class="modal-content">
+            <img class="modal-image" id="modalImg" src="" alt="">
+            <div class="modal-info">
+                <h3 id="modalTitle"></h3>
+                <p id="modalCategory"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>झटपट दुवे</h3>
+                    <ul class="footer-links">
+                        <li><a href="team.html"><i class="fas fa-chevron-right"></i> ग्रामपंचायत सदस्य</a></li>
+                        <li><a href="schools.html"><i class="fas fa-chevron-right"></i> शाळा व अंगणवाडी</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> विकास प्रकल्प</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> फोटो गॅलरी</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> आपत्कालीन संपर्क</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>संपर्क माहिती</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-map-marker-alt"></i> सावंगी देवळी, महाराष्ट्र</p>
+                        <p><i class="fas fa-phone"></i> आपत्कालीन: १०८</p>
+                        <p><i class="fas fa-envelope"></i> sawangidevali@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> कार्यालयीन वेळ: सकाळी 10 ते दुपारी 6</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>आपत्कालीन संपर्क</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-phone"></i> पोलीस स्टेशन: १००</a></li>
+                        <li><a href="#"><i class="fas fa-ambulance"></i> एम्ब्युलन्स: १०८</a></li>
+                        <li><a href="#"><i class="fas fa-fire-extinguisher"></i> फायर ब्रिगेड: १०१</a></li>
+                        <li><a href="#"><i class="fas fa-hospital"></i> ग्रामीण रुग्णालय</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 सावंगी देवळी ग्रामपंचायत. सर्व हक्क राखीव.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function () {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Gallery Filter & Modal
+        document.addEventListener('DOMContentLoaded', function () {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalCategory = document.getElementById('modalCategory');
+            const closeBtn = document.querySelector('.close');
+
+            // Filter
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    const filterValue = this.getAttribute('data-filter');
+                    galleryItems.forEach(item => {
+                        item.style.display = (filterValue === 'all' || item.getAttribute('data-category') === filterValue) ? 'block' : 'none';
+                    });
+                });
+            });
+
+            // Modal
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    modalImg.src = this.querySelector('img').src;
+                    modalTitle.textContent = this.querySelector('.gallery-title').textContent;
+                    modalCategory.textContent = this.querySelector('.gallery-category').textContent;
+                    modal.style.display = 'block';
+                });
+            });
+
+            closeBtn.addEventListener('click', () => modal.style.display = 'none');
+            window.addEventListener('click', (e) => { if (e.target === modal) modal.style.display = 'none'; });
+        });
+    </script>
+</body>
+
+</html>

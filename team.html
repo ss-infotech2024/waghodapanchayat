@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="mr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>पंचायत मंडळ - सावंगी देवळी ग्रामपंचायत</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2E7D32;
+            --secondary: #FF9800;
+            --accent: #2196F3;
+            --light: #F1F8E9;
+            --dark: #1B5E20;
+            --text: #212121;
+            --text-light: #757575;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --gradient: linear-gradient(135deg, var(--primary), var(--dark));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tiro Devanagari Marathi', serif;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 10px 0;
+            box-shadow: var(--shadow);
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            background-color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 24px;
+        }
+
+        .logo-text h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .logo-text p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .contact-item i {
+            color: var(--secondary);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            background-color: var(--light);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 200px;
+            box-shadow: var(--shadow);
+            z-index: 1;
+            border-radius: 0 0 5px 5px;
+            overflow: hidden;
+        }
+
+        .dropdown-content a {
+            padding: 12px 16px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #F57C00;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Team Section */
+        .team-content {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .team-structure {
+            background-color: var(--light);
+            padding: 40px;
+            border-radius: 10px;
+            margin-bottom: 50px;
+        }
+
+        .structure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .structure-card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            border-left: 4px solid var(--primary);
+        }
+
+        .structure-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .team-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+        }
+
+        .team-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-color: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 40px;
+            overflow: hidden;
+            border: 3px solid var(--primary);
+        }
+
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-card h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+
+        .team-card .position {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .team-card .contact {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .responsibilities {
+            background-color: var(--light);
+            padding: 50px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        .responsibility-item {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 70px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+
+        .footer-links a i {
+            margin-right: 8px;
+            font-size: 14px;
+        }
+
+        .contact-details p {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .contact-details i {
+            margin-right: 10px;
+            color: var(--secondary);
+            width: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: var(--white);
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .structure-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="top-bar">
+                <div class="logo">
+                    <div class="logo-img">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>सावंगी देवळी ग्रामपंचायत</h1>
+                        <p>विकास आणि प्रगतीचे प्रतीक</p>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>आपत्कालीन: १०८</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>sawangidevali@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>सावंगी देवळी, महाराष्ट्र</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">मुख्यपृष्ठ</a></li>
+                <li class="dropdown">
+                    <a href="#" class="active">आमच्याबद्दल <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="about.html">परिचय</a>
+                        <a href="team.html" class="active">पंचायत मंडळ</a>
+                    </div>
+                </li>
+                <!-- <li><a href="announcements.html">सूचना</a></li> -->
+                <li class="dropdown">
+                    <a href="#">सेवा <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="service.html">नागरिक सेवा</a>
+                        <a href="facilities.html">स्थानीय सुविधा</a>
+                        <a href="rti.html">माहिती अधिकार</a>
+                        <a href="govt-schemes.html">शासकीय योजना</a>
+                    </div>
+                </li>
+                <li><a href="gallery.html">गॅलरी</a></li>
+                <li><a href="contact.html">संपर्क</a></li>
+                <li class="dropdown">
+                    <a href="#">अधिक <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="work.html">कामांची माहिती</a>
+                        <a href="fund.html">आर्थिक माहिती</a>
+                        <a href="complaint.html">तक्रार / सूचना</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>पंचायत मंडळ</h1>
+            <p>सावंगी देवळी ग्रामपंचायतीचे माननीय सदस्य</p>
+        </div>
+    </section>
+
+    <!-- Team Content Section -->
+    <section class="team-content">
+        <div class="container">
+            <div class="section-title">
+                <h2>आमचे पंचायत सदस्य</h2>
+                <p>ग्रामपंचायतीचे निवडून आलेले माननीय सदस्य</p>
+            </div>
+
+            <div class="team-structure">
+                <h3 style="text-align: center; color: var(--primary); margin-bottom: 30px;">पंचायत संरचना</h3>
+                <div class="structure-grid">
+                    <div class="structure-card">
+                        <h3>सरपंच</h3>
+                        <p>ग्रामपंचायतीचे प्रमुख</p>
+                        <p>कार्यकाळ: ५ वर्ष</p>
+                    </div>
+                    <div class="structure-card">
+                        <h3>उपसरपंच</h3>
+                        <p>सरपंचांचे सहाय्यक</p>
+                        <p>कार्यकाळ: ५ वर्ष</p>
+                    </div>
+                    <div class="structure-card">
+                        <h3>पंच सदस्य</h3>
+                        <p>एकूण ९ निवडून आलेले सदस्य</p>
+                        <p>कार्यकाळ: ५ वर्ष</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-image">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>श्री. राजेंद्र पाटील</h3>
+                    <div class="position">सरपंच</div>
+                    <div class="contact"><i class="fas fa-phone"></i> ९८७६५४३२१०</div>
+                    <div class="contact"><i class="fas fa-envelope"></i> sarpanch@sawangidevali.com</div>
+                    <div class="contact"><i class="fas fa-map-marker-alt"></i> वार्ड क्रमांक १</div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>श्रीमती. सुनंदा देशमुख</h3>
+                    <div class="position">उपसरपंच</div>
+                    <div class="contact"><i class="fas fa-phone"></i> ९८७६५४३२११</div>
+                    <div class="contact"><i class="fas fa-envelope"></i> upasarpanch@sawangidevali.com</div>
+                    <div class="contact"><i class="fas fa-map-marker-alt"></i> वार्ड क्रमांक ४</div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image">
+                        <i class="fas fa-user-cog"></i>
+                    </div>
+                    <h3>श्री. संतोष जाधव</h3>
+                    <div class="position">ग्रामसेवक</div>
+                    <div class="contact"><i class="fas fa-phone"></i> ९८७६५४३२१२</div>
+                    <div class="contact"><i class="fas fa-envelope"></i> gramsevak@sawangidevali.com</div>
+                    <div class="contact"><i class="fas fa-map-marker-alt"></i> ग्रामपंचायत कार्यालय</div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>श्री. विजय शिंदे</h3>
+                    <div class="position">पंच सदस्य</div>
+                    <div class="contact"><i class="fas fa-phone"></i> ९८७६५४३२१३</div>
+                    <div class="contact"><i class="fas fa-map-marker-alt"></i> वार्ड क्रमांक २</div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>श्रीमती. मंजुषा पवार</h3>
+                    <div class="position">पंच सदस्य</div>
+                    <div class="contact"><i class="fas fa-phone"></i> ९८७६५४३२१४</div>
+                    <div class="contact"><i class="fas fa-map-marker-alt"></i> वार्ड क्रमांक ३</div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>श्री. अशोक कोल्हे</h3>
+                    <div class="position">पंच सदस्य</div>
+                    <div class="contact"><i class="fas fa-phone"></i> ९८७६५४३२१५</div>
+                    <div class="contact"><i class="fas fa-map-marker-alt"></i> वार्ड क्रमांक ५</div>
+                </div>
+            </div>
+
+            <div class="responsibilities">
+                <h3 style="text-align: center; color: var(--primary); margin-bottom: 30px;">पंचायत मंडळाची जबाबदाऱ्या
+                </h3>
+
+                <div class="responsibility-item">
+                    <h4>सरपंच यांच्या जबाबदाऱ्या</h4>
+                    <p>• ग्रामपंचायतीचे नेतृत्व करणे</p>
+                    <p>• पंचायत समितीचे अध्यक्षस्थान भूषविणे</p>
+                    <p>• ग्रामपंचायतीच्या सर्व कामकाजाचे निरीक्षण करणे</p>
+                    <p>• वार्षिक अंदाजपत्रक तयार करणे</p>
+                </div>
+
+                <div class="responsibility-item">
+                    <h4>उपसरपंच यांच्या जबाबदाऱ्या</h4>
+                    <p>• सरपंचांच्या अनुपस्थितीत पंचायत समितीचे अध्यक्षस्थान भूषविणे</p>
+                    <p>• सरपंचांना सर्व कामकाजात सहकार्य करणे</p>
+                    <p>• विविध समित्यांचे नेतृत्व करणे</p>
+                </div>
+
+                <div class="responsibility-item">
+                    <h4>ग्रामसेवक यांच्या जबाबदाऱ्या</h4>
+                    <p>• ग्रामपंचायतीचे सचिव म्हणून काम करणे</p>
+                    <p>• सर्व कागदपत्रे व रेकॉर्ड राखणे</p>
+                    <p>• आर्थिक लेखा तयार करणे</p>
+                    <p>• सरकारी योजनांची अंमलबजावणी करणे</p>
+                </div>
+
+                <div class="responsibility-item">
+                    <h4>पंच सदस्य यांच्या जबाबदाऱ्या</h4>
+                    <p>• आपापल्या वार्डच्या विकासासाठी काम करणे</p>
+                    <p>• ग्रामपंचायत समितीच्या बैठकींमध्ये सहभागी होणे</p>
+                    <p>• ग्रामस्थांच्या समस्यांचे निराकरण करणे</p>
+                    <p>• विकास कामांचे निरीक्षण करणे</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>झटपट दुवे</h3>
+                    <ul class="footer-links">
+                        <li><a href="team.html"><i class="fas fa-chevron-right"></i> ग्रामपंचायत सदस्य</a></li>
+                        <li><a href="schools.html"><i class="fas fa-chevron-right"></i> शाळा व अंगणवाडी</a></li>
+                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> विकास प्रकल्प</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> फोटो गॅलरी</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> आपत्कालीन संपर्क</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>संपर्क माहिती</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-map-marker-alt"></i> सावंगी देवळी, महाराष्ट्र</p>
+                        <p><i class="fas fa-phone"></i> आपत्कालीन: १०८</p>
+                        <p><i class="fas fa-envelope"></i> sawangidevali@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> कार्यालयीन वेळ: सकाळी 10 ते दुपारी 6</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>आपत्कालीन संपर्क</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-phone"></i> पोलीस स्टेशन: १००</a></li>
+                        <li><a href="#"><i class="fas fa-ambulance"></i> एम्ब्युलन्स: १०८</a></li>
+                        <li><a href="#"><i class="fas fa-fire-extinguisher"></i> फायर ब्रिगेड: १०१</a></li>
+                        <li><a href="#"><i class="fas fa-hospital"></i> ग्रामीण रुग्णालय</a></li>
+                    </ul>
+                </div>
+                <!-- <div class="footer-column">
+                    <h3>डाउनलोड</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-file-pdf"></i> ग्रामसभा नोंदी (PDF)</a></li>
+                        <li><a href="#"><i class="fas fa-file-pdf"></i> वार्षिक आर्थिक अहवाल</a></li>
+                        <li><a href="#"><i class="fas fa-file-pdf"></i> कर विवरण</a></li>
+                        <li><a href="#"><i class="fas fa-file-pdf"></i> विकास आराखडा (DP)</a></li>
+                    </ul>
+                </div> -->
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 सावंगी देवळी ग्रामपंचायत. सर्व हक्क राखीव.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function () {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

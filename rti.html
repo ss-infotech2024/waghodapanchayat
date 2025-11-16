@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="mr">
+
+<head>
+    <meta charset="utf-8">
+    <title>सावंगी देवळी ग्रामपंचायत - माहिती अधिकार</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #2E7D32;
+            --secondary: #FF9800;
+            --accent: #4CAF50;
+            --light: #E8F5E9;
+            --dark: #1B5E20;
+        }
+
+        body {
+            font-family: 'Tiro Devanagari Marathi', serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            color: var(--light) !important;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(46, 125, 50, 0.8), rgba(27, 94, 32, 0.9)), url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section-title {
+            color: var(--dark);
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            border-radius: 12px 12px 0 0 !important;
+            padding: 15px 20px;
+            font-weight: 600;
+        }
+
+        .info-card {
+            border-left: 5px solid var(--secondary);
+        }
+
+        .process-card {
+            border-left: 5px solid var(--accent);
+        }
+
+        .contact-card {
+            border-left: 5px solid #2196F3;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            border: none;
+            border-radius: 30px;
+            padding: 10px 25px;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            background: linear-gradient(135deg, var(--dark), #0d4211);
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .footer a {
+            color: var(--light);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: var(--secondary);
+        }
+
+        .badge-custom {
+            background-color: var(--secondary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -36px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--secondary);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--secondary);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            color: var(--primary);
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-tree me-2"></i>सावंगी देवळी ग्रामपंचायत
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">मुख्यपृष्ठ</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            आमच्याबद्दल
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="about.html">परिचय</a></li>
+                            <li><a class="dropdown-item" href="team.html">पंचायत मंडळ</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <!-- <a class="nav-link" href="announcements.html">सूचना</a> -->
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="servicesDropdown" role="button"
+                            data-bs-toggle="dropdown">
+                            सेवा
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="service.html">नागरिक सेवा</a></li>
+                            <li><a class="dropdown-item" href="facilities.html">स्थानीय सुविधा</a></li>
+                            <li><a class="dropdown-item active" href="rti.html">माहिती अधिकार</a></li>
+                            <li><a class="dropdown-item" href="govt-schemes.html">शासकीय योजना</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">गॅलरी</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">संपर्क</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h1 class="display-4 fw-bold mb-4">माहिती अधिकार</h1>
+                    <p class="lead mb-4">माहितीचा अधिकार कायदा २००५ नुसार ग्रामपंचायतशी संबंधित माहिती येथे उपलब्ध आहे
+                    </p>
+                    <a href="#rti-info" class="btn btn-light btn-lg px-4">अधिक माहिती</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RTI Information Section -->
+    <section id="rti-info" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title">माहिती अधिकार कायदा २००५</h2>
+                    <p class="lead">प्रत्येक भारतीय नागरिकाला शासकीय कार्यालयांकडून माहिती मागवण्याचा कायदेशीर अधिकार
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="card info-card h-100">
+                        <div class="card-body p-4">
+                            <h4 class="mb-3">RTI कायद्याची मुख्य वैशिष्ट्ये</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> कोणताही भारतीय
+                                    नागरिक RTI अर्ज करू शकतो</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> अर्ज लेखी
+                                    स्वरूपात किंवा ऑनलाईन करता येतो</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> उत्तर कालावधी —
+                                    30 दिवस</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> अर्जासाठी फी: ₹10
+                                    (नगद / पोस्टल ऑर्डर / डिमांड ड्राफ्ट)</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> अर्ज नाकारल्यास
+                                    अपील करण्याचा अधिकार आहे</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="card process-card h-100">
+                        <div class="card-body p-4">
+                            <h4 class="mb-3">RTI अर्ज प्रक्रिया</h4>
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <h5>अर्ज तयार करा</h5>
+                                    <p>RTI अर्ज भरून आवश्यक फी (₹10) जोडा</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <h5>अर्ज सादर करा</h5>
+                                    <p>अर्ज PIO कडे जमा करा किंवा ई-मेलवर पाठवा</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <h5>प्रतिसाद प्राप्त करा</h5>
+                                    <p>30 दिवसांच्या आत माहिती उपलब्ध होईल</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <h5>अपील करा (आवश्यक असल्यास)</h5>
+                                    <p>माहिती न मिळाल्यास प्रथम अपील करावे</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RTI Officers Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title">RTI अधिकारी व संपर्क माहिती</h2>
+                    <p>सावंगी देवळी ग्रामपंचायत अंतर्गत माहिती अधिकारी</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card contact-card h-100">
+                        <div class="card-header">
+                            <h5 class="mb-0">सार्वजनिक माहिती अधिकारी (PIO)</h5>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="feature-icon">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h5 class="mb-1">श्री. रमेश साहेबराव सुरडकर</h5>
+                                    <p class="text-muted mb-0">पंचायत अधिकारी</p>
+                                </div>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-map-marker-alt text-primary me-2"></i> ग्रामपंचायत
+                                    कार्यालय, सावंगी देवळी</li>
+                                <li class="mb-2"><i class="fas fa-phone text-primary me-2"></i> संपर्क क्रमांक:
+                                    xxxxxxxxxx</li>
+                                <li class="mb-2"><i class="fas fa-envelope text-primary me-2"></i> ईमेल:
+                                    sawangidevali@gmail.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <div class="card contact-card h-100">
+                        <div class="card-header">
+                            <h5 class="mb-0">अपील अधिकारी</h5>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="mb-4">
+                                <h6 class="text-primary">प्रथम अपील प्राधिकृत अधिकारी</h6>
+                                <p class="mb-1">गट विकास अधिकारी पंचायत समिती</p>
+                                <p class="text-muted">जिल्हा: बुलढाणा</p>
+                            </div>
+                            <div>
+                                <h6 class="text-primary">द्वितीय अपील अधिकारी</h6>
+                                <p class="mb-1">मा. राज्य आयुक्त माहिती अधिकार</p>
+                                <p class="text-muted">अमरावती</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RTI Application Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title">RTI अर्ज सादर करणे</h2>
+                    <p>अर्ज सादर करण्यासाठी खालील पर्याय उपलब्ध आहेत</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body p-4">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h5 class="my-3">व्यक्तिचलित अर्ज</h5>
+                            <p>ग्रामपंचायत कार्यालयात जाऊन व्यक्तिचलित RTI अर्ज सादर करा</p>
+                            <span class="badge-custom">शुल्क: ₹10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body p-4">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h5 class="my-3">पोस्टद्वारे अर्ज</h5>
+                            <p>RTI अर्ज पोस्टद्वारे पाठवा. ₹10 चा पोस्टल ऑर्डर जोडा</p>
+                            <span class="badge-custom">शुल्क: ₹10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card text-center h-100">
+                        <div class="card-body p-4">
+                            <div class="feature-icon mx-auto">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <h5 class="my-3">ई-मेल द्वारे अर्ज</h5>
+                            <p>RTI अर्ज ई-मेलद्वारे पाठवा. फी ऑनलाइन भरा</p>
+                            <span class="badge-custom">शुल्क: ₹10</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="card bg-light border-0">
+                        <div class="card-body p-4">
+                            <h4 class="mb-3">महत्वाची सूचना</h4>
+                            <p class="mb-0">RTI अर्जात स्पष्ट, संक्षिप्त आणि विशिष्ट माहितीची मागणी करावी. अर्जावर नाव,
+                                पत्ता आणि संपर्क क्रमांक असणे आवश्यक आहे. माहिती मिळाल्यानंतर 30 दिवसांच्या आत अपील केले
+                                जाऊ शकते.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-light mb-4">कार्यालय</h4>
+                    <p class="mb-2"><i class="fas fa-map-marker-alt me-3"></i>ग्रामपंचायत, सावंगी देवळी</p>
+                    <p class="mb-2"><i class="fas fa-phone-alt me-3"></i>०२३३-१२३४५६</p>
+                    <p class="mb-2"><i class="fas fa-envelope me-3"></i>sawangidevali@gmail.com</p>
+                    <div class="d-flex pt-3">
+                        <a class="btn btn-square btn-light me-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-light me-2" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-light me-2" href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-light me-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h4 class="text-light mb-4">झटपट दुवे</h4>
+                    <a class="d-block mb-2" href="govt-schemes.html">शासकीय योजना</a>
+                    <a class="d-block mb-2" href="facilities.html">सोई-सुविधा</a>
+                    <a class="d-block mb-2" href="fund.html">बजेट आणि निधी</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">कार्यालयीन वेळा</h4>
+                    <p class="mb-1">सप्ताहाचे दिवस</p>
+                    <h6 class="text-light">सकाळी १०:०० - संध्याकाळी ६:००</h6>
+                    <p class="mb-1 mt-3">शनिवार</p>
+                    <h6 class="text-light">सकाळी १०:०० - दुपारी २:००</h6>
+                    <p class="mb-1 mt-3">रविवार: </p>
+                    <h6 class="text-light">बंद</h6>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">गॅलरी</h4>
+                    <div class="row g-2">
+                        <div class="col-4">
+                            <img class="img-fluid rounded"
+                                src="https://via.placeholder.com/80x60/4CAF50/FFFFFF?text=GP1" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded"
+                                src="https://via.placeholder.com/80x60/2196F3/FFFFFF?text=GP2" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded"
+                                src="https://via.placeholder.com/80x60/FF9800/FFFFFF?text=GP3" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded"
+                                src="https://via.placeholder.com/80x60/4CAF50/FFFFFF?text=GP4" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded"
+                                src="https://via.placeholder.com/80x60/2196F3/FFFFFF?text=GP5" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid rounded"
+                                src="https://via.placeholder.com/80x60/FF9800/FFFFFF?text=GP6" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright pt-5 mt-4 border-top border-light">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="fw-semi-bold text-light" href="index.html">सावंगी देवळी ग्रामपंचायत</a>, सर्व
+                        हक्क राखीव.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <a class="text-light me-3" href="privacy.html">गोपनीयता धोरण</a>
+                        <a class="text-light" href="terms.html">वापर अटी</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top position-fixed"
+        style="bottom: 30px; right: 30px;">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Back to top button
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.back-to-top').fadeIn();
+                } else {
+                    $('.back-to-top').fadeOut();
+                }
+            });
+
+            $('.back-to-top').click(function () {
+                $("html, body").animate({ scrollTop: 0 }, 600);
+                return false;
+            });
+        });
+    </script>
+</body>
+
+</html>
