@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>सावंगी देवळी ग्रामपंचायत</title>
+    <title>वाघोदा ग्रामपंचायत</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&display=swap"
         rel="stylesheet">
     <style>
         :root {
-            --primary: #2E7D32;
-            --secondary: #FF9800;
-            --accent: #2196F3;
-            --light: #F1F8E9;
-            --dark: #1B5E20;
-            --text: #212121;
-            --text-light: #757575;
+            --primary: #8B4513;
+            --secondary: #D2691E;
+            --accent: #CD853F;
+            --light: #FAEBD7;
+            --dark: #654321;
+            --text: #2F4F4F;
+            --text-light: #696969;
             --white: #ffffff;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --gradient: linear-gradient(135deg, var(--primary), var(--dark));
@@ -244,7 +244,7 @@
         }
 
         .btn:hover {
-            background-color: #F57C00;
+            background-color: #B35900;
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
@@ -305,7 +305,7 @@
         /* Features Section */
         .features {
             padding: 80px 0;
-            background-color: var(--white);
+            background-color: var(--light);
         }
 
         .section-title {
@@ -381,7 +381,7 @@
         /* About Section */
         .about {
             padding: 80px 0;
-            background-color: var(--light);
+            background-color: var(--white);
         }
 
         .about-content {
@@ -419,12 +419,72 @@
             transform: scale(1.05);
         }
 
-        /* Statistics Section */
-        .statistics {
+        /* Weather Section */
+        .weather {
             padding: 80px 0;
             background: var(--gradient);
             color: var(--white);
+        }
+
+        .weather-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .weather-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
             text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .weather-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .weather-temp {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .weather-desc {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        .weather-details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .weather-detail {
+            text-align: center;
+        }
+
+        .weather-detail span {
+            display: block;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .weather-detail .value {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 5px;
+            color: var(--secondary);
+        }
+
+        /* Statistics Section */
+        .statistics {
+            padding: 80px 0;
+            background-color: var(--light);
         }
 
         .stats-grid {
@@ -434,19 +494,23 @@
         }
 
         .stat-item {
-            padding: 30px 20px;
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
         }
 
         .stat-number {
             font-size: 48px;
             font-weight: 700;
             margin-bottom: 10px;
-            color: var(--secondary);
+            color: var(--primary);
         }
 
         .stat-label {
             font-size: 18px;
-            opacity: 0.9;
+            color: var(--text);
         }
 
         /* Services Section */
@@ -467,6 +531,7 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
+            border: 1px solid var(--light);
         }
 
         .service-card:hover {
@@ -593,10 +658,49 @@
             opacity: 0.9;
         }
 
+        /* Location Info */
+        .location {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .location-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .location-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .location-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            font-size: 28px;
+        }
+
+        .location-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
         /* Team Section */
         .team {
             padding: 80px 0;
-            background-color: var(--white);
+            background-color: var(--light);
         }
 
         .team-grid {
@@ -646,71 +750,6 @@
         }
 
         .team-card .position {
-            color: var(--secondary);
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .team-card .contact {
-            color: var(--text-light);
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-
-        /* Government Section */
-        .government {
-            padding: 80px 0;
-            background-color: var(--light);
-        }
-
-        .gov-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-
-        .gov-card {
-            background-color: var(--white);
-            border-radius: 10px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            border-top: 4px solid var(--primary);
-        }
-
-        .gov-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .gov-image {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin: 0 auto 15px;
-            background-color: var(--light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 40px;
-            overflow: hidden;
-        }
-
-        .gov-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .gov-card h3 {
-            font-size: 18px;
-            margin-bottom: 5px;
-            color: var(--primary);
-        }
-
-        .gov-card .position {
             color: var(--secondary);
             font-weight: 600;
             margin-bottom: 10px;
@@ -858,7 +897,6 @@
             .mobile-menu {
                 display: block;
                 margin-left: auto;
-                /* Added to push the menu to the right */
             }
 
             .hero-slider {
@@ -904,7 +942,7 @@
             .features-grid,
             .services-grid,
             .team-grid,
-            .gov-grid {
+            .location-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -928,75 +966,6 @@
                 font-size: 12px;
             }
         }
-
-        @media (max-width: 370px) {
-            .container {
-                padding: 0 10px;
-            }
-
-            .hero-slider {
-                height: 300px;
-            }
-
-            .slide-content h1 {
-                font-size: 24px;
-            }
-
-            .slide-content p {
-                font-size: 14px;
-            }
-
-            .btn {
-                padding: 10px 20px;
-                font-size: 14px;
-            }
-
-            .section-title h2 {
-                font-size: 22px;
-            }
-
-            .section-title p {
-                font-size: 14px;
-            }
-
-            .feature-card,
-            .service-card,
-            .team-card,
-            .gov-card {
-                padding: 20px;
-            }
-
-            .stat-number {
-                font-size: 36px;
-            }
-
-            .stat-label {
-                font-size: 14px;
-            }
-
-            .logo-img {
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
-            }
-
-            .logo-text h1 {
-                font-size: 18px;
-            }
-
-            .nav-links a {
-                padding: 12px 15px;
-                font-size: 14px;
-            }
-
-            .footer-column h3 {
-                font-size: 18px;
-            }
-
-            .copyright {
-                font-size: 12px;
-            }
-        }
     </style>
 </head>
 
@@ -1007,11 +976,11 @@
             <div class="top-bar">
                 <div class="logo">
                     <div class="logo-img">
-                        <i class="fas fa-landmark"></i>
+                        <i class="fas fa-village"></i>
                     </div>
                     <div class="logo-text">
-                        <h1>सावंगी देवळी ग्रामपंचायत</h1>
-                        <p>विकास आणि प्रगतीचे प्रतीक</p>
+                        <h1>वाघोदा ग्रामपंचायत</h1>
+                        <p>नागपूर, सावनेर, महाराष्ट्र</p>
                     </div>
                 </div>
                 <div class="contact-info">
@@ -1021,11 +990,11 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>sawangidevali@gmail.com</span>
+                        <span>waghodapanchayat@gmail.com</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>सावंगी देवळी, महाराष्ट्र</span>
+                        <span>वाघोदा, सावनेर</span>
                     </div>
                 </div>
             </div>
@@ -1040,21 +1009,22 @@
                 <li class="dropdown">
                     <a href="#">आमच्याबद्दल <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="about.html">परिचय</a>
+                        <a href="about.html">गावाचा इतिहास</a>
                         <a href="team.html">पंचायत मंडळ</a>
+                        <a href="demographics.html">लोकसंख्या</a>
                     </div>
                 </li>
-                <!-- <li><a href="annoucements.html">सूचना</a></li> -->
                 <li class="dropdown">
                     <a href="#">सेवा <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
                         <a href="service.html">नागरिक सेवा</a>
-                        <a href="facilities.html">स्थानीय सुविधा</a>
+                        <a href="facilities.html">पायाभूत सुविधा</a>
                         <a href="rti.html">माहिती अधिकार</a>
                         <a href="govt-schemes.html">शासकीय योजना</a>
                     </div>
                 </li>
                 <li><a href="gallery.html">गॅलरी</a></li>
+                <li><a href="weather.html">हवामान</a></li>
                 <li><a href="contact.html">संपर्क</a></li>
                 <li class="dropdown">
                     <a href="#">अधिक <i class="fas fa-chevron-down"></i></a>
@@ -1075,128 +1045,143 @@
     <section class="hero-slider">
         <div class="slides">
             <div class="slide">
-                <img src="./img/pancha.jpg" alt="ग्रामपंचायत">
+                <img src="./image/G29.jpg" alt="वाघोदा ग्रामपंचायत">
                 <div class="slide-content">
-                    <h1>सावंगी देवळी ग्रामपंचायतमध्ये आपले स्वागत आहे</h1>
-                    <p>सावंगी देवळी ही 1959 साली स्थापन झालेली एक विकसित व प्रगतिशील ग्रामपंचायत आहे.</p>
-                    <a href="about.html" class="btn">अधिक माहिती</a>
+                    <h1>वाघोदा ग्रामपंचायत</h1>
+                    <p>गावाची मूलभूत माहिती व सेवांचा आढावा</p>
+                    <a href="about.html" class="btn">अधिक जाणून घ्या</a>
                 </div>
             </div>
+
             <div class="slide">
-                <img src="./image/G11.jpg" alt="महिला सक्षमीकरण">
+                <img src="./image/G30.jpg" alt="वाघोदा ग्रामीण भाग">
                 <div class="slide-content">
-                    <h1>महिला सक्षमीकरण</h1>
-                    <p>सावंगी देवळी ग्रामपंचायत महिला सक्षमीकरणावर भर देते. आमच्या गावातील महिला स्वावलंबी, शिक्षित आणि
-                        सबल आहेत. विविध कौशल्य विकास कार्यक्रम, स्वयंसहाय्य गट आणि उद्योजकता योजनांद्वारे महिलांना सक्षम
-                        करण्याचे कार्य सुरू आहे.</p>
-                    <a href="women-empowerment.html" class="btn">अधिक माहिती</a>
+                    <h1>आपले गाव, आपला अभिमान</h1>
+                    <p>निसर्गरम्य आणि शांत ग्रामीण परिसर</p>
+                    <a href="location.html" class="btn">स्थान माहिती</a>
                 </div>
             </div>
+
             <div class="slide">
-                <img src="./image/G8.jpg" alt="ग्रामीण विकास">
+                <img src="./image/G26.jpg" alt="वाघोदा शेती">
                 <div class="slide-content">
-                    <h1>सामाजिक ऐक्य व विकास</h1>
-                    <p>गावात सामाजिक ऐक्य, शेतीप्रधान अर्थव्यवस्था, तसेच सतत विकसित होत असलेली पायाभूत सुविधा.</p>
-                    <a href="work.html" class="btn">कामांची माहिती</a>
+                    <h1>शेती आणि विकास</h1>
+                    <p>शेती, पशुपालन आणि गावाच्या प्रगतीची दिशा</p>
+                    <a href="services.html" class="btn">सेवा पाहा</a>
                 </div>
             </div>
-        </div>
-        <div class="slider-arrow prev">
-            <i class="fas fa-chevron-left"></i>
-        </div>
-        <div class="slider-arrow next">
-            <i class="fas fa-chevron-right"></i>
-        </div>
-        <div class="slider-nav">
-            <div class="slider-dot active"></div>
-            <div class="slider-dot"></div>
-            <div class="slider-dot"></div>
-        </div>
+
+            <div class="slider-arrow prev">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="slider-arrow next">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="slider-nav">
+                <div class="slider-dot active"></div>
+                <div class="slider-dot"></div>
+                <div class="slider-dot"></div>
+            </div>
     </section>
 
-
-    <!-- Government Section -->
-    <section class="government">
+    <!-- Weather Section -->
+    <section class="weather">
         <div class="container">
             <div class="section-title">
-                <h2>महाराष्ट्र शासन</h2>
-                <p>माननीय मंत्रीमंडळ</p>
+                <h2 style="color: white;">वाघोदा हवामान</h2>
+                <p style="color: #ddd;">सध्याचे हवामान आणि पुढील ५ दिवसांचा अंदाज</p>
             </div>
-            <div class="gov-grid">
-                <div class="gov-card">
-                    <div class="gov-image">
-                        <img src="https://gujaratvidyapith.org/common/media/2024/09/24090205195019.png" alt="राज्यपाल">
+            <div class="weather-grid">
+                <div class="weather-card">
+                    <div class="weather-icon">
+                        <i class="fas fa-sun"></i>
                     </div>
-                    <h3>श्री. आचार्य देवव्रत</h3>
-                    <div class="position">माननीय राज्यपाल</div>
+                    <div class="weather-temp">24.4°C</div>
+                    <div class="weather-desc">स्वच्छ आकाश</div>
+                    <div class="weather-details">
+                        <div class="weather-detail">
+                            <span>आर्द्रता</span>
+                            <div class="value">25%</div>
+                        </div>
+                        <div class="weather-detail">
+                            <span>वारा</span>
+                            <div class="value">1.58 m/s</div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="gov-card">
-                    <div class="gov-image">
-                        <img src="./img/chief-minister.webp" alt="उपमुख्यमंत्री">
+                <div class="weather-card">
+                    <div class="weather-icon">
+                        <i class="fas fa-calendar-day"></i>
                     </div>
-                    <h3>श्री. देवेंद्र फडणवीस</h3>
-                    <div class="position">माननीय मुख्यमंत्री</div>
+                    <div class="weather-temp">27.0°C</div>
+                    <div class="weather-desc">उद्या - १२ डिसेंबर</div>
+                    <div class="weather-details">
+                        <div class="weather-detail">
+                            <span>किमान</span>
+                            <div class="value">14.7°C</div>
+                        </div>
+                        <div class="weather-detail">
+                            <span>कमाल</span>
+                            <div class="value">27.0°C</div>
+                        </div>
+                    </div>
                 </div>
-
-
-                <div class="gov-card">
-                    <div class="gov-image">
-                        <img src="./img/deputy-cm-2.webp" alt="उपमुख्यमंत्री">
+                <div class="weather-card">
+                    <div class="weather-icon">
+                        <i class="fas fa-calendar-alt"></i>
                     </div>
-                    <h3>श्री. एकनाथ शिंदे</h3>
-                    <div class="position">माननीय उपमुख्यमंत्री</div>
-
-                </div>
-
-
-                <div class="gov-card">
-                    <div class="gov-image">
-                        <img src="./img/deputy-cm-1.webp" alt="मुख्यमंत्री">
+                    <div class="weather-temp">27.4°C</div>
+                    <div class="weather-desc">१४ डिसेंबर</div>
+                    <div class="weather-details">
+                        <div class="weather-detail">
+                            <span>किमान</span>
+                            <div class="value">13.5°C</div>
+                        </div>
+                        <div class="weather-detail">
+                            <span>कमाल</span>
+                            <div class="value">27.4°C</div>
+                        </div>
                     </div>
-                    <h3>श्री. अजित पवार</h3>
-                    <div class="position">माननीय उपमुख्यमंत्री</div>
                 </div>
             </div>
         </div>
     </section>
-
 
     <!-- Features Section -->
     <section class="features">
         <div class="container">
             <div class="section-title">
-                <h2>मुख्य वैशिष्ट्ये</h2>
-                <p>सावंगी देवळी ग्रामपंचायतची प्रमुख वैशिष्ट्ये</p>
+                <h2>वाघोदा ग्रामपंचायत</h2>
+                <p>मुख्य वैशिष्ट्ये आणि माहिती</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <h3>लोकसंख्या</h3>
-                    <p>एकूण लोकसंख्या: 2507 (पुरुष: 1332, स्त्रिया: 1175)</p>
+                    <h3>स्थान</h3>
+                    <p>नागपूर जिल्हा, सावनेर तालुका, विदर्भ प्रदेश</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-calendar-alt"></i>
+                        <i class="fas fa-water"></i>
                     </div>
-                    <h3>स्थापना</h3>
-                    <p>ग्रामपंचायत स्थापना: 1959</p>
+                    <h3>नदी</h3>
+                    <p>सुर नदी काठावर वसलेले</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-tractor"></i>
                     </div>
                     <h3>मुख्य व्यवसाय</h3>
-                    <p>शेती, पशुपालन</p>
+                    <p>शेती आणि पशुपालन</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-graduation-cap"></i>
+                        <i class="fas fa-language"></i>
                     </div>
-                    <h3>शैक्षणिक सुविधा</h3>
-                    <p>प्राथमिक शाळा व अंगणवाडी</p>
+                    <h3>भाषा</h3>
+                    <p>मराठी, हिंदी, इंग्रजी</p>
                 </div>
             </div>
         </div>
@@ -1207,16 +1192,16 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>ग्रामपंचायत परिचय</h2>
-                    <p>सावंगी देवळी ग्रामपंचायतने स्थापनेपासून गावाच्या सर्वांगीण विकासाची धुरा वाहिली आहे. गावात
-                        पायाभूत सुविधा उभारणी, स्वच्छता, पाणीपुरवठा, शिक्षण व आरोग्य या क्षेत्रांत उल्लेखनीय कार्य केले
-                        आहे.</p>
-                    <p>भौगोलिक माहिती: सावंगी देवळी हे महाराष्ट्र राज्यातील एक प्रगतिशील गाव आहे. ग्रामपंचायत कार्यालय
-                        सावंगी देवळी येथे आहे.</p>
-                    <a href="about.html" class="btn">अधिक वाचा</a>
+                    <h2>वाघोदा गावाचा इतिहास</h2>
+                    <p>वाघोदा हे नागपूर जिल्ह्यातील सावनेर तालुक्यातील एक गाव आहे. हे गाव सुर नदीच्या काठावर वसलेले असून
+                        निसर्ग सौंदर्याने नटलेले आहे. गावाचा इतिहास पुरातन आहे आणि येथे समृद्ध सांस्कृतिक वारसा आहे.</p>
+                    <p>वाघोदा हे नागपूर पासून ३४ किमी उत्तरेस आणि सावनेर पासून केवळ ७ किमी अंतरावर वसलेले आहे. गावाची
+                        सरासरी उंची समुद्रसपाटीपासून ३२९ मीटर आहे.</p>
+                    <a href="about.html" class="btn">संपूर्ण इतिहास वाचा</a>
                 </div>
                 <div class="about-image">
-                    <img src="./image/G4.jpg" alt="ग्रामपंचायत इमारत">
+                    <img src="https://images.unsplash.com/photo-1516996087931-4a7dd7e8c8c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                        alt="वाघोदा ग्रामीण दृश्य">
                 </div>
             </div>
         </div>
@@ -1226,25 +1211,65 @@
     <section class="statistics">
         <div class="container">
             <div class="section-title">
-                <h1>आमची संख्या</h1>
-                <p style="color: #cccaca;">सावंगी देवळी ग्रामपंचायतची सांख्यिकी</p>
+                <h2>आकडेवारी</h2>
+                <p>वाघोदा गावाची संख्याशास्त्रीय माहिती</p>
             </div>
             <div class="stats-grid">
                 <div class="stat-item">
-                    <div class="stat-number">2507</div>
-                    <div class="stat-label">एकूण लोकसंख्या</div>
+                    <div class="stat-number">441107</div>
+                    <div class="stat-label">पिन कोड</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">1332</div>
-                    <div class="stat-label">पुरुष</div>
+                    <div class="stat-number">329 m</div>
+                    <div class="stat-label">समुद्रसपाटीपासून उंची</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">1175</div>
-                    <div class="stat-label">स्त्रिया</div>
+                    <div class="stat-number">07113</div>
+                    <div class="stat-label">STD कोड</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">1959</div>
-                    <div class="stat-label">स्थापना वर्ष</div>
+                    <div class="stat-number">7 KM</div>
+                    <div class="stat-label">सावनेर पासून अंतर</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Info -->
+    <section class="location">
+        <div class="container">
+            <div class="section-title">
+                <h2>प्रवास माहिती</h2>
+                <p>वाघोदा पर्यंत पोहोचण्याच्या मार्गांची माहिती</p>
+            </div>
+            <div class="location-grid">
+                <div class="location-card">
+                    <div class="location-icon">
+                        <i class="fas fa-train"></i>
+                    </div>
+                    <h3>रेल्वे मार्ग</h3>
+                    <p>सावनेर जंक्शन (7 किमी) किंवा मालेगाव व्येंकू रेल्वे स्थानक</p>
+                </div>
+                <div class="location-card">
+                    <div class="location-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3>रस्त्याने</h3>
+                    <p>सावनेर, नागपूर, खापा या शहरांपासून रस्ते संपर्क</p>
+                </div>
+                <div class="location-card">
+                    <div class="location-icon">
+                        <i class="fas fa-bus"></i>
+                    </div>
+                    <h3>बस सेवा</h3>
+                    <p>नागपूर-सावनेर बस मार्गावरून वाघोदा पर्यंत</p>
+                </div>
+                <div class="location-card">
+                    <div class="location-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>विमानतळ</h3>
+                    <p>डॉ. बाबासाहेब आंबेडकर आंतरराष्ट्रीय विमानतळ, नागपूर (40 किमी)</p>
                 </div>
             </div>
         </div>
@@ -1254,38 +1279,41 @@
     <section class="services">
         <div class="container">
             <div class="section-title">
-                <h2>आमच्या सेवा</h2>
-                <p>सावंगी देवळी ग्रामपंचायतद्वारे पुरवल्या जाणाऱ्या सेवा</p>
+                <h2>पंचायत सेवा</h2>
+                <p>ग्रामपंचायतद्वारे पुरवल्या जाणाऱ्या सेवा</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="./image/G5.jpg" alt="प्रशासन सेवा">
+                        <img src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="प्रशासन सेवा">
                     </div>
                     <div class="service-content">
                         <h3>प्रशासन सेवा</h3>
-                        <p>ग्रामपंचायत प्रशासन, सरपंच, उपसरपंच, ग्रामसेवक यांची माहिती व कार्यालयीन वेळ.</p>
+                        <p>ग्रामपंचायत कार्यालयीन सेवा, सरपंच, उपसरपंच, ग्रामसेवक यांची माहिती</p>
                         <a href="work.html" class="service-link">अधिक माहिती <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="./image/G6.jpg" alt="विकास प्रकल्प">
+                        <img src="https://images.unsplash.com/photo-1471286174890-9c112ffca0c6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="विकास प्रकल्प">
                     </div>
                     <div class="service-content">
                         <h3>विकास प्रकल्प</h3>
-                        <p>ग्रामपाणीपुरवठा योजना, स्वच्छ भारत अभियान, रस्ते काँक्रीटीकरण, LED स्ट्रीट लाईट प्रकल्प.</p>
-                        <a href="work.html" class="service-link">अधिक माहिती <i class="fas fa-arrow-right"></i></a>
+                        <p>रस्ते, पाणीपुरवठा, स्वच्छता, बिजली, शैक्षणिक सुविधा यासंबंधी प्रकल्प</p>
+                        <a href="projects.html" class="service-link">अधिक माहिती <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="./image/G7.jpg" alt="शैक्षणिक संस्था">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="शैक्षणिक संस्था">
                     </div>
                     <div class="service-content">
                         <h3>शैक्षणिक संस्था</h3>
-                        <p>प्राथमिक शाळा व अंगणवाडीची माहिती, सुविधा आणि शैक्षणिक कार्यक्रम.</p>
-                        <a href="work.html" class="service-link">अधिक माहिती <i class="fas fa-arrow-right"></i></a>
+                        <p>शाळा, अंगणवाडी, शिक्षण संस्था आणि शैक्षणिक कार्यक्रम</p>
+                        <a href="schools.html" class="service-link">अधिक माहिती <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -1297,63 +1325,39 @@
         <div class="container">
             <div class="section-title">
                 <h2>आमची गॅलरी</h2>
-                <p>ग्रामपंचायतीच्या विविध कार्यक्रमांचे फोटो</p>
+                <p>वाघोदा गावाचे सुंदर दृश्य आणि कार्यक्रम</p>
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="./image/G8.jpg" alt="ग्रामसभा बैठक">
+                    <img src="https://images.unsplash.com/photo-1575286362653-d9e35d93b2d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                        alt="ग्रामपंचायत इमारत">
                     <div class="gallery-overlay">
-                        <div class="gallery-title">ग्रामसभा बैठक</div>
+                        <div class="gallery-title">ग्रामपंचायत इमारत</div>
                         <div class="gallery-category">अधिकृत</div>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="./image/G9.jpg" alt="स्वच्छता अभियान">
+                    <img src="https://images.unsplash.com/photo-1596079890744-c1a0462d6d7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                        alt="सुर नदी">
                     <div class="gallery-overlay">
-                        <div class="gallery-title">स्वच्छता अभियान</div>
-                        <div class="gallery-category">कार्यक्रम</div>
+                        <div class="gallery-title">सुर नदी</div>
+                        <div class="gallery-category">नैसर्गिक</div>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="./image/G10.jpg" alt="रस्ते बांधकाम">
+                    <img src="https://images.unsplash.com/photo-1586769852044-692a5016f8a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                        alt="शेती क्षेत्र">
                     <div class="gallery-overlay">
-                        <div class="gallery-title">रस्ते बांधकाम</div>
-                        <div class="gallery-category">विकास कामे</div>
+                        <div class="gallery-title">शेती क्षेत्र</div>
+                        <div class="gallery-category">आर्थिक</div>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="./image/G11.jpg" alt="गणेशोत्सव">
+                    <img src="https://images.unsplash.com/photo-1516996087931-4a7dd7e8c8c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                        alt="ग्रामीण जीवन">
                     <div class="gallery-overlay">
-                        <div class="gallery-title">गणेशोत्सव समारंभ</div>
-                        <div class="gallery-category">सांस्कृतिक</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./image/G12.jpg" alt="पाणी टाकी">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title">नवीन पाणी टाकी</div>
-                        <div class="gallery-category">पायाभूत सुविधा</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./image/G13.jpg" alt="शाळा कार्यक्रम">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title">शाळा वार्षिकोत्सव</div>
-                        <div class="gallery-category">कार्यक्रम</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./image/G14.jpg" alt="शाळा कार्यक्रम">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title">शाळा वार्षिकोत्सव</div>
-                        <div class="gallery-category">कार्यक्रम</div>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./image/G15.jpg" alt="शाळा कार्यक्रम">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title">शाळा वार्षिकोत्सव</div>
-                        <div class="gallery-category">कार्यक्रम</div>
+                        <div class="gallery-title">ग्रामीण जीवन</div>
+                        <div class="gallery-category">सामाजिक</div>
                     </div>
                 </div>
             </div>
@@ -1363,93 +1367,48 @@
         </div>
     </section>
 
-    <!-- Team Section -->
-    <!-- <section class="team">
+    <!-- Political Info -->
+    <section class="features">
         <div class="container">
             <div class="section-title">
-                <h2>पंचायत मंडळ</h2>
-                <p>ग्रामपंचायतीचे माननीय सदस्य</p>
+                <h2>राजकीय माहिती</h2>
+                <p>वाघोदाची राजकीय संरचना</p>
             </div>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-image">
-                        <i class="fas fa-user-tie"></i>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-landmark"></i>
                     </div>
-                    <h3>सरपंच</h3>
-                    <div class="position">सरपंच</div>
-                    <div class="contact">फोन: </div>
-                    <div class="contact">ईमेल: </div>
+                    <h3>विधानसभा मतदारसंघ</h3>
+                    <p>सावनेर विधानसभा मतदारसंघ</p>
+                    <p><strong>विधानसभा खासदार:</strong> श्री. केदार सुनील छत्रपाल</p>
                 </div>
-
-                <div class="team-card">
-                    <div class="team-image">
-                        <i class="fas fa-user-tie"></i>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-flag"></i>
                     </div>
-                    <h3>उपसरपंच</h3>
-                    <div class="position">उपसरपंच</div>
-                    <div class="contact">फोन: </div>
-                    <div class="contact">ईमेल: </div>
+                    <h3>लोकसभा मतदारसंघ</h3>
+                    <p>रामटेक लोकसभा मतदारसंघ</p>
+                    <p><strong>लोकसभा खासदार:</strong> श्री. कृपाळ बालाजी तुमाणे</p>
                 </div>
-
-                <div class="team-card">
-                    <div class="team-image">
-                        <i class="fas fa-user-cog"></i>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-vote-yea"></i>
                     </div>
-                    <h3>ग्रामसेवक</h3>
-                    <div class="position">ग्रामसेवक</div>
-                    <div class="contact">फोन: </div>
-                    <div class="contact">ईमेल: </div>
+                    <h3>मतदान केंद्रे</h3>
+                    <p>वाघोदा येथे ५ मतदान केंद्रे</p>
+                    <p>मुख्य राजकीय पक्ष: भाजप, शिवसेना, काँग्रेस</p>
                 </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Government Section -->
-    <section class="government">
-        <div class="container">
-            <div class="section-title">
-                <h2>महाराष्ट्र शासन</h2>
-                <p>माननीय मंत्रीमंडळ</p>
-            </div>
-            <div class="gov-grid">
-                <div class="gov-card">
-                    <div class="gov-image">
-                        <img src="https://gujaratvidyapith.org/common/media/2024/09/24090205195019.png" alt="राज्यपाल">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
                     </div>
-                    <h3>श्री. आचार्य देवव्रत</h3>
-                    <div class="position">माननीय राज्यपाल</div>
-                </div>
-
-                <div class="gov-card">
-                    <div class="gov-image">
-                        <img src="./img/chief-minister.webp" alt="उपमुख्यमंत्री">
-                    </div>
-                    <h3>श्री. देवेंद्र फडणवीस</h3>
-                    <div class="position">माननीय मुख्यमंत्री</div>
-                </div>
-
-
-                <div class="gov-card">
-                    <div class="gov-image">
-                        <img src="./img/deputy-cm-2.webp" alt="उपमुख्यमंत्री">
-                    </div>
-                    <h3>श्री. एकनाथ शिंदे</h3>
-                    <div class="position">माननीय उपमुख्यमंत्री</div>
-
-                </div>
-
-
-                <div class="gov-card">
-                    <div class="gov-image">
-                        <img src="./img/deputy-cm-1.webp" alt="मुख्यमंत्री">
-                    </div>
-                    <h3>श्री. अजित पवार</h3>
-                    <div class="position">माननीय उपमुख्यमंत्री</div>
+                    <h3>जवळील गावे</h3>
+                    <p>निलगाव (३ किमी), मालेगाव (३ किमी), सोनपूर (४ किमी), माणगाव (५ किमी)</p>
                 </div>
             </div>
         </div>
     </section>
-
 
     <!-- Footer -->
     <footer>
@@ -1458,20 +1417,21 @@
                 <div class="footer-column">
                     <h3>झटपट दुवे</h3>
                     <ul class="footer-links">
-                        <li><a href="team.html"><i class="fas fa-chevron-right"></i> ग्रामपंचायत सदस्य</a></li>
-                        <li><a href="schools.html"><i class="fas fa-chevron-right"></i> शाळा व अंगणवाडी</a></li>
+                        <li><a href="team.html"><i class="fas fa-chevron-right"></i> पंचायत मंडळ</a></li>
+                        <li><a href="schools.html"><i class="fas fa-chevron-right"></i> शैक्षणिक संस्था</a></li>
                         <li><a href="projects.html"><i class="fas fa-chevron-right"></i> विकास प्रकल्प</a></li>
                         <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> फोटो गॅलरी</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> आपत्कालीन संपर्क</a></li>
+                        <li><a href="weather.html"><i class="fas fa-chevron-right"></i> हवामान माहिती</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>संपर्क माहिती</h3>
                     <div class="contact-details">
-                        <p><i class="fas fa-map-marker-alt"></i> सावंगी देवळी, महाराष्ट्र</p>
+                        <p><i class="fas fa-map-marker-alt"></i> वाघोदा, सावनेर, नागपूर, महाराष्ट्र</p>
                         <p><i class="fas fa-phone"></i> आपत्कालीन: १०८</p>
-                        <p><i class="fas fa-envelope"></i> sawangidevali@gmail.com</p>
-                        <p><i class="fas fa-clock"></i> कार्यालयीन वेळ: सकाळी 10 ते दुपारी 6</p>
+                        <p><i class="fas fa-envelope"></i> waghodapanchayat@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> कार्यालयीन वेळ: सकाळी १० ते दुपारी ६</p>
+                        <p><i class="fas fa-code"></i> पिन कोड: ४४११०७</p>
                     </div>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1486,13 +1446,14 @@
                         <li><a href="#"><i class="fas fa-phone"></i> पोलीस स्टेशन: १००</a></li>
                         <li><a href="#"><i class="fas fa-ambulance"></i> एम्ब्युलन्स: १०८</a></li>
                         <li><a href="#"><i class="fas fa-fire-extinguisher"></i> फायर ब्रिगेड: १०१</a></li>
-                        <li><a href="#"><i class="fas fa-hospital"></i> ग्रामीण रुग्णालय</a></li>
+                        <li><a href="#"><i class="fas fa-hospital"></i> सावनेर रुग्णालय</a></li>
+                        <li><a href="#"><i class="fas fa-train"></i> सावनेर रेल्वे स्थानक</a></li>
                     </ul>
                 </div>
-
             </div>
             <div class="copyright">
-                <p>&copy; 2025 सावंगी देवळी ग्रामपंचायत. सर्व हक्क राखीव.</p>
+                <p>&copy; २०२५ वाघोदा ग्रामपंचायत. सर्व हक्क राखीव.</p>
+                <p style="margin-top: 10px; font-size: 12px;">विदर्भ प्रदेश, महाराष्ट्र राज्य, भारत</p>
             </div>
         </div>
     </footer>
@@ -1549,13 +1510,25 @@
         // Auto slide
         setInterval(nextSlide, 5000);
 
-        // Service links - redirect to work.html
-        document.querySelectorAll('.service-link').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
-                window.location.href = 'work.html';
-            });
-        });
+        // Update weather data (example function)
+        function updateWeather() {
+            const now = new Date();
+            const timeElement = document.createElement('p');
+            timeElement.style.textAlign = 'center';
+            timeElement.style.color = '#ddd';
+            timeElement.style.marginTop = '20px';
+            timeElement.innerHTML = `अंतिम अद्यतन: ${now.toLocaleString('mr-IN')}`;
+
+            const weatherSection = document.querySelector('.weather .container');
+            if (!document.querySelector('.weather-update-time')) {
+                weatherSection.appendChild(timeElement);
+                timeElement.classList.add('weather-update-time');
+            }
+        }
+
+        // Initialize weather update
+        updateWeather();
+        setInterval(updateWeather, 600000); // Update every 10 minutes
     </script>
 </body>
 
