@@ -10,18 +10,19 @@
         rel="stylesheet">
     <style>
         :root {
-            --primary: #8B4513;
-            --secondary: #D2691E;
-            --accent: #CD853F;
-            --light: #FAEBD7;
-            --dark: #654321;
-            --text: #2F4F4F;
-            --text-light: #696969;
+            --primary: #1a237e;
+            --secondary: #ff9800;
+            --accent: #4caf50;
+            --light: #e8eaf6;
+            --dark: #0d1b6e;
+            --text: #212121;
+            --text-light: #757575;
             --white: #ffffff;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --gradient: linear-gradient(135deg, var(--primary), var(--dark));
         }
 
+        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
@@ -29,10 +30,20 @@
             font-family: 'Tiro Devanagari Marathi', serif;
         }
 
+        html,
         body {
-            background-color: #f9f9f9;
-            color: var(--text);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
             line-height: 1.6;
+            color: var(--text);
+            background-color: #f9f9f9;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
         }
 
         .container {
@@ -177,30 +188,65 @@
             color: var(--text);
         }
 
-        /* Hero Slider */
+        /* HERO SLIDER FIXED - NO EMPTY SPACE */
         .hero-slider {
             position: relative;
-            height: 500px;
+            height: 600px;
             overflow: hidden;
-            margin-bottom: 0;
+            margin: 0;
+            padding: 0;
+            line-height: 0;
+            font-size: 0;
+            background: var(--primary);
+        }
+
+        .slides-container {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
         }
 
         .slides {
             display: flex;
             transition: transform 0.5s ease-in-out;
             height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
         }
 
         .slide {
             min-width: 100%;
             height: 100%;
             position: relative;
+            flex-shrink: 0;
+            margin: 0;
+            padding: 0;
         }
 
         .slide img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
+            margin: 0;
+            padding: 0;
+            display: block;
+        }
+
+        /* Fallback backgrounds */
+        .slide[data-bg="1"] {
+            background: linear-gradient(45deg, var(--primary), var(--dark));
+        }
+
+        .slide[data-bg="2"] {
+            background: linear-gradient(45deg, #0d1b6e, #283593);
+        }
+
+        .slide[data-bg="3"] {
+            background: linear-gradient(45deg, #1a237e, #3949ab);
         }
 
         .slide-content {
@@ -215,14 +261,16 @@
             align-items: center;
             text-align: center;
             color: var(--white);
-            background: rgba(0, 0, 0, 0.5);
-            padding: 0 20px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            z-index: 2;
         }
 
         .slide-content h1 {
             font-size: 42px;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            line-height: 1.2;
         }
 
         .slide-content p {
@@ -230,6 +278,7 @@
             max-width: 700px;
             margin: 0 auto 30px;
             opacity: 0.9;
+            line-height: 1.5;
         }
 
         .btn {
@@ -247,7 +296,7 @@
         }
 
         .btn:hover {
-            background-color: #B35900;
+            background-color: #e68900;
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
@@ -259,6 +308,7 @@
             transform: translateX(-50%);
             display: flex;
             gap: 10px;
+            z-index: 10;
         }
 
         .slider-dot {
@@ -291,6 +341,7 @@
             font-size: 20px;
             transition: all 0.3s ease;
             z-index: 10;
+            border: none;
         }
 
         .slider-arrow:hover {
@@ -342,7 +393,7 @@
 
         /* Features Section */
         .features {
-            background-color: var(--light);
+            background-color: var(--white);
         }
 
         .features-grid {
@@ -755,6 +806,56 @@
             margin-bottom: 10px;
         }
 
+        /* Updated Village Info Section */
+        .village-info {
+            background-color: var(--light);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .info-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-card h3 {
+            font-size: 20px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light);
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .info-item i {
+            color: var(--accent);
+            margin-right: 10px;
+            margin-top: 3px;
+            width: 20px;
+        }
+
+        .info-item strong {
+            color: var(--primary);
+            margin-right: 5px;
+        }
+
         /* Footer */
         footer {
             background-color: var(--dark);
@@ -942,7 +1043,8 @@
             .features-grid,
             .services-grid,
             .team-grid,
-            .location-grid {
+            .location-grid,
+            .info-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -980,7 +1082,7 @@
                     </div>
                     <div class="logo-text">
                         <h1>वाघोडा ग्रामपंचायत</h1>
-                        <p>नागपूर, सावनेर, महाराष्ट्र</p>
+                        <p>सावनेर तालुका, नागपूर जिल्हा, महाराष्ट्र</p>
                     </div>
                 </div>
                 <div class="contact-info">
@@ -1041,46 +1143,161 @@
         </div>
     </nav>
 
-    <!-- Hero Slider -->
+    <!-- Hero Slider - FIXED -->
     <section class="hero-slider">
-        <div class="slides">
-            <div class="slide">
-                <img src="./image/G29.jpg" alt="वाघोडा ग्रामपंचायत">
-                <div class="slide-content">
-                    <h1>वाघोडा ग्रामपंचायत</h1>
-                    <p>गावाची मूलभूत माहिती व सेवांचा आढावा</p>
-                    <a href="about.html" class="btn">अधिक जाणून घ्या</a>
+        <div class="slides-container">
+            <div class="slides">
+                <div class="slide" data-bg="1">
+                    <img src="./image/G29.jpg"
+                        onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2MDAiIHZpZXdCb3g9IjAgMCAxMjAwIDYwMCIgZmlsbD0iIzFhMjM3ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IlRpcm8gRGV2YW5hZ2FyaSBNYXJhdGhpIiBmb250LXNpemU9IjMyIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPndhZ2hvZGEgZ3JhbXBhbmNoYXlhdDwvdGV4dD48L3N2Zz4='"
+                        alt="वाघोडा ग्रामपंचायत">
+                    <div class="slide-content">
+                        <h1>वाघोडा ग्रामपंचायत</h1>
+                        <p>सुर नदी काठावर वसलेले निसर्गरम्य गाव</p>
+                        <a href="about.html" class="btn">अधिक जाणून घ्या</a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="slide">
-                <img src="./image/G30.jpg" alt="वाघोडा ग्रामीण भाग">
-                <div class="slide-content">
-                    <h1>आपले गाव, आपला अभिमान</h1>
-                    <p>निसर्गरम्य आणि शांत ग्रामीण परिसर</p>
-                    <a href="location.html" class="btn">स्थान माहिती</a>
+                <div class="slide" data-bg="2">
+                    <img src="./image/G30.jpg"
+                        onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2MDAiIHZpZXdCb3g9IjAgMCAxMjAwIDYwMCIgZmlsbD0iIzBkMWI2ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IlRpcm8gRGV2YW5hZ2FyaSBNYXJhdGhpIiBmb250LXNpemU9IjMyIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPndhZ2hvZGEgZ3JhbWluIGJoYWc8L3RleHQ+PC9zdmc+'"
+                        alt="वाघोडा ग्रामीण भाग">
+                    <div class="slide-content">
+                        <h1>आपले गाव, आपला अभिमान</h1>
+                        <p>विदर्भातील सुंदर ग्रामीण परिसर आणि समृद्ध संस्कृती</p>
+                        <a href="location.html" class="btn">स्थान माहिती</a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="slide">
-                <img src="./image/G26.jpg" alt="वाघोडा शेती">
-                <div class="slide-content">
-                    <h1>शेती आणि विकास</h1>
-                    <p>शेती, पशुपालन आणि गावाच्या प्रगतीची दिशा</p>
-                    <a href="services.html" class="btn">सेवा पाहा</a>
+                <div class="slide" data-bg="3">
+                    <img src="./image/G26.jpg"
+                        onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2MDAiIHZpZXdCb3g9IjAgMCAxMjAwIDYwMCIgZmlsbD0iIzFhMjM3ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IlRpcm8gRGV2YW5hZ2FyaSBNYXJhdGhpIiBmb250LXNpemU9IjMyIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPndhZ2hvZGEgc2hldGk8L3RleHQ+PC9zdmc+'"
+                        alt="वाघोडा शेती">
+                    <div class="slide-content">
+                        <h1>शेती आणि विकास</h1>
+                        <p>शेती, पशुपालन आणि गावाच्या प्रगतीची दिशा</p>
+                        <a href="services.html" class="btn">सेवा पाहा</a>
+                    </div>
                 </div>
             </div>
+            <div class="slider-arrow prev">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+            <div class="slider-arrow next">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="slider-nav">
+                <div class="slider-dot active"></div>
+                <div class="slider-dot"></div>
+                <div class="slider-dot"></div>
+            </div>
         </div>
-        <div class="slider-arrow prev">
-            <i class="fas fa-chevron-left"></i>
-        </div>
-        <div class="slider-arrow next">
-            <i class="fas fa-chevron-right"></i>
-        </div>
-        <div class="slider-nav">
-            <div class="slider-dot active"></div>
-            <div class="slider-dot"></div>
-            <div class="slider-dot"></div>
+    </section>
+
+    <!-- Updated Village Information Section -->
+    <section class="village-info">
+        <div class="container">
+            <div class="section-title">
+                <h2>वाघोडा गावाची संपूर्ण माहिती</h2>
+                <p>सर्व तपशीलवार माहिती एकाच ठिकाणी</p>
+            </div>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3><i class="fas fa-info-circle"></i> मूलभूत माहिती</h3>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div><strong>स्थान:</strong> सावनेर तालुका, नागपूर जिल्हा, महाराष्ट्र</div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-globe-asia"></i>
+                        <div><strong>प्रदेश:</strong> विदर्भ</div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-divide"></i>
+                        <div><strong>विभाग:</strong> नागपूर</div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-mountain"></i>
+                        <div><strong>समुद्रसपाटीपासून उंची:</strong> 329 मीटर</div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-language"></i>
+                        <div><strong>भाषा:</strong> मराठी, हिंदी, इंग्रजी</div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3><i class="fas fa-address-card"></i> संपर्क माहिती</h3>
+                    <div class="info-item">
+                        <i class="fas fa-map-pin"></i>
+                        <div><strong>पिन कोड:</strong> ४४११०७ ✅</div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-mail-bulk"></i>
+                        <div><strong>पोस्ट ऑफिस:</strong> सावनेर</div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div><strong>STD कोड:</strong> ०७११३</div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <div><strong>अंतर:</strong> नागपूर पासून ३४ किमी, सावनेर पासून ७ किमी</div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-road"></i>
+                        <div><strong>जवळील शहरे:</strong> सावनेर, नागपूर, कामठी, सावसार</div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3><i class="fas fa-landmark"></i> राजकीय माहिती</h3>
+                    <div class="info-item">
+                        <i class="fas fa-gopuram"></i>
+                        <div><strong>विधानसभा मतदारसंघ:</strong> सावनेर</div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-user-tie"></i>
+                        <div><strong>विधानसभा खासदार:</strong> श्री. केदार सुनील छत्रपाल</div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-flag"></i>
+                        <div><strong>लोकसभा मतदारसंघ:</strong> रामटेक</div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-users"></i>
+                        <div><strong>लोकसभा खासदार:</strong> श्री. कृपाळ बालाजी तुमाणे</div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-vote-yea"></i>
+                        <div><strong>मतदान केंद्रे:</strong> वाघोडा येथे ५ मतदान केंद्रे</div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3><i class="fas fa-water"></i> नदी आणि जवळील गावे</h3>
+                    <div class="info-item">
+                        <i class="fas fa-river"></i>
+                        <div><strong>नदी:</strong> सूर नदी काठावर वसलेले</div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-signs"></i>
+                        <div><strong>जवळील गावे:</strong></div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-village"></i>
+                        <div>निलगाव (३ किमी), मालेगाव (३ किमी), सोनपूर (४ किमी), माणगाव (५ किमी)</div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-compass"></i>
+                        <div><strong>सभोवतालचे तालुके:</strong></div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map"></i>
+                        <div>कलमेश्वर (दक्षिण), परसोणी (पूर्व), नागपूर (दक्षिण), सावसार (उत्तर)</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1096,33 +1313,36 @@
                     <div class="weather-icon">
                         <i class="fas fa-sun"></i>
                     </div>
-                    <div class="weather-temp">24.4°C</div>
+                    <div class="weather-temp">27.3°C</div>
                     <div class="weather-desc">स्वच्छ आकाश</div>
                     <div class="weather-details">
                         <div class="weather-detail">
                             <span>आर्द्रता</span>
-                            <div class="value">25%</div>
+                            <div class="value">20%</div>
                         </div>
                         <div class="weather-detail">
                             <span>वारा</span>
-                            <div class="value">1.58 m/s</div>
+                            <div class="value">2.08 m/s</div>
                         </div>
                     </div>
+                    <p style="margin-top: 15px; font-size: 14px; opacity: 0.8;">
+                        <i class="fas fa-clock"></i> 4 मिनिटांपूर्वी
+                    </p>
                 </div>
                 <div class="weather-card">
                     <div class="weather-icon">
                         <i class="fas fa-calendar-day"></i>
                     </div>
-                    <div class="weather-temp">27.0°C</div>
-                    <div class="weather-desc">उद्या - १२ डिसेंबर</div>
+                    <div class="weather-temp">27.3°C</div>
+                    <div class="weather-desc">१३ डिसेंबर - शनिवार</div>
                     <div class="weather-details">
                         <div class="weather-detail">
                             <span>किमान</span>
-                            <div class="value">14.7°C</div>
+                            <div class="value">14.9°C</div>
                         </div>
                         <div class="weather-detail">
                             <span>कमाल</span>
-                            <div class="value">27.0°C</div>
+                            <div class="value">27.3°C</div>
                         </div>
                     </div>
                 </div>
@@ -1130,16 +1350,16 @@
                     <div class="weather-icon">
                         <i class="fas fa-calendar-alt"></i>
                     </div>
-                    <div class="weather-temp">27.4°C</div>
-                    <div class="weather-desc">१४ डिसेंबर</div>
+                    <div class="weather-temp">27.6°C</div>
+                    <div class="weather-desc">१४ डिसेंबर - रविवार</div>
                     <div class="weather-details">
                         <div class="weather-detail">
                             <span>किमान</span>
-                            <div class="value">13.5°C</div>
+                            <div class="value">13.9°C</div>
                         </div>
                         <div class="weather-detail">
                             <span>कमाल</span>
-                            <div class="value">27.4°C</div>
+                            <div class="value">27.6°C</div>
                         </div>
                     </div>
                 </div>
@@ -1196,7 +1416,9 @@
                     <p>वाघोडा हे नागपूर जिल्ह्यातील सावनेर तालुक्यातील एक गाव आहे. हे गाव सुर नदीच्या काठावर वसलेले असून
                         निसर्ग सौंदर्याने नटलेले आहे. गावाचा इतिहास पुरातन आहे आणि येथे समृद्ध सांस्कृतिक वारसा आहे.</p>
                     <p>वाघोडा हे नागपूर पासून ३४ किमी उत्तरेस आणि सावनेर पासून केवळ ७ किमी अंतरावर वसलेले आहे. गावाची
-                        सरासरी उंची समुद्रसपाटीपासून ३२९ मीटर आहे.</p>
+                        सरासरी उंची समुद्रसपाटीपासून ३२९ मीटर आहे. हे गाव विदर्भ प्रदेशातील नागपूर विभागात येते.</p>
+                    <p>गावात शेती हा मुख्य व्यवसाय असून सूर नदीच्या पाण्यामुळे शेतीसाठी पुरेसा पाणीपुरवठा उपलब्ध आहे.
+                        गावात शैक्षणिक सुविधा, आरोग्य केंद्र आणि इतर पायाभूत सुविधा उपलब्ध आहेत.</p>
                     <a href="about.html" class="btn">संपूर्ण इतिहास वाचा</a>
                 </div>
                 <div class="about-image">
@@ -1210,8 +1432,8 @@
     <section class="statistics">
         <div class="container">
             <div class="section-title">
-                <h2>आकडेवारी</h2>
-                <p>वाघोडा गावाची संख्याशास्त्रीय माहिती</p>
+                <h2 style="color: white;">आकडेवारी</h2>
+                <p style="color: #ddd;">वाघोडा गावाची संख्याशास्त्रीय माहिती</p>
             </div>
             <div class="stats-grid">
                 <div class="stat-item">
@@ -1363,49 +1585,6 @@
         </div>
     </section>
 
-    <!-- Political Info -->
-    <section class="features">
-        <div class="container">
-            <div class="section-title">
-                <h2>राजकीय माहिती</h2>
-                <p>वाघोडाची राजकीय संरचना</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-landmark"></i>
-                    </div>
-                    <h3>विधानसभा मतदारसंघ</h3>
-                    <p>सावनेर विधानसभा मतदारसंघ</p>
-                    <p><strong>विधानसभा खासदार:</strong> श्री. केदार सुनील छत्रपाल</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-flag"></i>
-                    </div>
-                    <h3>लोकसभा मतदारसंघ</h3>
-                    <p>रामटेक लोकसभा मतदारसंघ</p>
-                    <p><strong>लोकसभा खासदार:</strong> श्री. कृपाळ बालाजी तुमाणे</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-vote-yea"></i>
-                    </div>
-                    <h3>मतदान केंद्रे</h3>
-                    <p>वाघोडा येथे ५ मतदान केंद्रे</p>
-                    <p>मुख्य राजकीय पक्ष: भाजप, शिवसेना, काँग्रेस</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>जवळील गावे</h3>
-                    <p>निलगाव (३ किमी), मालेगाव (३ किमी), सोनपूर (४ किमी), माणगाव (५ किमी)</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1470,6 +1649,7 @@
 
         let currentSlide = 0;
         const slideCount = slideItems.length;
+        let slideInterval;
 
         function goToSlide(index) {
             if (index < 0) {
@@ -1480,9 +1660,9 @@
                 currentSlide = index;
             }
 
+            slides.style.transition = 'transform 0.5s ease-in-out';
             slides.style.transform = `translateX(-${currentSlide * 100}%)`;
 
-            // Update active dot
             dots.forEach((dot, i) => {
                 dot.classList.toggle('active', i === currentSlide);
             });
@@ -1496,24 +1676,112 @@
             goToSlide(currentSlide - 1);
         }
 
-        // Event listeners
-        nextBtn.addEventListener('click', nextSlide);
-        prevBtn.addEventListener('click', prevSlide);
-
-        dots.forEach((dot, i) => {
-            dot.addEventListener('click', () => goToSlide(i));
+        nextBtn.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            nextSlide();
+            startAutoSlide();
         });
 
-        // Auto slide
-        setInterval(nextSlide, 5000);
+        prevBtn.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            prevSlide();
+            startAutoSlide();
+        });
 
-        // Update weather data
-        function updateWeather() {
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                goToSlide(i);
+                startAutoSlide();
+            });
+        });
+
+        function startAutoSlide() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        function initializeSlider() {
+            slides.style.transform = `translateX(0)`;
+            startAutoSlide();
+
+            const slider = document.querySelector('.hero-slider');
+            slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+            slider.addEventListener('mouseleave', startAutoSlide);
+        }
+
+        document.addEventListener('DOMContentLoaded', initializeSlider);
+
+        // Fix image loading issues
+        document.querySelectorAll('.slide img').forEach(img => {
+            img.onerror = function () {
+                this.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwMCIgaGVpZ2h0PSI2MDAiIHZpZXdCb3g9IjAgMCAxMjAwIDYwMCIgZmlsbD0iIzFhMjM3ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZm9udC1mYW1pbHk9IlRpcm8gRGV2YW5hZ2FyaSBNYXJhdGhpIiBmb250LXNpemU9IjMyIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPldhZ2hvZGEgR3JhbXBhbmNoYXlhdDwvdGV4dD48L3N2Zz4=';
+            };
+        });
+
+        // Ensure all images load properly
+        window.addEventListener('load', function () {
+            document.querySelectorAll('img').forEach(img => {
+                if (img.complete && img.naturalHeight === 0) {
+                    console.log('Image failed to load:', img.src);
+                    img.style.display = 'block';
+                }
+            });
+        });
+
+        // Update current date and time
+        function updateDateTime() {
+            const now = new Date();
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: true
+            };
+
+            const dateTimeString = now.toLocaleDateString('mr-IN', options);
+
+            // Create or update date time element in village info section
+            const villageInfoSection = document.querySelector('.village-info .container');
+            let dateTimeElement = document.querySelector('.date-time-info');
+
+            if (!dateTimeElement) {
+                dateTimeElement = document.createElement('div');
+                dateTimeElement.className = 'date-time-info';
+                dateTimeElement.style.textAlign = 'center';
+                dateTimeElement.style.marginTop = '20px';
+                dateTimeElement.style.padding = '15px';
+                dateTimeElement.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+                dateTimeElement.style.borderRadius = '10px';
+                dateTimeElement.style.color = 'var(--primary)';
+                dateTimeElement.style.fontSize = '16px';
+                dateTimeElement.style.fontWeight = '500';
+
+                const sectionTitle = document.querySelector('.village-info .section-title');
+                sectionTitle.parentNode.insertBefore(dateTimeElement, sectionTitle.nextElementSibling.nextElementSibling);
+            }
+
+            dateTimeElement.innerHTML = `
+                <i class="fas fa-calendar-alt"></i> ${dateTimeString} (IST) |
+                <i class="fas fa-clock"></i> समयक्षेत्र: IST (UTC+5:30)
+            `;
+        }
+
+        // Initialize date time
+        updateDateTime();
+        setInterval(updateDateTime, 60000); // Update every minute
+
+        // Update weather data time
+        function updateWeatherTime() {
             const now = new Date();
             const timeElement = document.createElement('p');
             timeElement.style.textAlign = 'center';
             timeElement.style.color = '#ddd';
             timeElement.style.marginTop = '20px';
+            timeElement.style.fontSize = '14px';
             timeElement.innerHTML = `अंतिम अद्यतन: ${now.toLocaleString('mr-IN')}`;
 
             const weatherSection = document.querySelector('.weather .container');
@@ -1524,8 +1792,8 @@
         }
 
         // Initialize weather update
-        updateWeather();
-        setInterval(updateWeather, 600000); // Update every 10 minutes
+        updateWeatherTime();
+        setInterval(updateWeatherTime, 600000);
     </script>
 </body>
 
