@@ -108,13 +108,14 @@
             box-shadow: var(--shadow);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 15px;
         }
 
         .nav-links {
@@ -173,6 +174,7 @@
             display: none;
             font-size: 24px;
             cursor: pointer;
+            color: var(--text);
         }
 
         /* Hero Slider */
@@ -180,6 +182,7 @@
             position: relative;
             height: 500px;
             overflow: hidden;
+            margin-bottom: 0;
         }
 
         .slides {
@@ -302,10 +305,9 @@
             right: 20px;
         }
 
-        /* Features Section */
-        .features {
+        /* Common Section Styles */
+        section {
             padding: 80px 0;
-            background-color: var(--light);
         }
 
         .section-title {
@@ -336,6 +338,11 @@
             color: var(--text-light);
             max-width: 600px;
             margin: 0 auto;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--light);
         }
 
         .features-grid {
@@ -380,7 +387,6 @@
 
         /* About Section */
         .about {
-            padding: 80px 0;
             background-color: var(--white);
         }
 
@@ -421,7 +427,6 @@
 
         /* Weather Section */
         .weather {
-            padding: 80px 0;
             background: var(--gradient);
             color: var(--white);
         }
@@ -483,7 +488,6 @@
 
         /* Statistics Section */
         .statistics {
-            padding: 80px 0;
             background-color: var(--light);
         }
 
@@ -515,7 +519,6 @@
 
         /* Services Section */
         .services {
-            padding: 80px 0;
             background-color: var(--white);
         }
 
@@ -594,7 +597,6 @@
 
         /* Gallery Section */
         .gallery {
-            padding: 80px 0;
             background-color: var(--light);
         }
 
@@ -660,7 +662,6 @@
 
         /* Location Info */
         .location {
-            padding: 80px 0;
             background-color: var(--white);
         }
 
@@ -699,7 +700,6 @@
 
         /* Team Section */
         .team {
-            padding: 80px 0;
             background-color: var(--light);
         }
 
@@ -1070,18 +1070,18 @@
                     <a href="services.html" class="btn">सेवा पाहा</a>
                 </div>
             </div>
-
-            <div class="slider-arrow prev">
-                <i class="fas fa-chevron-left"></i>
-            </div>
-            <div class="slider-arrow next">
-                <i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="slider-nav">
-                <div class="slider-dot active"></div>
-                <div class="slider-dot"></div>
-                <div class="slider-dot"></div>
-            </div>
+        </div>
+        <div class="slider-arrow prev">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="slider-arrow next">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+        <div class="slider-nav">
+            <div class="slider-dot active"></div>
+            <div class="slider-dot"></div>
+            <div class="slider-dot"></div>
+        </div>
     </section>
 
     <!-- Weather Section -->
@@ -1290,7 +1290,7 @@
                     <div class="service-content">
                         <h3>प्रशासन सेवा</h3>
                         <p>ग्रामपंचायत कार्यालयीन सेवा, सरपंच, उपसरपंच, ग्रामसेवक यांची माहिती</p>
-                        <a href="work.html" class="service-link">अधिक माहिती <i class="fas fa-arrow-right"></i></a>
+                        <a href="team.html" class="service-link">अधिक माहिती <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -1301,7 +1301,7 @@
                     <div class="service-content">
                         <h3>विकास प्रकल्प</h3>
                         <p>रस्ते, पाणीपुरवठा, स्वच्छता, बिजली, शैक्षणिक सुविधा यासंबंधी प्रकल्प</p>
-                        <a href="projects.html" class="service-link">अधिक माहिती <i class="fas fa-arrow-right"></i></a>
+                        <a href="work.html" class="service-link">अधिक माहिती <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <div class="service-card">
@@ -1312,7 +1312,8 @@
                     <div class="service-content">
                         <h3>शैक्षणिक संस्था</h3>
                         <p>शाळा, अंगणवाडी, शिक्षण संस्था आणि शैक्षणिक कार्यक्रम</p>
-                        <a href="schools.html" class="service-link">अधिक माहिती <i class="fas fa-arrow-right"></i></a>
+                        <a href="facilities.html#education" class="service-link">अधिक माहिती <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
@@ -1328,35 +1329,31 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1575286362653-d9e35d93b2d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
-                        alt="ग्रामपंचायत इमारत">
+                    <img src="./image/G24.jpg" alt="उद्यान निर्मिती">
                     <div class="gallery-overlay">
-                        <div class="gallery-title">ग्रामपंचायत इमारत</div>
-                        <div class="gallery-category">अधिकृत</div>
+                        <div class="gallery-title">बालवाडी उद्यान</div>
+                        <div class="gallery-category">विकास कामे</div>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1596079890744-c1a0462d6d7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
-                        alt="सुर नदी">
+                    <img src="./image/G25.jpg" alt="सामुदायिक भवन">
                     <div class="gallery-overlay">
-                        <div class="gallery-title">सुर नदी</div>
-                        <div class="gallery-category">नैसर्गिक</div>
+                        <div class="gallery-title">नवीन सामुदायिक भवन</div>
+                        <div class="gallery-category">पायाभूत सुविधा</div>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1586769852044-692a5016f8a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
-                        alt="शेती क्षेत्र">
+                    <img src="./image/G26.jpg" alt="वृक्षारोपण">
                     <div class="gallery-overlay">
-                        <div class="gallery-title">शेती क्षेत्र</div>
-                        <div class="gallery-category">आर्थिक</div>
+                        <div class="gallery-title">वृक्षारोपण अभियान</div>
+                        <div class="gallery-category">कार्यक्रम</div>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1516996087931-4a7dd7e8c8c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
-                        alt="ग्रामीण जीवन">
+                    <img src="./image/G27.jpg" alt="दिवाळी सोहळा">
                     <div class="gallery-overlay">
-                        <div class="gallery-title">ग्रामीण जीवन</div>
-                        <div class="gallery-category">सामाजिक</div>
+                        <div class="gallery-title">दिवाळी सोहळा</div>
+                        <div class="gallery-category">सांस्कृतिक</div>
                     </div>
                 </div>
             </div>
@@ -1417,8 +1414,9 @@
                     <h3>झटपट दुवे</h3>
                     <ul class="footer-links">
                         <li><a href="team.html"><i class="fas fa-chevron-right"></i> पंचायत मंडळ</a></li>
-                        <li><a href="schools.html"><i class="fas fa-chevron-right"></i> शैक्षणिक संस्था</a></li>
-                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> विकास प्रकल्प</a></li>
+                        <li><a href="facilities.html#education"><i class="fas fa-chevron-right"></i> शैक्षणिक संस्था</a>
+                        </li>
+                        <li><a href="work.html"><i class="fas fa-chevron-right"></i> विकास प्रकल्प</a></li>
                         <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> फोटो गॅलरी</a></li>
                         <li><a href="weather.html"><i class="fas fa-chevron-right"></i> हवामान माहिती</a></li>
                     </ul>
@@ -1509,7 +1507,7 @@
         // Auto slide
         setInterval(nextSlide, 5000);
 
-        // Update weather data (example function)
+        // Update weather data
         function updateWeather() {
             const now = new Date();
             const timeElement = document.createElement('p');

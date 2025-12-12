@@ -4,19 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>परिचय - सावंगी देवळी ग्रामपंचायत</title>
+    <title>गावाचा इतिहास - वाघोडा ग्रामपंचायत</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&display=swap"
         rel="stylesheet">
     <style>
+        /* Same CSS as index.html */
         :root {
-            --primary: #2E7D32;
-            --secondary: #FF9800;
-            --accent: #2196F3;
-            --light: #F1F8E9;
-            --dark: #1B5E20;
-            --text: #212121;
-            --text-light: #757575;
+            --primary: #8B4513;
+            --secondary: #D2691E;
+            --accent: #CD853F;
+            --light: #FAEBD7;
+            --dark: #654321;
+            --text: #2F4F4F;
+            --text-light: #696969;
             --white: #ffffff;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --gradient: linear-gradient(135deg, var(--primary), var(--dark));
@@ -108,13 +109,14 @@
             box-shadow: var(--shadow);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 15px;
         }
 
         .nav-links {
@@ -173,44 +175,25 @@
             display: none;
             font-size: 24px;
             cursor: pointer;
+            color: var(--text);
         }
 
-        /* Hero Section */
-        .hero {
+        /* Page Hero */
+        .page-hero {
             background: var(--gradient);
             color: var(--white);
-            padding: 80px 0;
             text-align: center;
+            padding: 100px 20px;
             position: relative;
-            overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.2;
-            z-index: 0;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
+        .page-hero h1 {
             font-size: 42px;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
-        .hero p {
+        .page-hero p {
             font-size: 18px;
             max-width: 700px;
             margin: 0 auto 30px;
@@ -232,15 +215,14 @@
         }
 
         .btn:hover {
-            background-color: #F57C00;
+            background-color: #B35900;
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
-        /* About Content */
-        .about-content {
+        /* Section Common */
+        section {
             padding: 80px 0;
-            background-color: var(--white);
         }
 
         .section-title {
@@ -271,6 +253,11 @@
             color: var(--text-light);
             max-width: 600px;
             margin: 0 auto;
+        }
+
+        /* About Content */
+        .about-content {
+            background-color: var(--white);
         }
 
         .about-grid {
@@ -309,10 +296,11 @@
             transform: scale(1.05);
         }
 
+        /* History Timeline */
         .history-timeline {
             background-color: var(--light);
             padding: 50px;
-            border-radius: 10px;
+            border-radius: 15px;
             margin-top: 50px;
         }
 
@@ -331,6 +319,7 @@
             margin-right: 20px;
             min-width: 100px;
             text-align: center;
+            flex-shrink: 0;
         }
 
         .timeline-content {
@@ -529,13 +518,14 @@
 
             .mobile-menu {
                 display: block;
+                margin-left: auto;
             }
 
-            .hero h1 {
+            .page-hero h1 {
                 font-size: 32px;
             }
 
-            .hero p {
+            .page-hero p {
                 font-size: 16px;
             }
 
@@ -546,6 +536,41 @@
             .timeline-year {
                 margin-right: 0;
                 margin-bottom: 10px;
+                width: 100%;
+            }
+
+            .history-timeline {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-hero h1 {
+                font-size: 28px;
+            }
+
+            .section-title h2 {
+                font-size: 26px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-text h1 {
+                font-size: 20px;
+            }
+
+            .logo-text p {
+                font-size: 12px;
+            }
+
+            .contact-item {
+                font-size: 12px;
             }
         }
     </style>
@@ -558,11 +583,11 @@
             <div class="top-bar">
                 <div class="logo">
                     <div class="logo-img">
-                        <i class="fas fa-landmark"></i>
+                        <i class="fas fa-village"></i>
                     </div>
                     <div class="logo-text">
-                        <h1>सावंगी देवळी ग्रामपंचायत</h1>
-                        <p>विकास आणि प्रगतीचे प्रतीक</p>
+                        <h1>वाघोडा ग्रामपंचायत</h1>
+                        <p>नागपूर, सावनेर, महाराष्ट्र</p>
                     </div>
                 </div>
                 <div class="contact-info">
@@ -572,11 +597,11 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>sawangidevali@gmail.com</span>
+                        <span>waghodapanchayat@gmail.com</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>सावंगी देवळी, महाराष्ट्र</span>
+                        <span>वाघोडा, सावनेर</span>
                     </div>
                 </div>
             </div>
@@ -591,21 +616,22 @@
                 <li class="dropdown">
                     <a href="#" class="active">आमच्याबद्दल <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="about.html" class="active">परिचय</a>
+                        <a href="about.html" class="active">गावाचा इतिहास</a>
                         <a href="team.html">पंचायत मंडळ</a>
+                        <a href="demographics.html">लोकसंख्या</a>
                     </div>
                 </li>
-                <!-- <li><a href="announcements.html">सूचना</a></li> -->
                 <li class="dropdown">
                     <a href="#">सेवा <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
                         <a href="service.html">नागरिक सेवा</a>
-                        <a href="facilities.html">स्थानीय सुविधा</a>
+                        <a href="facilities.html">पायाभूत सुविधा</a>
                         <a href="rti.html">माहिती अधिकार</a>
                         <a href="govt-schemes.html">शासकीय योजना</a>
                     </div>
                 </li>
                 <li><a href="gallery.html">गॅलरी</a></li>
+                <li><a href="weather.html">हवामान</a></li>
                 <li><a href="contact.html">संपर्क</a></li>
                 <li class="dropdown">
                     <a href="#">अधिक <i class="fas fa-chevron-down"></i></a>
@@ -622,11 +648,11 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>ग्रामपंचायत परिचय</h1>
-            <p>सावंगी देवळी ग्रामपंचायतचा संपूर्ण इतिहास आणि विकास यात्रा</p>
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>गावाचा इतिहास</h1>
+            <p>वाघोडा गावाचा संपूर्ण इतिहास आणि विकास यात्रा</p>
         </div>
     </section>
 
@@ -634,40 +660,38 @@
     <section class="about-content">
         <div class="container">
             <div class="section-title">
-                <h2>सावंगी देवळी ग्रामपंचायत</h2>
-                <p>१९५९ पासून समर्पित सेवा</p>
+                <h2>वाघोडा ग्रामपंचायत</h2>
+                <p>नागपूर जिल्ह्यातील सावनेर तालुक्यातील एक सुंदर गाव</p>
             </div>
 
             <div class="about-grid">
                 <div class="about-text">
-                    <h3>आमची गौरवशाली परंपरा</h3>
-                    <p>सावंगी देवळी ग्रामपंचायत ही १९५९ साली स्थापन झालेली एक विकसित व प्रगतिशील ग्रामपंचायत आहे. गावात
-                        सामाजिक ऐक्य, शेतीप्रधान अर्थव्यवस्था, तसेच सतत विकसित होत असलेली पायाभूत सुविधा यामुळे सावंगी
-                        देवळीचा आत्मविश्वास अधिकच वाढत आहे.</p>
-                    <p>गावाचे एकूण क्षेत्रफळ १२५० हेक्टर आहे. गावातील मुख्य व्यवसाय शेती व पशुपालन आहे. गावात सुमारे ८५%
-                        लोकसंख्या शेतीवर अवलंबून आहे.</p>
-                    <p>ग्रामपंचायत कार्यालय सावंगी देवळी येथे आहे. गावात प्राथमिक शाळा, आंगणवाडी, प्राथमिक आरोग्य
-                        केंद्र, पाण्याची टाकी, ग्रामीण रस्ते इत्यादी मूलभूत सुविधा उपलब्ध आहेत.</p>
+                    <h3>वाघोडा गावाचा इतिहास</h3>
+                    <p>वाघोडा हे नागपूर जिल्ह्यातील सावनेर तालुक्यातील एक गाव आहे. हे गाव सुर नदीच्या काठावर वसलेले असून
+                        निसर्ग सौंदर्याने नटलेले आहे. गावाचा इतिहास पुरातन आहे आणि येथे समृद्ध सांस्कृतिक वारसा आहे.</p>
+                    <p>वाघोडा हे नागपूर पासून ३४ किमी उत्तरेस आणि सावनेर पासून केवळ ७ किमी अंतरावर वसलेले आहे. गावाची
+                        सरासरी उंची समुद्रसपाटीपासून ३२९ मीटर आहे. गावातील मुख्य व्यवसाय शेती व पशुपालन आहे.</p>
+                    <p>ग्रामपंचायत कार्यालय वाघोडा येथे आहे. गावात प्राथमिक शाळा, आंगणवाडी, प्राथमिक आरोग्य केंद्र,
+                        पाण्याची टाकी, ग्रामीण रस्ते इत्यादी मूलभूत सुविधा उपलब्ध आहेत.</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1593115057322-e94b77572f20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-                        alt="ग्रामपंचायत इमारत">
+                    <img src="./image/G31.jpg" alt="वाघोडा गाव दृश्य">
                 </div>
             </div>
 
             <div class="history-timeline">
-                <h3 style="text-align: center; color: var(--primary); margin-bottom: 30px;">आमची विकास यात्रा</h3>
+                <h3 style="text-align: center; color: var(--primary); margin-bottom: 30px;">वाघोडाची विकास यात्रा</h3>
 
                 <div class="timeline-item">
-                    <div class="timeline-year">१९५९</div>
+                    <div class="timeline-year">१९५०</div>
                     <div class="timeline-content">
-                        <h4>ग्रामपंचायत स्थापना</h4>
-                        <p>सावंगी देवळी ग्रामपंचायतची अधिकृत स्थापना. पहिले सरपंच श्री. रामचंद्र पाटील यांची निवड.</p>
+                        <h4>गावाची स्थापना</h4>
+                        <p>वाघोडा गावाची स्थापना आणि पहिले वस्तीवास. गावाची मूळ नावे आणि ऐतिहासिक पार्श्वभूमी.</p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-year">१९७५</div>
+                    <div class="timeline-year">१९६५</div>
                     <div class="timeline-content">
                         <h4>प्राथमिक शाळेची स्थापना</h4>
                         <p>गावात पहिली प्राथमिक शाळा सुरू करण्यात आली. शिक्षणाच्या क्षेत्रातील पहिली महत्वाची पायरी.</p>
@@ -675,7 +699,7 @@
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-year">१९९०</div>
+                    <div class="timeline-year">१९८०</div>
                     <div class="timeline-content">
                         <h4>वीज पुरवठा सुरू</h4>
                         <p>गावात वीज पुरवठा सुरू झाला. ग्रामीण विद्युतीकरणाने गावाच्या विकासाला गती मिळाली.</p>
@@ -683,7 +707,7 @@
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-year">२००५</div>
+                    <div class="timeline-year">१९९५</div>
                     <div class="timeline-content">
                         <h4>पाणी पुरवठा योजना</h4>
                         <p>ग्रामपाणी पुरवठा योजना राबविण्यात आली. प्रत्येक घरापर्यंत स्वच्छ पिण्याचे पाणी पोहोचले.</p>
@@ -691,7 +715,7 @@
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-year">२०१५</div>
+                    <div class="timeline-year">२०१४</div>
                     <div class="timeline-content">
                         <h4>स्वच्छ भारत अभियान</h4>
                         <p>स्वच्छ भारत अभियानासोबत गावात स्वच्छता अभियान राबविण्यात आले. खुले शौच मुक्त गावाचा दर्जा
@@ -711,31 +735,35 @@
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <h3>लोकसंख्या</h3>
-                    <p>एकूण लोकसंख्या: 2507 (पुरुष: 1332, स्त्रिया: 1175)</p>
+                    <h3>स्थान</h3>
+                    <p>नागपूर जिल्हा, सावनेर तालुका, महाराष्ट्र</p>
+                    <p><strong>पिन कोड:</strong> ४४११०७</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-home"></i>
+                        <i class="fas fa-water"></i>
                     </div>
-                    <h3>कुटुंबे</h3>
-                    <p>एकूण कुटुंब संख्या: ५८०</p>
+                    <h3>नदी</h3>
+                    <p>सुर नदी काठावर वसलेले</p>
+                    <p><strong>उंची:</strong> ३२९ मीटर</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-graduation-cap"></i>
+                        <i class="fas fa-language"></i>
                     </div>
-                    <h3>साक्षरता</h3>
-                    <p>साक्षरता दर: ८५% (पुरुष: ९०%, स्त्रिया: ८०%)</p>
+                    <h3>भाषा</h3>
+                    <p>मराठी, हिंदी, इंग्रजी</p>
+                    <p><strong>मुख्य व्यवसाय:</strong> शेती</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-tractor"></i>
+                        <i class="fas fa-train"></i>
                     </div>
-                    <h3>शेती क्षेत्र</h3>
-                    <p>एकूण शेती क्षेत्र: ९८० हेक्टर</p>
+                    <h3>प्रवास</h3>
+                    <p>सावनेर जंक्शन: ७ किमी</p>
+                    <p>नागपूर: ३४ किमी</p>
                 </div>
             </div>
         </div>
@@ -748,9 +776,10 @@
                 <div class="footer-column">
                     <h3>झटपट दुवे</h3>
                     <ul class="footer-links">
-                        <li><a href="team.html"><i class="fas fa-chevron-right"></i> ग्रामपंचायत सदस्य</a></li>
-                        <li><a href="schools.html"><i class="fas fa-chevron-right"></i> शाळा व अंगणवाडी</a></li>
-                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> विकास प्रकल्प</a></li>
+                        <li><a href="team.html"><i class="fas fa-chevron-right"></i> पंचायत मंडळ</a></li>
+                        <li><a href="facilities.html#education"><i class="fas fa-chevron-right"></i> शैक्षणिक संस्था</a>
+                        </li>
+                        <li><a href="work.html"><i class="fas fa-chevron-right"></i> विकास प्रकल्प</a></li>
                         <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> फोटो गॅलरी</a></li>
                         <li><a href="contact.html"><i class="fas fa-chevron-right"></i> आपत्कालीन संपर्क</a></li>
                     </ul>
@@ -758,9 +787,9 @@
                 <div class="footer-column">
                     <h3>संपर्क माहिती</h3>
                     <div class="contact-details">
-                        <p><i class="fas fa-map-marker-alt"></i> सावंगी देवळी, महाराष्ट्र</p>
+                        <p><i class="fas fa-map-marker-alt"></i> वाघोडा, सावनेर, नागपूर, महाराष्ट्र</p>
                         <p><i class="fas fa-phone"></i> आपत्कालीन: १०८</p>
-                        <p><i class="fas fa-envelope"></i> sawangidevali@gmail.com</p>
+                        <p><i class="fas fa-envelope"></i> waghodapanchayat@gmail.com</p>
                         <p><i class="fas fa-clock"></i> कार्यालयीन वेळ: सकाळी 10 ते दुपारी 6</p>
                     </div>
                     <div class="social-links">
@@ -776,21 +805,13 @@
                         <li><a href="#"><i class="fas fa-phone"></i> पोलीस स्टेशन: १००</a></li>
                         <li><a href="#"><i class="fas fa-ambulance"></i> एम्ब्युलन्स: १०८</a></li>
                         <li><a href="#"><i class="fas fa-fire-extinguisher"></i> फायर ब्रिगेड: १०१</a></li>
-                        <li><a href="#"><i class="fas fa-hospital"></i> ग्रामीण रुग्णालय</a></li>
+                        <li><a href="#"><i class="fas fa-hospital"></i> सावनेर रुग्णालय</a></li>
                     </ul>
                 </div>
-                <!-- <div class="footer-column">
-                    <h3>डाउनलोड</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> ग्रामसभा नोंदी (PDF)</a></li>
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> वार्षिक आर्थिक अहवाल</a></li>
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> कर विवरण</a></li>
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> विकास आराखडा (DP)</a></li>
-                    </ul>
-                </div> -->
             </div>
             <div class="copyright">
-                <p>&copy; 2023 सावंगी देवळी ग्रामपंचायत. सर्व हक्क राखीव.</p>
+                <p>&copy; २०२५ वाघोडा ग्रामपंचायत. सर्व हक्क राखीव.</p>
+                <p style="margin-top: 10px; font-size: 12px;">विदर्भ प्रदेश, महाराष्ट्र राज्य, भारत</p>
             </div>
         </div>
     </footer>

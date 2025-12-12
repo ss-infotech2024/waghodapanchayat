@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>सूचना - सावंगी देवळी ग्रामपंचायत</title>
+    <title>जाहिराती - वाघोडा ग्रामपंचायत</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&display=swap"
         rel="stylesheet">
     <style>
         :root {
-            --primary: #2E7D32;
-            --secondary: #FF9800;
-            --accent: #2196F3;
-            --light: #F1F8E9;
-            --dark: #1B5E20;
-            --text: #212121;
-            --text-light: #757575;
+            --primary: #8B4513;
+            --secondary: #D2691E;
+            --accent: #CD853F;
+            --light: #FAEBD7;
+            --dark: #654321;
+            --text: #2F4F4F;
+            --text-light: #696969;
             --white: #ffffff;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --gradient: linear-gradient(135deg, var(--primary), var(--dark));
@@ -108,13 +108,14 @@
             box-shadow: var(--shadow);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 15px;
         }
 
         .nav-links {
@@ -173,72 +174,49 @@
             display: none;
             font-size: 24px;
             cursor: pointer;
+            color: var(--text);
         }
 
-        /* Hero Section */
-        .hero {
+        /* Page Hero */
+        .page-hero {
             background: var(--gradient);
             color: var(--white);
-            padding: 80px 0;
             text-align: center;
+            padding: 100px 20px;
             position: relative;
-            overflow: hidden;
         }
 
-        .hero::before {
+        .page-hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.2;
+            background: url('https://images.unsplash.com/photo-1559131397-f94da358a3d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.15;
             z-index: 0;
         }
 
-        .hero-content {
+        .page-hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 1;
         }
 
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero p {
+        .page-hero p {
             font-size: 18px;
             max-width: 700px;
             margin: 0 auto 30px;
             opacity: 0.9;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--secondary);
-            color: var(--white);
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .btn:hover {
-            background-color: #F57C00;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
         }
 
         /* Announcements Section */
-        .announcements-content {
+        .announcements-section {
             padding: 80px 0;
             background-color: var(--white);
         }
@@ -267,164 +245,362 @@
             transform: translateX(-50%);
         }
 
-        .section-title p {
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .filter-buttons {
+        /* Filter Tabs */
+        .announcement-filters {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
             flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
         }
 
         .filter-btn {
-            padding: 10px 20px;
+            padding: 10px 25px;
             background: var(--light);
             border: none;
-            border-radius: 25px;
+            border-radius: 30px;
+            color: var(--text);
+            font-weight: 500;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .filter-btn.active,
-        .filter-btn:hover {
+        .filter-btn:hover,
+        .filter-btn.active {
             background: var(--primary);
             color: white;
         }
 
+        /* Announcements Grid */
         .announcements-grid {
             display: grid;
-            gap: 25px;
-            max-width: 900px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
         }
 
         .announcement-card {
-            background: white;
-            border-radius: 10px;
-            padding: 25px;
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
             box-shadow: var(--shadow);
-            border-left: 4px solid var(--primary);
             transition: all 0.3s ease;
+            border: 1px solid var(--light);
             position: relative;
         }
 
         .announcement-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
 
-        .announcement-card.important {
-            border-left-color: #f44336;
-            background: linear-gradient(135deg, #fff, #ffebee);
+        .announcement-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 1;
         }
 
-        .announcement-card.urgent {
-            border-left-color: #ff9800;
-            background: linear-gradient(135deg, #fff, #fff3e0);
+        .badge-new {
+            background: #ff4757;
+            color: white;
+        }
+
+        .badge-important {
+            background: #ffa502;
+            color: white;
+        }
+
+        .badge-tender {
+            background: #3742fa;
+            color: white;
         }
 
         .announcement-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
+            background: var(--gradient);
+            color: white;
+            padding: 25px;
+            position: relative;
         }
 
-        .announcement-title {
-            font-size: 20px;
+        .announcement-date {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .announcement-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: var(--secondary);
+            text-align: center;
+        }
+
+        .announcement-header h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .announcement-content {
+            padding: 25px;
+        }
+
+        .announcement-details {
+            margin-bottom: 20px;
+        }
+
+        .detail-item {
+            display: flex;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            min-width: 120px;
+            color: var(--text);
+        }
+
+        .announcement-description {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .announcement-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: var(--dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Calendar Section */
+        .calendar-section {
+            background-color: var(--light);
+            padding: 80px 0;
+        }
+
+        .calendar-container {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .calendar-header {
+            background: var(--gradient);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .calendar-header h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+            background: #eee;
+        }
+
+        .calendar-day {
+            background: var(--white);
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .calendar-date {
+            background: var(--white);
+            padding: 15px;
+            text-align: center;
+            min-height: 80px;
+            position: relative;
+        }
+
+        .calendar-date.has-event {
+            background: #f0f8ff;
+            cursor: pointer;
+        }
+
+        .calendar-date.today {
+            background: var(--light);
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .date-number {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .event-indicator {
+            width: 8px;
+            height: 8px;
+            background: var(--secondary);
+            border-radius: 50%;
+            margin: 5px auto;
+        }
+
+        .event-popup {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--white);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            min-width: 200px;
+            z-index: 10;
+            display: none;
+        }
+
+        .calendar-date.has-event:hover .event-popup {
+            display: block;
+        }
+
+        .event-popup h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Important Dates */
+        .dates-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .dates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .date-card {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .date-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .date-info h4 {
             color: var(--primary);
             margin-bottom: 5px;
         }
 
-        .announcement-date {
-            background: var(--light);
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-size: 14px;
-            color: var(--text-light);
-            white-space: nowrap;
-        }
-
-        .announcement-category {
-            display: inline-block;
-            padding: 4px 12px;
-            background: var(--secondary);
-            color: white;
-            border-radius: 12px;
-            font-size: 12px;
+        .date-info .date {
+            color: var(--secondary);
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
-        .announcement-content {
-            color: var(--text);
-            margin-bottom: 15px;
+        /* Subscribe Section */
+        .subscribe-section {
+            background-color: var(--light);
+            padding: 80px 0;
         }
 
-        .announcement-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 15px;
-            border-top: 1px solid #eee;
-        }
-
-        .announcement-author {
-            font-size: 14px;
-            color: var(--text-light);
-        }
-
-        .download-btn {
-            padding: 8px 16px;
-            background: var(--accent);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-
-        .download-btn:hover {
-            background: #1976d2;
-        }
-
-        .no-announcements {
+        .subscribe-box {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
             text-align: center;
-            padding: 60px 20px;
-            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .no-announcements i {
-            font-size: 48px;
+        .subscribe-box h3 {
+            color: var(--primary);
             margin-bottom: 20px;
-            color: #ddd;
+            font-size: 24px;
         }
 
-        /* Important Notice */
-        .important-notice {
-            background: linear-gradient(135deg, #ffebee, #ffcdd2);
-            border: 2px solid #f44336;
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .important-notice h3 {
-            color: #d32f2f;
-            margin-bottom: 15px;
+        .subscribe-form {
             display: flex;
-            align-items: center;
-            justify-content: center;
             gap: 10px;
+            margin-top: 30px;
+        }
+
+        .subscribe-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
         }
 
         /* Footer */
@@ -529,6 +705,12 @@
         }
 
         /* Responsive Design */
+        @media (max-width: 992px) {
+            .calendar-grid {
+                grid-template-columns: repeat(7, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .top-bar {
                 flex-direction: column;
@@ -558,32 +740,93 @@
 
             .mobile-menu {
                 display: block;
+                margin-left: auto;
             }
 
-            .hero h1 {
+            .page-hero h1 {
                 font-size: 32px;
             }
 
-            .hero p {
+            .page-hero p {
                 font-size: 16px;
             }
 
-            .announcement-header {
+            .announcements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .announcement-filters {
                 flex-direction: column;
-                gap: 10px;
-            }
-
-            .announcement-date {
-                align-self: flex-start;
-            }
-
-            .filter-buttons {
-                gap: 10px;
+                align-items: center;
             }
 
             .filter-btn {
-                padding: 8px 16px;
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .calendar-grid {
+                grid-template-columns: repeat(7, 1fr);
                 font-size: 14px;
+            }
+
+            .calendar-date {
+                padding: 10px;
+                min-height: 60px;
+            }
+
+            .subscribe-form {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-hero h1 {
+                font-size: 28px;
+            }
+
+            .section-title h2 {
+                font-size: 26px;
+            }
+
+            .date-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .announcement-actions {
+                flex-direction: column;
+            }
+
+            .dates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-text h1 {
+                font-size: 20px;
+            }
+
+            .logo-text p {
+                font-size: 12px;
+            }
+
+            .contact-item {
+                font-size: 12px;
+            }
+
+            .calendar-grid {
+                grid-template-columns: repeat(7, 1fr);
+            }
+
+            .calendar-day,
+            .calendar-date {
+                padding: 8px;
+                font-size: 12px;
             }
         }
     </style>
@@ -596,11 +839,11 @@
             <div class="top-bar">
                 <div class="logo">
                     <div class="logo-img">
-                        <i class="fas fa-landmark"></i>
+                        <i class="fas fa-village"></i>
                     </div>
                     <div class="logo-text">
-                        <h1>सावंगी देवळी ग्रामपंचायत</h1>
-                        <p>विकास आणि प्रगतीचे प्रतीक</p>
+                        <h1>वाघोडा ग्रामपंचायत</h1>
+                        <p>नागपूर, सावनेर, महाराष्ट्र</p>
                     </div>
                 </div>
                 <div class="contact-info">
@@ -610,11 +853,11 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>sawangidevali@gmail.com</span>
+                        <span>waghodapanchayat@gmail.com</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>सावंगी देवळी, महाराष्ट्र</span>
+                        <span>वाघोडा, सावनेर</span>
                     </div>
                 </div>
             </div>
@@ -629,21 +872,23 @@
                 <li class="dropdown">
                     <a href="#">आमच्याबद्दल <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="about.html">परिचय</a>
+                        <a href="about.html">गावाचा इतिहास</a>
                         <a href="team.html">पंचायत मंडळ</a>
+                        <a href="demographics.html">लोकसंख्या</a>
                     </div>
                 </li>
-                <li><a href="announcements.html" class="active">सूचना</a></li>
                 <li class="dropdown">
                     <a href="#">सेवा <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
                         <a href="service.html">नागरिक सेवा</a>
-                        <a href="facilities.html">स्थानीय सुविधा</a>
+                        <a href="facilities.html">पायाभूत सुविधा</a>
                         <a href="rti.html">माहिती अधिकार</a>
                         <a href="govt-schemes.html">शासकीय योजना</a>
                     </div>
                 </li>
                 <li><a href="gallery.html">गॅलरी</a></li>
+                <li><a href="weather.html">हवामान</a></li>
+                <li><a href="announcements.html" class="active">जाहिराती</a></li>
                 <li><a href="contact.html">संपर्क</a></li>
                 <li class="dropdown">
                     <a href="#">अधिक <i class="fas fa-chevron-down"></i></a>
@@ -660,146 +905,483 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>सूचना</h1>
-            <p>ग्रामपंचायतकडून नवीनतम सूचना आणि जाहिराती</p>
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>जाहिराती</h1>
+            <p>वाघोडा ग्रामपंचायतीच्या अधिसूचना, तंत्रीक जाहिराती आणि महत्वाच्या सूचना</p>
         </div>
     </section>
 
-    <!-- Announcements Content Section -->
-    <section class="announcements-content">
+    <!-- Announcements Section -->
+    <section class="announcements-section">
         <div class="container">
             <div class="section-title">
-                <h2>नवीनतम सूचना</h2>
-                <p>ग्रामपंचायत कार्यालयातील सर्व अद्ययावत सूचना</p>
+                <h2>अधिसूचना आणि जाहिराती</h2>
+                <p>ग्रामपंचायतीच्या नवीनतम जाहिराती आणि सूचना</p>
             </div>
 
-            <div class="important-notice">
-                <h3><i class="fas fa-exclamation-triangle"></i> महत्वाची सूचना</h3>
-                <p>ग्रामपंचायत कार्यालय दिनांक २६ जानेवारी २०२४ रोजी सार्वजनिक सुट्टी असल्याने बंद राहील. कृपया याची
-                    नोंद घ्यावी.</p>
+            <!-- Filter Buttons -->
+            <div class="announcement-filters">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-layer-group"></i> सर्व जाहिराती
+                </button>
+                <button class="filter-btn" data-filter="notification">
+                    <i class="fas fa-bullhorn"></i> अधिसूचना
+                </button>
+                <button class="filter-btn" data-filter="tender">
+                    <i class="fas fa-file-contract"></i> तंत्रीक जाहिराती
+                </button>
+                <button class="filter-btn" data-filter="meeting">
+                    <i class="fas fa-users"></i> बैठक सूचना
+                </button>
+                <button class="filter-btn" data-filter="important">
+                    <i class="fas fa-exclamation-circle"></i> महत्वाचे
+                </button>
             </div>
 
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">सर्व सूचना</button>
-                <button class="filter-btn" data-filter="important">महत्वाच्या</button>
-                <button class="filter-btn" data-filter="tax">कर संबंधित</button>
-                <button class="filter-btn" data-filter="scheme">योजना</button>
-                <button class="filter-btn" data-filter="meeting">बैठका</button>
-            </div>
-
+            <!-- Announcements Grid -->
             <div class="announcements-grid">
-                <div class="announcement-card important" data-category="important">
+                <!-- Announcement 1 -->
+                <div class="announcement-card" data-category="notification important">
+                    <div class="announcement-badge badge-new">नवीन</div>
+                    <div class="announcement-badge badge-important">महत्वाचे</div>
+                    <div class="announcement-date">१५ डिसेंबर २०२४</div>
                     <div class="announcement-header">
-                        <div>
-                            <span class="announcement-category">महत्वाची सूचना</span>
-                            <h3 class="announcement-title">प्रॉपर्टी टॅक्स भरण्याची अंतिम मुदत</h3>
+                        <div class="announcement-icon">
+                            <i class="fas fa-water"></i>
                         </div>
-                        <span class="announcement-date">१५ डिसेंबर २०२३</span>
+                        <h3>पाणी पुरवठा कालावधी बदल</h3>
                     </div>
                     <div class="announcement-content">
-                        <p>सर्व ग्रामस्थांना कळावे की, वार्षिक प्रॉपर्टी टॅक्स भरण्याची अंतिम मुदत ३१ डिसेंबर २०२३
-                            पर्यंत वाढवण्यात आली आहे. विलंब शुल्क टाळण्यासाठी कृपया लवकरात लवकर कर भरावा.</p>
+                        <div class="announcement-details">
+                            <div class="detail-item">
+                                <span class="detail-label">जाहिरात क्रमांक:</span>
+                                <span>NOTI/WAG/2024/025</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">प्रभावी तारीख:</span>
+                                <span>२० डिसेंबर २०२४</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">विभाग:</span>
+                                <span>पाणी पुरवठा</span>
+                            </div>
+                        </div>
+                        <div class="announcement-description">
+                            <p>हिवाळ्याच्या हंगामात पाणी पुरवठ्याच्या कालावधीत बदल करण्यात आला आहे. दिवसातून ३ तास ऐवजी
+                                २ तास पाणी पुरवठा केला जाईल.</p>
+                            <p><strong>नवीन वेळ:</strong> सकाळी ७:०० ते ९:०० व संध्याकाळी ५:०० ते ६:००</p>
+                        </div>
+                        <div class="announcement-actions">
+                            <a href="#" class="btn"><i class="fas fa-download"></i> जाहिरात डाउनलोड</a>
+                            <a href="#" class="btn btn-outline"><i class="fas fa-share-alt"></i> शेअर करा</a>
+                        </div>
                     </div>
-                    <!-- <div class="announcement-footer">
-                        <span class="announcement-author">- ग्रामसेवक, सावंगी देवळी</span>
-                        <a href="#" class="download-btn"><i class="fas fa-download"></i> डाउनलोड</a>
-                    </div> -->
                 </div>
 
+                <!-- Announcement 2 -->
+                <div class="announcement-card" data-category="tender">
+                    <div class="announcement-badge badge-tender">तंत्रीक</div>
+                    <div class="announcement-date">१२ डिसेंबर २०२४</div>
+                    <div class="announcement-header">
+                        <div class="announcement-icon">
+                            <i class="fas fa-hard-hat"></i>
+                        </div>
+                        <h3>रस्ता दुरुस्ती तंत्रीक जाहिरात</h3>
+                    </div>
+                    <div class="announcement-content">
+                        <div class="announcement-details">
+                            <div class="detail-item">
+                                <span class="detail-label">तंत्रीक क्रमांक:</span>
+                                <span>TENDER/WAG/2024/018</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">शेवटची तारीख:</span>
+                                <span>३१ डिसेंबर २०२४</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">अंदाजे खर्च:</span>
+                                <span>₹८,००,०००</span>
+                            </div>
+                        </div>
+                        <div class="announcement-description">
+                            <p>वाघोडा गावातील २ किमी रस्त्याच्या दुरुस्ती कामासाठी तंत्रीक जाहिरात. ठेकेदारांनी ३१
+                                डिसेंबर २०२४ पर्यंत अर्ज सादर करावे.</p>
+                            <p><strong>कामाचा कालावधी:</strong> २ महिने<br>
+                                <strong>EMD:</strong> ₹८०,०००
+                            </p>
+                        </div>
+                        <div class="announcement-actions">
+                            <a href="#" class="btn"><i class="fas fa-file-download"></i> तंत्रीक डाउनलोड</a>
+                            <a href="#" class="btn btn-secondary"><i class="fas fa-edit"></i> अर्ज फॉर्म</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Announcement 3 -->
                 <div class="announcement-card" data-category="meeting">
+                    <div class="announcement-date">१० डिसेंबर २०२४</div>
                     <div class="announcement-header">
-                        <div>
-                            <span class="announcement-category">बैठक सूचना</span>
-                            <h3 class="announcement-title">ग्रामसभा बैठक</h3>
+                        <div class="announcement-icon">
+                            <i class="fas fa-users"></i>
                         </div>
-                        <span class="announcement-date">१० डिसेंबर २०२३</span>
+                        <h3>मासिक ग्रामसभा बैठक</h3>
                     </div>
                     <div class="announcement-content">
-                        <p>दिनांक २० डिसेंबर २०२३ रोजी दुपारी ३ वाजता ग्रामसभेची बैठक ग्रामपंचायत कार्यालयात घेण्यात
-                            येणार आहे. सर्व ग्रामस्थांनी यामध्ये सहभागी होण्याचे कृपया करावे.</p>
-                        <p><strong>ठिकाण:</strong> ग्रामपंचायत कार्यालय, सावंगी देवळी</p>
-                    </div>
-                    <div class="announcement-footer">
-                        <span class="announcement-author">- सरपंच, सावंगी देवळी</span>
-                        <a href="#" class="download-btn"><i class="fas fa-download"></i> अजेंडा</a>
+                        <div class="announcement-details">
+                            <div class="detail-item">
+                                <span class="detail-label">बैठक क्रमांक:</span>
+                                <span>MTG/WAG/2024/012</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">तारीख व वेळ:</span>
+                                <span>२० डिसेंबर २०२४, दुपारी ३:००</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">स्थळ:</span>
+                                <span>ग्रामपंचायत सभागृह</span>
+                            </div>
+                        </div>
+                        <div class="announcement-description">
+                            <p>डिसेंबर २०२४ महिन्याची मासिक ग्रामसभा बैठक. सर्व ग्रामस्थांनी उपस्थित राहणे अपेक्षित आहे.
+                            </p>
+                            <p><strong>बैठकीचा अजेंडा:</strong><br>
+                                १. आर्थिक अहवाल<br>
+                                २. विकास कामांची माहिती<br>
+                                ३. नवीन प्रकल्प प्रस्ताव<br>
+                                ४. जनसुनावणी</p>
+                        </div>
+                        <div class="announcement-actions">
+                            <a href="#" class="btn"><i class="fas fa-download"></i> अजेंडा डाउनलोड</a>
+                            <a href="#" class="btn btn-outline"><i class="fas fa-calendar-plus"></i> कॅलेंडरमध्ये
+                                जोडा</a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="announcement-card urgent" data-category="scheme">
+                <!-- Announcement 4 -->
+                <div class="announcement-card" data-category="notification">
+                    <div class="announcement-badge badge-new">नवीन</div>
+                    <div class="announcement-date">०८ डिसेंबर २०२४</div>
                     <div class="announcement-header">
-                        <div>
-                            <span class="announcement-category">योजना जाहिरात</span>
-                            <h3 class="announcement-title">पीएम आवास योजना अर्ज मागणी</h3>
+                        <div class="announcement-icon">
+                            <i class="fas fa-solar-panel"></i>
                         </div>
-                        <span class="announcement-date">०५ डिसेंबर २०२३</span>
+                        <h3>सोलर स्ट्रीट लाईट प्रकल्प</h3>
                     </div>
                     <div class="announcement-content">
-                        <p>प्रधानमंत्री आवास योजनेअंतर्गत ग्रामीण भागातील लाभार्थ्यांसाठी अर्ज मागविण्यात येत आहेत.
-                            इच्छुक उमेदवारांनी ३१ डिसेंबर २०२३ पर्यंत ग्रामपंचायत कार्यालयात संपर्क करावा.</p>
-                        <p><strong>अर्ज शुल्क:</strong> कोणतेही नाही</p>
-                    </div>
-                    <div class="announcement-footer">
-                        <span class="announcement-author">- ग्राम विकास अधिकारी</span>
-                        <a href="#" class="download-btn"><i class="fas fa-download"></i> अर्ज फॉर्म</a>
+                        <div class="announcement-details">
+                            <div class="detail-item">
+                                <span class="detail-label">जाहिरात क्रमांक:</span>
+                                <span>NOTI/WAG/2024/024</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">प्रारंभ तारीख:</span>
+                                <span>१० जानेवारी २०२५</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">कालावधी:</span>
+                                <span>२ महिने</span>
+                            </div>
+                        </div>
+                        <div class="announcement-description">
+                            <p>गावात २० सोलर स्ट्रीट लाईट लावण्याचा प्रकल्प सुरू होणार आहे. प्रकल्पाचे काम १० जानेवारी
+                                २०२५ पासून सुरू होईल.</p>
+                            <p><strong>लक्षात घ्यावयाचे मुद्दे:</strong><br>
+                                • काम सुरू असताना वाहतूक व्यवस्थित करावी<br>
+                                • मोकळ्या जागेत कामाची सामग्री न ठेवावी<br>
+                                • सुरक्षेच्या काळजी घ्याव्यात</p>
+                        </div>
+                        <div class="announcement-actions">
+                            <a href="#" class="btn"><i class="fas fa-download"></i> सविस्तर माहिती</a>
+                            <a href="#" class="btn btn-outline"><i class="fas fa-map-marked-alt"></i> नकाशा पहा</a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="announcement-card" data-category="tax">
-                    <div class="announcement-header">
-                        <div>
-                            <span class="announcement-category">कर सूचना</span>
-                            <h3 class="announcement-title">वॉटर टॅक्स संबंधित सूचना</h3>
-                        </div>
-                        <span class="announcement-date">२८ नोव्हेंबर २०२३</span>
-                    </div>
-                    <div class="announcement-content">
-                        <p>ग्रामपंचायतीने नवीन पाणीपुरवठा योजना राबविल्यामुळे, वार्षिक वॉटर टॅक्स दरांमध्ये सुधारणा
-                            करण्यात आली आहे. नवीन दर लागू करण्यात आले आहेत.</p>
-                    </div>
-                    <div class="announcement-footer">
-                        <span class="announcement-author">- ग्रामपंचायत समिती</span>
-                        <a href="#" class="download-btn"><i class="fas fa-download"></i> दर यादी</a>
-                    </div>
-                </div>
-
-                <div class="announcement-card" data-category="scheme">
-                    <div class="announcement-header">
-                        <div>
-                            <span class="announcement-category">योजना</span>
-                            <h3 class="announcement-title">स्वच्छता अभियान</h3>
-                        </div>
-                        <span class="announcement-date">२० नोव्हेंबर २०२३</span>
-                    </div>
-                    <div class="announcement-content">
-                        <p>ग्रामपंचायतीतर्फे स्वच्छता अभियान राबविण्यात येत आहे. दर शनिवारी सकाळी ७ ते ९ या वेळेत सर्व
-                            ग्रामस्थांनी स्वच्छता कार्यात सहभागी होण्याचे नम्र विनंती.</p>
-                    </div>
-                    <div class="announcement-footer">
-                        <span class="announcement-author">- स्वच्छता समिती</span>
-                        <a href="#" class="download-btn"><i class="fas fa-download"></i> माहिती</a>
-                    </div>
-                </div>
-
+                <!-- Announcement 5 -->
                 <div class="announcement-card" data-category="important">
+                    <div class="announcement-badge badge-important">महत्वाचे</div>
+                    <div class="announcement-date">०५ डिसेंबर २०२४</div>
                     <div class="announcement-header">
-                        <div>
-                            <span class="announcement-category">महत्वाची सूचना</span>
-                            <h3 class="announcement-title">रस्ते दुरुस्ती कामे</h3>
+                        <div class="announcement-icon">
+                            <i class="fas fa-rupee-sign"></i>
                         </div>
-                        <span class="announcement-date">१५ नोव्हेंबर २०२३</span>
+                        <h3>महसूल वसुली मोहीम</h3>
                     </div>
                     <div class="announcement-content">
-                        <p>ग्रामपंचायतीतर्फे मुख्य रस्त्याची दुरुस्ती कामे सुरू करण्यात येत आहेत. दिनांक २० नोव्हेंबर ते
-                            ३० नोव्हेंबर दरम्यान रस्त्यावरील वाहतूक मर्यादित असल्याने पर्यायी मार्गाचा वापर करावा.</p>
-                    </div>
-                    <div class="announcement-footer">
-                        <span class="announcement-author">- सार्वजनिक बांधकाम विभाग</span>
-                        <a href="#" class="download-btn"><i class="fas fa-download"></i> नकाशा</a>
+                        <div class="announcement-details">
+                            <div class="detail-item">
+                                <span class="detail-label">जाहिरात क्रमांक:</span>
+                                <span>NOTI/WAG/2024/023</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">तारीख:</span>
+                                <span>१५ डिसेंबर ते ३१ डिसेंबर २०२४</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">विभाग:</span>
+                                <span>महसूल</span>
+                            </div>
+                        </div>
+                        <div class="announcement-description">
+                            <p>ग्रामपंचायतीच्या विविध महसूलाची वसुली करण्यासाठी विशेष मोहीम. सर्व बकाया दात्यांनी नमूद
+                                केलेल्या तारखांमध्ये महसूल भरावा.</p>
+                            <p><strong>वसुली केंद्र:</strong> ग्रामपंचायत कार्यालय<br>
+                                <strong>वेळ:</strong> सकाळी १०:०० ते संध्याकाळी ५:००<br>
+                                <strong>शुल्क:</strong> देय रकमेवर २% विलंब शुल्क लागू
+                            </p>
+                        </div>
+                        <div class="announcement-actions">
+                            <a href="#" class="btn"><i class="fas fa-download"></i> बकाया तपशील</a>
+                            <a href="#" class="btn btn-secondary"><i class="fas fa-print"></i> पावती फॉर्म</a>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Announcement 6 -->
+                <div class="announcement-card" data-category="notification">
+                    <div class="announcement-date">०३ डिसेंबर २०२४</div>
+                    <div class="announcement-header">
+                        <div class="announcement-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3>वृद्धाश्रम भेट कार्यक्रम</h3>
+                    </div>
+                    <div class="announcement-content">
+                        <div class="announcement-details">
+                            <div class="detail-item">
+                                <span class="detail-label">जाहिरात क्रमांक:</span>
+                                <span>EVENT/WAG/2024/022</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">तारीख:</span>
+                                <span>२५ डिसेंबर २०२४</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">वेळ:</span>
+                                <span>सकाळी १०:०० ते दुपारी २:००</span>
+                            </div>
+                        </div>
+                        <div class="announcement-description">
+                            <p>ख्रिसमस निमित्त ग्रामपंचायत वतीने वृद्धाश्रम भेट कार्यक्रम आयोजित करण्यात आला आहे. सर्व
+                                ग्रामस्थांनी सहभागी होऊन वृद्धांचे आशीर्वाद घ्यावेत.</p>
+                            <p><strong>कार्यक्रम स्थळ:</strong> श्री संत तुकाराम वृद्धाश्रम<br>
+                                <strong>सहभागासाठी आवश्यक:</strong> गिफ्ट पॅक, फळे किंवा इतर उपयुक्त वस्तू<br>
+                                <strong>संपर्क:</strong> ग्रामसेवक - ९८७६५४३२१०
+                            </p>
+                        </div>
+                        <div class="announcement-actions">
+                            <a href="#" class="btn"><i class="fas fa-calendar-check"></i> सहभाग नोंदणी</a>
+                            <a href="#" class="btn btn-outline"><i class="fas fa-gift"></i> देणगी माहिती</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <section class="calendar-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>महत्वाच्या तारखा</h2>
+                <p>ग्रामपंचायतीच्या कार्यक्रमांचे माहितीपत्र</p>
+            </div>
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <h3>डिसेंबर २०२४</h3>
+                    <p>सर्व सार्वजनिक कार्यक्रमांचे तपशील</p>
+                </div>
+                <div class="calendar-grid">
+                    <div class="calendar-day">रविवार</div>
+                    <div class="calendar-day">सोमवार</div>
+                    <div class="calendar-day">मंगळवार</div>
+                    <div class="calendar-day">बुधवार</div>
+                    <div class="calendar-day">गुरुवार</div>
+                    <div class="calendar-day">शुक्रवार</div>
+                    <div class="calendar-day">शनिवार</div>
+
+                    <!-- Calendar Dates -->
+                    <div class="calendar-date"></div>
+                    <div class="calendar-date"></div>
+                    <div class="calendar-date"></div>
+                    <div class="calendar-date"></div>
+                    <div class="calendar-date"></div>
+                    <div class="calendar-date">
+                        <div class="date-number">१</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">२</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">३</div>
+                        <div class="event-indicator"></div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">४</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">५</div>
+                        <div class="event-indicator"></div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">६</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">७</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">८</div>
+                        <div class="event-indicator"></div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">९</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">१०</div>
+                        <div class="event-indicator"></div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">११</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">१२</div>
+                        <div class="event-indicator"></div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">१३</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">१४</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">१५</div>
+                        <div class="event-indicator"></div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">१६</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">१७</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">१८</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">१९</div>
+                    </div>
+                    <div class="calendar-date today">
+                        <div class="date-number">२०</div>
+                        <div class="event-indicator"></div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">२१</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">२२</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">२३</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">२४</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">२५</div>
+                        <div class="event-indicator"></div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">२६</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">२७</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">२८</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">२९</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">३०</div>
+                    </div>
+                    <div class="calendar-date">
+                        <div class="date-number">३१</div>
+                        <div class="event-indicator"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Dates Section -->
+    <section class="dates-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>महत्वाच्या तारखांची यादी</h2>
+                <p>ग्रामपंचायतीच्या नियोजित कार्यक्रम</p>
+            </div>
+            <div class="dates-grid">
+                <div class="date-card">
+                    <div class="date-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="date-info">
+                        <h4>मासिक ग्रामसभा बैठक</h4>
+                        <p class="date">२० डिसेंबर २०२४</p>
+                        <p>दुपारी ३:०० वाजता, ग्रामपंचायत सभागृह</p>
+                    </div>
+                </div>
+                <div class="date-card">
+                    <div class="date-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <div class="date-info">
+                        <h4>वृद्धाश्रम भेट</h4>
+                        <p class="date">२५ डिसेंबर २०२४</p>
+                        <p>सकाळी १०:०० ते दुपारी २:००, श्री संत तुकाराम वृद्धाश्रम</p>
+                    </div>
+                </div>
+                <div class="date-card">
+                    <div class="date-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="date-info">
+                        <h4>पाणी पुरवठा बदल</h4>
+                        <p class="date">२० डिसेंबर २०२४ पासून</p>
+                        <p>नवीन वेळ: सकाळी ७-९ व संध्याकाळी ५-६</p>
+                    </div>
+                </div>
+                <div class="date-card">
+                    <div class="date-icon">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <div class="date-info">
+                        <h4>तंत्रीक जाहिरात शेवटची तारीख</h4>
+                        <p class="date">३१ डिसेंबर २०२४</p>
+                        <p>रस्ता दुरुस्ती कामासाठी तंत्रीक जाहिरात अर्ज शेवटची तारीख</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subscribe Section -->
+    <section class="subscribe-section">
+        <div class="container">
+            <div class="subscribe-box">
+                <h3><i class="fas fa-bell"></i> जाहिरातीची सूचना मिळवा</h3>
+                <p>वाघोडा ग्रामपंचायतीच्या सर्व नवीन जाहिराती आणि सूचना ईमेलद्वारे मिळवण्यासाठी आपला ईमेल नोंदवा.
+                    कोणतीही महत्वाची सूचना त्वरित आपल्यापर्यंत पोहोचेल.</p>
+                <div class="subscribe-form">
+                    <input type="email" placeholder="आपला ईमेल टाइप करा" required>
+                    <button type="submit" class="btn">सदस्यता घ्या</button>
+                </div>
+                <p style="margin-top: 15px; font-size: 14px; color: var(--text-light);"><i
+                        class="fas fa-info-circle"></i> कोणतीही अनवांटेड ईमेल पाठवली जाणार नाही. आपली माहिती गोपनीय
+                    राखली जाईल.</p>
             </div>
         </div>
     </section>
@@ -809,89 +1391,191 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>झटपट दुवे</h3>
-                    <ul class="footer-links">
-                        <li><a href="team.html"><i class="fas fa-chevron-right"></i> ग्रामपंचायत सदस्य</a></li>
-                        <li><a href="schools.html"><i class="fas fa-chevron-right"></i> शाळा व अंगणवाडी</a></li>
-                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> विकास प्रकल्प</a></li>
-                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> फोटो गॅलरी</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> आपत्कालीन संपर्क</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>संपर्क माहिती</h3>
-                    <div class="contact-details">
-                        <p><i class="fas fa-map-marker-alt"></i> सावंगी देवळी, महाराष्ट्र</p>
-                        <p><i class="fas fa-phone"></i> आपत्कालीन: १०८</p>
-                        <p><i class="fas fa-envelope"></i> sawangidevali@gmail.com</p>
-                        <p><i class="fas fa-clock"></i> कार्यालयीन वेळ: सकाळी 10 ते दुपारी 6</p>
-                    </div>
+                    <h3>वाघोडा ग्रामपंचायत</h3>
+                    <p>वाघोडा ग्रामपंचायत ही नागपूर जिल्ह्यातील सावनेर तालुक्यातील एक प्रगतीशील ग्रामपंचायत आहे. आमचे
+                        उद्दीष्ट ग्रामीण विकास आणि नागरिक कल्याण आहे.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>आपत्कालीन संपर्क</h3>
+                    <h3>द्रुत लिंक्स</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-phone"></i> पोलीस स्टेशन: १००</a></li>
-                        <li><a href="#"><i class="fas fa-ambulance"></i> एम्ब्युलन्स: १०८</a></li>
-                        <li><a href="#"><i class="fas fa-fire-extinguisher"></i> फायर ब्रिगेड: १०१</a></li>
-                        <li><a href="#"><i class="fas fa-hospital"></i> ग्रामीण रुग्णालय</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i> मुख्यपृष्ठ</a></li>
+                        <li><a href="about.html"><i class="fas fa-history"></i> गावाचा इतिहास</a></li>
+                        <li><a href="team.html"><i class="fas fa-users"></i> पंचायत मंडळ</a></li>
+                        <li><a href="service.html"><i class="fas fa-concierge-bell"></i> नागरिक सेवा</a></li>
+                        <li><a href="announcements.html"><i class="fas fa-bullhorn"></i> जाहिराती</a></li>
+                        <li><a href="contact.html"><i class="fas fa-phone"></i> संपर्क</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>डाउनलोड</h3>
+                    <h3>संपर्क माहिती</h3>
+                    <div class="contact-details">
+                        <p><i class="fas fa-map-marker-alt"></i> वाघोडा ग्रामपंचायत कार्यालय, वाघोडा, सावनेर, नागपूर,
+                            महाराष्ट्र - ४४१२०७</p>
+                        <p><i class="fas fa-phone"></i> आपत्कालीन: १०८</p>
+                        <p><i class="fas fa-envelope"></i> waghodapanchayat@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> कार्यालयीन वेळ: सोम-शनि, सकाळी ९:०० ते संध्याकाळी ५:००</p>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>उपयुक्त लिंक्स</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> ग्रामसभा नोंदी (PDF)</a></li>
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> वार्षिक आर्थिक अहवाल</a></li>
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> कर विवरण</a></li>
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> विकास आराखडा (DP)</a></li>
+                        <li><a href="https://maharashtra.gov.in" target="_blank"><i
+                                    class="fas fa-external-link-alt"></i> महाराष्ट्र शासन</a></li>
+                        <li><a href="https://nagpur.gov.in" target="_blank"><i class="fas fa-external-link-alt"></i>
+                                नागपूर जिल्हा</a></li>
+                        <li><a href="rti.html"><i class="fas fa-file-alt"></i> माहिती अधिकार</a></li>
+                        <li><a href="govt-schemes.html"><i class="fas fa-hand-holding-usd"></i> शासकीय योजना</a></li>
+                        <li><a href="complaint.html"><i class="fas fa-comment-dots"></i> तक्रार / सूचना</a></li>
+                        <li><a href="fund.html"><i class="fas fa-rupee-sign"></i> आर्थिक माहिती</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 सावंगी देवळी ग्रामपंचायत. सर्व हक्क राखीव.</p>
+                <p>© २०२४ वाघोडा ग्रामपंचायत. सर्व हक्क राखीव. | आयटी सेल: वाघोडा ग्रामपंचायत</p>
+                <p style="margin-top: 5px; font-size: 12px;">डिझाइन आणि विकास: ग्रामपंचायत आयटी सेल</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu').addEventListener('click', function () {
-            document.querySelector('.nav-links').classList.toggle('active');
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active')
+                ? '<i class="fas fa-times"></i>'
+                : '<i class="fas fa-bars"></i>';
         });
 
-        // Filter functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const announcementCards = document.querySelectorAll('.announcement-card');
+        // Announcement Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const announcementCards = document.querySelectorAll('.announcement-card');
 
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function () {
-                    // Remove active class from all buttons
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    // Add active class to clicked button
-                    this.classList.add('active');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
 
-                    const filterValue = this.getAttribute('data-filter');
+                const filter = btn.getAttribute('data-filter');
 
-                    announcementCards.forEach(card => {
-                        if (filterValue === 'all') {
-                            card.style.display = 'block';
-                        } else {
-                            if (card.getAttribute('data-category') === filterValue) {
-                                card.style.display = 'block';
-                            } else {
-                                card.style.display = 'none';
-                            }
-                        }
-                    });
+                // Show/hide cards based on filter
+                announcementCards.forEach(card => {
+                    const categories = card.getAttribute('data-category');
+
+                    if (filter === 'all' || categories.includes(filter)) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
                 });
             });
         });
+
+        // Calendar Event Hover
+        const eventDates = document.querySelectorAll('.calendar-date.has-event');
+        eventDates.forEach(date => {
+            date.addEventListener('mouseenter', () => {
+                const eventPopup = date.querySelector('.event-popup');
+                if (eventPopup) {
+                    eventPopup.style.display = 'block';
+                }
+            });
+
+            date.addEventListener('mouseleave', () => {
+                const eventPopup = date.querySelector('.event-popup');
+                if (eventPopup) {
+                    eventPopup.style.display = 'none';
+                }
+            });
+        });
+
+        // Subscribe Form
+        const subscribeForm = document.querySelector('.subscribe-form');
+        const emailInput = subscribeForm.querySelector('input[type="email"]');
+        const subscribeBtn = subscribeForm.querySelector('.btn');
+
+        subscribeForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            if (emailInput.value) {
+                subscribeBtn.innerHTML = '<i class="fas fa-check"></i> नोंदणी झाली';
+                subscribeBtn.style.background = '#28a745';
+
+                setTimeout(() => {
+                    subscribeBtn.innerHTML = 'सदस्यता घ्या';
+                    subscribeBtn.style.background = '';
+                    emailInput.value = '';
+                    alert('धन्यवाद! आपण यशस्वीरित्या नोंदणी झाले आहेत. पुढील जाहिराती आपल्या ईमेलवर पाठवल्या जातील.');
+                }, 2000);
+            }
+        });
+
+        // Add event indicators to calendar dates
+        const calendarDates = document.querySelectorAll('.calendar-date');
+        const eventsData = {
+            3: "तंत्रीक जाहिरात प्रकाशित",
+            5: "महसूल वसुली मोहीम सुरू",
+            8: "सोलर लाईट प्रकल्प जाहिरात",
+            10: "मासिक ग्रामसभा बैठक",
+            12: "रस्ता दुरुस्ती तंत्रीक जाहिरात",
+            15: "पाणी पुरवठा बदल",
+            20: "मासिक ग्रामसभा बैठक",
+            25: "वृद्धाश्रम भेट कार्यक्रम",
+            31: "तंत्रीक जाहिरात शेवटची तारीख"
+        };
+
+        calendarDates.forEach(date => {
+            const dateNumberElement = date.querySelector('.date-number');
+            if (dateNumberElement) {
+                const dateNum = parseInt(dateNumberElement.textContent.trim());
+                if (eventsData[dateNum]) {
+                    date.classList.add('has-event');
+
+                    // Create event popup
+                    const popup = document.createElement('div');
+                    popup.className = 'event-popup';
+                    popup.innerHTML = `
+                        <h4>${dateNum} डिसेंबर</h4>
+                        <p>${eventsData[dateNum]}</p>
+                    `;
+                    date.appendChild(popup);
+                }
+            }
+        });
+
+        // Set today's date in calendar
+        const todayDate = new Date();
+        if (todayDate.getMonth() === 11 && todayDate.getFullYear() === 2024) {
+            const todayDay = todayDate.getDate();
+            calendarDates.forEach(date => {
+                const dateNumberElement = date.querySelector('.date-number');
+                if (dateNumberElement) {
+                    const dateNum = parseInt(dateNumberElement.textContent.trim());
+                    if (dateNum === todayDay) {
+                        date.classList.add('today');
+                    }
+                }
+            });
+        }
     </script>
 </body>
 

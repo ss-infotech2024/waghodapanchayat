@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>स्थानीय सुविधा - सावंगी देवळी ग्रामपंचायत</title>
+    <title>पायाभूत सुविधा - वाघोडा ग्रामपंचायत</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&display=swap"
         rel="stylesheet">
     <style>
         :root {
-            --primary: #2E7D32;
-            --secondary: #FF9800;
-            --accent: #2196F3;
-            --light: #F1F8E9;
-            --dark: #1B5E20;
-            --text: #212121;
-            --text-light: #757575;
+            --primary: #8B4513;
+            --secondary: #D2691E;
+            --accent: #CD853F;
+            --light: #FAEBD7;
+            --dark: #654321;
+            --text: #2F4F4F;
+            --text-light: #696969;
             --white: #ffffff;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --gradient: linear-gradient(135deg, var(--primary), var(--dark));
@@ -108,13 +108,14 @@
             box-shadow: var(--shadow);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 15px;
         }
 
         .nav-links {
@@ -173,48 +174,45 @@
             display: none;
             font-size: 24px;
             cursor: pointer;
+            color: var(--text);
         }
 
-        /* Hero Section */
-        .hero {
+        /* Page Hero */
+        .page-hero {
             background: var(--gradient);
             color: var(--white);
-            padding: 80px 0;
             text-align: center;
+            padding: 100px 20px;
             position: relative;
-            overflow: hidden;
         }
 
-        .hero::before {
+        .page-hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.2;
+            background: url('https://images.unsplash.com/photo-1591900947069-87c7a0b8d3f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.15;
             z-index: 0;
         }
 
-        .hero-content {
+        .page-hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 1;
         }
 
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero p {
+        .page-hero p {
             font-size: 18px;
             max-width: 700px;
             margin: 0 auto 30px;
             opacity: 0.9;
+            position: relative;
+            z-index: 1;
         }
 
         .btn {
@@ -229,18 +227,19 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
+            position: relative;
+            z-index: 1;
         }
 
         .btn:hover {
-            background-color: #F57C00;
+            background-color: #B35900;
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
-        /* Facilities Section */
-        .facilities-content {
+        /* Section Common */
+        section {
             padding: 80px 0;
-            background-color: var(--white);
         }
 
         .section-title {
@@ -273,161 +272,78 @@
             margin: 0 auto;
         }
 
-        .facilities-categories {
+        /* Facilities Section */
+        .facilities-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-bottom: 50px;
         }
 
-        .category-card {
-            background: var(--light);
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 3px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient);
-        }
-
-        .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary);
-        }
-
-        .category-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: var(--primary);
-            font-size: 32px;
-            border: 3px solid var(--primary);
-        }
-
-        .category-card h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 22px;
-        }
-
-        .facility-count {
-            background: var(--primary);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        /* Facilities Grid */
-        .facilities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
-        }
-
         .facility-card {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
-            border-left: 4px solid var(--accent);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .facility-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient);
+            border-top: 4px solid var(--primary);
         }
 
         .facility-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .facility-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
+        .facility-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .facility-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .facility-card:hover .facility-image img {
+            transform: scale(1.1);
+        }
+
+        .facility-content {
+            padding: 25px;
+        }
+
+        .facility-content h3 {
+            font-size: 20px;
+            color: var(--primary);
             margin-bottom: 15px;
         }
 
-        .facility-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--light);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent);
-            font-size: 24px;
-            flex-shrink: 0;
-        }
-
-        .facility-title {
-            font-size: 20px;
-            color: var(--primary);
-            margin-bottom: 5px;
-        }
-
-        .facility-location {
+        .facility-content p {
             color: var(--text-light);
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .facility-description {
-            color: var(--text);
             margin-bottom: 20px;
-            line-height: 1.6;
         }
 
         .facility-details {
-            background: var(--light);
+            background-color: var(--light);
             padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
         }
 
-        .detail-row {
+        .detail-item {
             display: flex;
             justify-content: space-between;
             margin-bottom: 8px;
             padding-bottom: 8px;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px dashed #ddd;
         }
 
-        .detail-row:last-child {
-            margin-bottom: 0;
+        .detail-item:last-child {
             border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
 
         .detail-label {
@@ -437,73 +353,12 @@
 
         .detail-value {
             color: var(--primary);
-            text-align: right;
         }
 
-        .facility-actions {
-            display: flex;
-            gap: 10px;
-            justify-content: flex-end;
-        }
-
-        .action-btn {
-            padding: 8px 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .action-btn.primary {
-            background: var(--primary);
-            color: white;
-        }
-
-        .action-btn.secondary {
-            background: var(--accent);
-            color: white;
-        }
-
-        .action-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Map Section */
-        .map-section {
-            background: var(--light);
-            padding: 60px 0;
-        }
-
-        .map-container {
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: var(--shadow);
-            text-align: center;
-        }
-
-        .map-placeholder {
-            background: #e0e0e0;
-            height: 300px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-light);
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        /* Statistics */
-        .statistics {
-            padding: 60px 0;
-            background: white;
+        /* Statistics Section */
+        .stats-section {
+            background: var(--gradient);
+            color: var(--white);
         }
 
         .stats-grid {
@@ -514,28 +369,22 @@
 
         .stat-card {
             text-align: center;
-            padding: 30px 20px;
-            background: var(--light);
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
         }
 
         .stat-number {
-            font-size: 42px;
-            font-weight: bold;
-            color: var(--primary);
+            font-size: 48px;
+            font-weight: 700;
             margin-bottom: 10px;
+            color: var(--secondary);
         }
 
-        .stat-label {
-            color: var(--text);
-            font-size: 16px;
-            font-weight: 600;
+        .stat-text {
+            font-size: 18px;
+            opacity: 0.9;
         }
 
         /* Footer */
@@ -669,31 +518,45 @@
 
             .mobile-menu {
                 display: block;
+                margin-left: auto;
             }
 
-            .hero h1 {
+            .page-hero h1 {
                 font-size: 32px;
             }
 
-            .hero p {
+            .page-hero p {
                 font-size: 16px;
             }
 
             .facilities-grid {
                 grid-template-columns: 1fr;
             }
+        }
 
-            .facility-actions {
-                flex-direction: column;
+        @media (max-width: 480px) {
+            .page-hero h1 {
+                font-size: 28px;
             }
 
-            .action-btn {
-                text-align: center;
-                justify-content: center;
+            .section-title h2 {
+                font-size: 26px;
             }
 
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-text h1 {
+                font-size: 20px;
+            }
+
+            .logo-text p {
+                font-size: 12px;
+            }
+
+            .contact-item {
+                font-size: 12px;
             }
         }
     </style>
@@ -706,11 +569,11 @@
             <div class="top-bar">
                 <div class="logo">
                     <div class="logo-img">
-                        <i class="fas fa-landmark"></i>
+                        <i class="fas fa-village"></i>
                     </div>
                     <div class="logo-text">
-                        <h1>सावंगी देवळी ग्रामपंचायत</h1>
-                        <p>विकास आणि प्रगतीचे प्रतीक</p>
+                        <h1>वाघोडा ग्रामपंचायत</h1>
+                        <p>नागपूर, सावनेर, महाराष्ट्र</p>
                     </div>
                 </div>
                 <div class="contact-info">
@@ -720,11 +583,11 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>sawangidevali@gmail.com</span>
+                        <span>waghodapanchayat@gmail.com</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>सावंगी देवळी, महाराष्ट्र</span>
+                        <span>वाघोडा, सावनेर</span>
                     </div>
                 </div>
             </div>
@@ -739,21 +602,22 @@
                 <li class="dropdown">
                     <a href="#">आमच्याबद्दल <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="about.html">परिचय</a>
+                        <a href="about.html">गावाचा इतिहास</a>
                         <a href="team.html">पंचायत मंडळ</a>
+                        <a href="demographics.html">लोकसंख्या</a>
                     </div>
                 </li>
-                <!-- <li><a href="announcements.html">सूचना</a></li> -->
                 <li class="dropdown">
                     <a href="#" class="active">सेवा <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
                         <a href="service.html">नागरिक सेवा</a>
-                        <a href="facilities.html" class="active">स्थानीय सुविधा</a>
+                        <a href="facilities.html" class="active">पायाभूत सुविधा</a>
                         <a href="rti.html">माहिती अधिकार</a>
                         <a href="govt-schemes.html">शासकीय योजना</a>
                     </div>
                 </li>
                 <li><a href="gallery.html">गॅलरी</a></li>
+                <li><a href="weather.html">हवामान</a></li>
                 <li><a href="contact.html">संपर्क</a></li>
                 <li class="dropdown">
                     <a href="#">अधिक <i class="fas fa-chevron-down"></i></a>
@@ -770,372 +634,308 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
-            <h1>स्थानीय सुविधा</h1>
-            <p>गावात उपलब्ध असलेल्या सर्व सुविधा आणि सेवा</p>
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>पायाभूत सुविधा</h1>
+            <p>वाघोडा गावातील शैक्षणिक, आरोग्य, पाणी आणि इतर मूलभूत सुविधा</p>
         </div>
     </section>
 
-    <!-- Facilities Content Section -->
-    <section class="facilities-content">
+    <!-- Education Facilities -->
+    <section id="education">
         <div class="container">
             <div class="section-title">
-                <h2>आमच्या सुविधा</h2>
-                <p>सावंगी देवळी ग्रामपंचायतीत उपलब्ध असलेल्या सर्व सार्वजनिक सुविधा</p>
+                <h2>शैक्षणिक सुविधा</h2>
+                <p>गावातील शिक्षण संस्था आणि विद्यार्थ्यांसाठी सुविधा</p>
             </div>
-
-            <div class="facilities-categories">
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>शैक्षणिक सुविधा</h3>
-                    <p>शाळा, अंगणवाडी आणि इतर शैक्षणिक संस्था</p>
-                    <div class="facility-count">५ सुविधा</div>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-hospital"></i>
-                    </div>
-                    <h3>आरोग्य सुविधा</h3>
-                    <p>आरोग्य केंद्रे, दवाखाने आणि आरोग्य सेवा</p>
-                    <div class="facility-count">३ सुविधा</div>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-tint"></i>
-                    </div>
-                    <h3>पाणीपुरवठा</h3>
-                    <p>पिण्याचे पाणी आणि जलस्रोत</p>
-                    <div class="facility-count">८ सुविधा</div>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h3>वीज सुविधा</h3>
-                    <p>विद्युत पुरवठा आणि संबंधित सुविधा</p>
-                    <div class="facility-count">१२ सुविधा</div>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-road"></i>
-                    </div>
-                    <h3>वाहतूक सुविधा</h3>
-                    <p>रस्ते, वाहतूक आणि संपर्क मार्ग</p>
-                    <div class="facility-count">६ सुविधा</div>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-tree"></i>
-                    </div>
-                    <h3>पर्यावरण सुविधा</h3>
-                    <p>पार्क, बागा आणि पर्यावरण संवर्धन</p>
-                    <div class="facility-count">४ सुविधा</div>
-                </div>
-            </div>
-
             <div class="facilities-grid">
-                <!-- प्राथमिक शाळा -->
                 <div class="facility-card">
-                    <div class="facility-header">
-                        <div class="facility-icon">
-                            <i class="fas fa-school"></i>
-                        </div>
-                        <div>
-                            <h3 class="facility-title">सावंगी देवळी प्राथमिक शाळा</h3>
-                            <p class="facility-location">
-                                <i class="fas fa-map-marker-alt"></i> ग्रामपंचायत कार्यालय जवळ
-                            </p>
+                    <div class="facility-image">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="प्राथमिक शाळा">
+                    </div>
+                    <div class="facility-content">
+                        <h3>वाघोडा प्राथमिक शाळा</h3>
+                        <p>पहिली ते चौथी इयत्ता, बालवाडीसह पूर्ण शैक्षणिक केंद्र</p>
+                        <div class="facility-details">
+                            <div class="detail-item">
+                                <span class="detail-label">इयत्ता:</span>
+                                <span class="detail-value">पहिली ते चौथी</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">विद्यार्थी:</span>
+                                <span class="detail-value">८५+</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">शिक्षक:</span>
+                                <span class="detail-value">५</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">स्थापना:</span>
+                                <span class="detail-value">१९६५</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="facility-description">
-                        <p>इ. १ ली ते ७ वी पर्यंतची शिक्षण सुविधा. सुसज्ज वर्गखोल्या, खेळाचे मैदान आणि अनुभवी शिक्षक.
-                        </p>
-                    </div>
-                    <div class="facility-details">
-                        <div class="detail-row">
-                            <span class="detail-label">वर्ग:</span>
-                            <span class="detail-value">१ ते ७ वी</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">विद्यार्थी संख्या:</span>
-                            <span class="detail-value">१८५</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">शिक्षक संख्या:</span>
-                            <span class="detail-value">८</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">वेळ:</span>
-                            <span class="detail-value">सकाळी १० - दुपारी ४</span>
-                        </div>
-                    </div>
-                    <!-- <div class="facility-actions">
-                        <a href="#" class="action-btn primary"><i class="fas fa-phone"></i> संपर्क</a>
-                        <a href="#" class="action-btn secondary"><i class="fas fa-directions"></i> मार्ग</a>
-                    </div> -->
                 </div>
 
-                <!-- आरोग्य केंद्र -->
                 <div class="facility-card">
-                    <div class="facility-header">
-                        <div class="facility-icon">
-                            <i class="fas fa-clinic-medical"></i>
-                        </div>
-                        <div>
-                            <h3 class="facility-title">प्राथमिक आरोग्य केंद्र</h3>
-                            <p class="facility-location">
-                                <i class="fas fa-map-marker-alt"></i> गावाच्या मध्यभागी
-                            </p>
+                    <div class="facility-image">
+                        <img src="https://images.unsplash.com/photo-1524178239883-269a632bb546?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="माध्यमिक शाळा">
+                    </div>
+                    <div class="facility-content">
+                        <h3>उच्च प्राथमिक शाळा</h3>
+                        <p>पाचवी ते आठवी इयत्तेसाठी पूर्ण शैक्षणिक सुविधा</p>
+                        <div class="facility-details">
+                            <div class="detail-item">
+                                <span class="detail-label">इयत्ता:</span>
+                                <span class="detail-value">पाचवी ते आठवी</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">विद्यार्थी:</span>
+                                <span class="detail-value">१२०+</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">शिक्षक:</span>
+                                <span class="detail-value">७</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">संगणक लॅब:</span>
+                                <span class="detail-value">होय</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="facility-description">
-                        <p>२४ तास उपलब्ध आरोग्य सेवा. दवाखाना, प्रसूती गृह आणि आपत्कालीन सेवा उपलब्ध.</p>
-                    </div>
-                    <div class="facility-details">
-                        <div class="detail-row">
-                            <span class="detail-label">डॉक्टर:</span>
-                            <span class="detail-value">डॉ. सुरेश पाटील</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">वेळ:</span>
-                            <span class="detail-value">सकाळी ९ - संध्याकाळी ६</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">आपत्कालीन:</span>
-                            <span class="detail-value">२४ तास</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">संपर्क:</span>
-                            <span class="detail-value">९८७६५४३२०१</span>
-                        </div>
-                    </div>
-                    <!-- <div class="facility-actions">
-                        <a href="#" class="action-btn primary"><i class="fas fa-phone"></i> संपर्क</a>
-                        <a href="#" class="action-btn secondary"><i class="fas fa-calendar-check"></i> अपॉइंटमेंट</a>
-                    </div> -->
                 </div>
 
-                <!-- पाणी टाकी -->
                 <div class="facility-card">
-                    <div class="facility-header">
-                        <div class="facility-icon">
-                            <i class="fas fa-water"></i>
-                        </div>
-                        <div>
-                            <h3 class="facility-title">मुख्य पाणी टाकी</h3>
-                            <p class="facility-location">
-                                <i class="fas fa-map-marker-alt"></i> गावाच्या उंच भागात
-                            </p>
+                    <div class="facility-image">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="अंगणवाडी">
+                    </div>
+                    <div class="facility-content">
+                        <h3>अंगणवाडी केंद्र</h3>
+                        <p>३-६ वर्षे वयोगटातील मुलांसाठी पूर्व-प्राथमिक शिक्षण</p>
+                        <div class="facility-details">
+                            <div class="detail-item">
+                                <span class="detail-label">मुले:</span>
+                                <span class="detail-value">३५</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">सेविका:</span>
+                                <span class="detail-value">२</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">पोषण आहार:</span>
+                                <span class="detail-value">होय</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">आरोग्य तपासणी:</span>
+                                <span class="detail-value">मासिक</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="facility-description">
-                        <p>५ लाख लिटर क्षमतेची पाणी टाकी. संपूर्ण गावासाठी पिण्याच्या पाण्याची सोय.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Healthcare Facilities -->
+    <section id="healthcare" style="background-color: var(--light);">
+        <div class="container">
+            <div class="section-title">
+                <h2>आरोग्य सुविधा</h2>
+                <p>गावातील आरोग्य केंद्रे आणि वैद्यकीय सुविधा</p>
+            </div>
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <div class="facility-image">
+                        <img src="https://images.unsplash.com/photo-1516549655669-df6654e435de?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="प्राथमिक आरोग्य केंद्र">
                     </div>
-                    <div class="facility-details">
-                        <div class="detail-row">
-                            <span class="detail-label">क्षमता:</span>
-                            <span class="detail-value">५ लाख लिटर</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">पाणी पुरवठा:</span>
-                            <span class="detail-value">दररोज ४ तास</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">जलस्रोत:</span>
-                            <span class="detail-value">बोरवेल</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">इन्चार्ज:</span>
-                            <span class="detail-value">श्री. महादेव जाधव</span>
+                    <div class="facility-content">
+                        <h3>प्राथमिक आरोग्य केंद्र</h3>
+                        <p>२४ तास उपलब्ध वैद्यकीय सुविधा आणि दवाखाना</p>
+                        <div class="facility-details">
+                            <div class="detail-item">
+                                <span class="detail-label">डॉक्टर:</span>
+                                <span class="detail-value">२</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">नर्स:</span>
+                                <span class="detail-value">३</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">आपत्कालीन:</span>
+                                <span class="detail-value">२४ तास</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">व्हॅक्सिनेशन:</span>
+                                <span class="detail-value">होय</span>
+                            </div>
                         </div>
                     </div>
-                    <!-- <div class="facility-actions">
-                        <a href="#" class="action-btn primary"><i class="fas fa-phone"></i> तक्रार</a>
-                        <a href="#" class="action-btn secondary"><i class="fas fa-info-circle"></i> माहिती</a>
-                    </div> -->
                 </div>
 
-                <!-- ग्रामीण रस्ता -->
                 <div class="facility-card">
-                    <div class="facility-header">
-                        <div class="facility-icon">
-                            <i class="fas fa-road"></i>
-                        </div>
-                        <div>
-                            <h3 class="facility-title">मुख्य ग्रामीण रस्ता</h3>
-                            <p class="facility-location">
-                                <i class="fas fa-map-marker-alt"></i> गावापासून तालुका ऑफिस पर्यंत
-                            </p>
+                    <div class="facility-image">
+                        <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="आशा कार्यकर्ता">
+                    </div>
+                    <div class="facility-content">
+                        <h3>आशा कार्यकर्ता</h3>
+                        <p>ग्रामस्तरीय आरोग्य सेवा आणि जागरुकता</p>
+                        <div class="facility-details">
+                            <div class="detail-item">
+                                <span class="detail-label">कार्यकर्ता:</span>
+                                <span class="detail-value">३</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">तपासणी:</span>
+                                <span class="detail-value">दररोज</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">स्वच्छता मोहीम:</span>
+                                <span class="detail-value">होय</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="facility-description">
-                        <p>८ मीटर रुंदीचा काँक्रीट रस्ता. सार्वजनिक वाहतूक आणि खासगी वाहनेसाठी उपलब्ध.</p>
-                    </div>
-                    <div class="facility-details">
-                        <div class="detail-row">
-                            <span class="detail-label">लांबी:</span>
-                            <span class="detail-value">१२ किमी</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">रुंदी:</span>
-                            <span class="detail-value">८ मीटर</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">बस सेवा:</span>
-                            <span class="detail-value">३० मिनिटांतून</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">दुरुस्ती:</span>
-                            <span class="detail-value">सद्यस्थितीत चांगली</span>
-                        </div>
-                    </div>
-                    <!-- <div class="facility-actions">
-                        <a href="#" class="action-btn primary"><i class="fas fa-tools"></i> दुरुस्ती</a>
-                        <a href="#" class="action-btn secondary"><i class="fas fa-bus"></i> बस वेळा</a>
-                    </div> -->
                 </div>
 
-                <!-- आंगणवाडी -->
                 <div class="facility-card">
-                    <div class="facility-header">
-                        <div class="facility-icon">
-                            <i class="fas fa-baby"></i>
-                        </div>
-                        <div>
-                            <h3 class="facility-title">आंगणवाडी केंद्र</h3>
-                            <p class="facility-location">
-                                <i class="fas fa-map-marker-alt"></i> वार्ड क्रमांक ३
-                            </p>
+                    <div class="facility-image">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="दवाखाना">
+                    </div>
+                    <div class="facility-content">
+                        <h3>खाजगी दवाखाने</h3>
+                        <p>गावातील खाजगी वैद्यकीय सुविधा</p>
+                        <div class="facility-details">
+                            <div class="detail-item">
+                                <span class="detail-label">दवाखाने:</span>
+                                <span class="detail-value">२</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">वैद्यक:</span>
+                                <span class="detail-value">३</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">ऍम्ब्युलन्स:</span>
+                                <span class="detail-value">होय</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="facility-description">
-                        <p>६ महिने ते ६ वर्षे वयोगटातील मुलांसाठी पोषण आहार आणि पूर्व प्राथमिक शिक्षण.</p>
-                    </div>
-                    <div class="facility-details">
-                        <div class="detail-row">
-                            <span class="detail-label">सेविका:</span>
-                            <span class="detail-value">श्रीमती. मीनाक्षी देशमुख</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">मुलांची संख्या:</span>
-                            <span class="detail-value">३५</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">वेळ:</span>
-                            <span class="detail-value">सकाळी ९ - दुपारी १</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">संपर्क:</span>
-                            <span class="detail-value">९८७६५४३२०२</span>
-                        </div>
-                    </div>
-                    <!-- <div class="facility-actions">
-                        <a href="#" class="action-btn primary"><i class="fas fa-phone"></i> संपर्क</a>
-                        <a href="#" class="action-btn secondary"><i class="fas fa-child"></i> नोंदणी</a>
-                    </div> -->
-                </div>
-
-                <!-- ग्रामीण पार्क -->
-                <div class="facility-card">
-                    <div class="facility-header">
-                        <div class="facility-icon">
-                            <i class="fas fa-park"></i>
-                        </div>
-                        <div>
-                            <h3 class="facility-title">ग्रामीण उद्यान</h3>
-                            <p class="facility-location">
-                                <i class="fas fa-map-marker-alt"></i> ग्रामपंचायत कार्यालय समोर
-                            </p>
-                        </div>
-                    </div>
-                    <div class="facility-description">
-                        <p>२ एकर क्षेत्रफळाचे सुंदर उद्यान. सकाळ-संध्याकाळ फिरण्यासाठी, मुलांच्या खेळण्यासाठी आदर्श.</p>
-                    </div>
-                    <div class="facility-details">
-                        <div class="detail-row">
-                            <span class="detail-label">क्षेत्रफळ:</span>
-                            <span class="detail-value">२ एकर</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">खेळणी:</span>
-                            <span class="detail-value">१० प्रकार</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">वेळ:</span>
-                            <span class="detail-value">सकाळी ५ - रात्री ९</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">प्रकाश:</span>
-                            <span class="detail-value">LED लाईट</span>
-                        </div>
-                    </div>
-                    <!-- <div class="facility-actions">
-                        <a href="#" class="action-btn primary"><i class="fas fa-tree"></i> माहिती</a>
-                        <a href="#" class="action-btn secondary"><i class="fas fa-camera"></i> फोटो</a>
-                    </div> -->
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Statistics Section -->
-    <section class="statistics">
+    <section class="stats-section">
         <div class="container">
             <div class="section-title">
-                <h2>सुविधा आकडेवारी</h2>
-                <p>ग्रामपंचायतीतील सुविधांची संपूर्ण माहिती</p>
+                <h2 style="color: white;">सुविधा आकडेवारी</h2>
+                <p style="color: #ddd;">वाघोडा गावातील मूलभूत सुविधांची संख्याशास्त्रीय माहिती</p>
             </div>
-
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">१२</div>
-                    <div class="stat-label">एकूण सुविधा</div>
+                    <div class="stat-number">२</div>
+                    <div class="stat-text">शैक्षणिक संस्था</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">५</div>
-                    <div class="stat-label">शैक्षणिक सुविधा</div>
+                    <div class="stat-number">१००%</div>
+                    <div class="stat-text">विद्युत पुरवठा</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">३</div>
-                    <div class="stat-label">आरोग्य केंद्रे</div>
+                    <div class="stat-text">आरोग्य केंद्रे</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">८</div>
-                    <div class="stat-label">पाणी स्रोत</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">१५</div>
-                    <div class="stat-label">वीज स्तंभ</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">६</div>
-                    <div class="stat-label">रस्ते किमी</div>
+                    <div class="stat-number">२४ तास</div>
+                    <div class="stat-text">पिण्याचे पाणी</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Map Section -->
-    <section class="map-section">
+    <!-- Other Facilities -->
+    <section id="other">
         <div class="container">
             <div class="section-title">
-                <h2>सुविधा नकाशा</h2>
-                <p>गावातील सर्व सुविधांचे स्थान नकाशावर</p>
+                <h2>इतर सुविधा</h2>
+                <p>संचार, वाहतूक आणि सार्वजनिक सुविधा</p>
             </div>
-
-            <div class="map-container">
-                <div class="map-placeholder">
-                    <i class="fas fa-map-marked-alt" style="font-size: 48px; margin-right: 15px;"></i>
-                    <span>सावंगी देवळी ग्रामपंचायत सुविधा नकाशा</span>
+            <div class="facilities-grid">
+                <div class="facility-card">
+                    <div class="facility-image">
+                        <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="वीज पुरवठा">
+                    </div>
+                    <div class="facility-content">
+                        <h3>वीज पुरवठा</h3>
+                        <p>२४ तास अखंड वीज पुरवठा, सौर ऊर्जा प्रकल्प</p>
+                        <div class="facility-details">
+                            <div class="detail-item">
+                                <span class="detail-label">कनेक्शन:</span>
+                                <span class="detail-value">१००%</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">सोलर स्ट्रीट लाइट:</span>
+                                <span class="detail-value">२०+</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <p style="color: var(--text-light); margin-bottom: 20px;">
-                    नकाशावर क्लिक करून प्रत्येक सुविधेचे अचूक स्थान पहा
-                </p>
-                <a href="#" class="btn"><i class="fas fa-map"></i> नकाशा पहा</a>
+
+                <div class="facility-card">
+                    <div class="facility-image">
+                        <img src="https://images.unsplash.com/photo-1548506584-11ebd42e6c67?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="पाणी पुरवठा">
+                    </div>
+                    <div class="facility-content">
+                        <h3>पाणी पुरवठा</h3>
+                        <p>पिण्याच्या पाण्याची नियमित पुरवठा योजना</p>
+                        <div class="facility-details">
+                            <div class="detail-item">
+                                <span class="detail-label">नळ कनेक्शन:</span>
+                                <span class="detail-value">१००%</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">पाणी टाक्या:</span>
+                                <span class="detail-value">३</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">हातपंप:</span>
+                                <span class="detail-value">१०</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="facility-card">
+                    <div class="facility-image">
+                        <img src="https://images.unsplash.com/photo-1559131397-f94da358a3d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="संचार सुविधा">
+                    </div>
+                    <div class="facility-content">
+                        <h3>संचार सुविधा</h3>
+                        <p>मोबाईल नेटवर्क, इंटरनेट आणि डाक सेवा</p>
+                        <div class="facility-details">
+                            <div class="detail-item">
+                                <span class="detail-label">मोबाईल नेटवर्क:</span>
+                                <span class="detail-value">४G</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">डाक सेवा:</span>
+                                <span class="detail-value">होय</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Wi-Fi केंद्र:</span>
+                                <span class="detail-value">शाळा</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1147,26 +947,19 @@
                 <div class="footer-column">
                     <h3>झटपट दुवे</h3>
                     <ul class="footer-links">
-                        <li><a href="team.html"><i class="fas fa-chevron-right"></i> ग्रामपंचायत सदस्य</a></li>
-                        <li><a href="schools.html"><i class="fas fa-chevron-right"></i> शाळा व अंगणवाडी</a></li>
-                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> विकास प्रकल्प</a></li>
-                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> फोटो गॅलरी</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> आपत्कालीन संपर्क</a></li>
+                        <li><a href="team.html"><i class="fas fa-chevron-right"></i> पंचायत मंडळ</a></li>
+                        <li><a href="#education"><i class="fas fa-chevron-right"></i> शैक्षणिक संस्था</a></li>
+                        <li><a href="#healthcare"><i class="fas fa-chevron-right"></i> आरोग्य केंद्रे</a></li>
+                        <li><a href="#other"><i class="fas fa-chevron-right"></i> इतर सुविधा</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>संपर्क माहिती</h3>
                     <div class="contact-details">
-                        <p><i class="fas fa-map-marker-alt"></i> सावंगी देवळी, महाराष्ट्र</p>
+                        <p><i class="fas fa-map-marker-alt"></i> वाघोडा, सावनेर, नागपूर, महाराष्ट्र</p>
                         <p><i class="fas fa-phone"></i> आपत्कालीन: १०८</p>
-                        <p><i class="fas fa-envelope"></i> sawangidevali@gmail.com</p>
+                        <p><i class="fas fa-envelope"></i> waghodapanchayat@gmail.com</p>
                         <p><i class="fas fa-clock"></i> कार्यालयीन वेळ: सकाळी 10 ते दुपारी 6</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -1175,21 +968,13 @@
                         <li><a href="#"><i class="fas fa-phone"></i> पोलीस स्टेशन: १००</a></li>
                         <li><a href="#"><i class="fas fa-ambulance"></i> एम्ब्युलन्स: १०८</a></li>
                         <li><a href="#"><i class="fas fa-fire-extinguisher"></i> फायर ब्रिगेड: १०१</a></li>
-                        <li><a href="#"><i class="fas fa-hospital"></i> ग्रामीण रुग्णालय</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>डाउनलोड</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> ग्रामसभा नोंदी (PDF)</a></li>
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> वार्षिक आर्थिक अहवाल</a></li>
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> कर विवरण</a></li>
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> विकास आराखडा (DP)</a></li>
+                        <li><a href="#"><i class="fas fa-hospital"></i> सावनेर रुग्णालय</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 सावंगी देवळी ग्रामपंचायत. सर्व हक्क राखीव.</p>
+                <p>&copy; २०२५ वाघोडा ग्रामपंचायत. सर्व हक्क राखीव.</p>
+                <p style="margin-top: 10px; font-size: 12px;">विदर्भ प्रदेश, महाराष्ट्र राज्य, भारत</p>
             </div>
         </div>
     </footer>

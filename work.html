@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>कामांची माहिती - सावंगी देवळी ग्रामपंचायत</title>
+    <title>कामांची माहिती - वाघोडा ग्रामपंचायत</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&display=swap"
         rel="stylesheet">
     <style>
         :root {
-            --primary: #2E7D32;
-            --secondary: #FF9800;
-            --accent: #2196F3;
-            --light: #F1F8E9;
-            --dark: #1B5E20;
-            --text: #212121;
-            --text-light: #757575;
+            --primary: #8B4513;
+            --secondary: #D2691E;
+            --accent: #CD853F;
+            --light: #FAEBD7;
+            --dark: #654321;
+            --text: #2F4F4F;
+            --text-light: #696969;
             --white: #ffffff;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --gradient: linear-gradient(135deg, var(--primary), var(--dark));
@@ -108,13 +108,14 @@
             box-shadow: var(--shadow);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 15px;
         }
 
         .nav-links {
@@ -173,72 +174,49 @@
             display: none;
             font-size: 24px;
             cursor: pointer;
+            color: var(--text);
         }
 
-        /* Hero Section */
-        .hero {
+        /* Page Hero */
+        .page-hero {
             background: var(--gradient);
             color: var(--white);
-            padding: 80px 0;
             text-align: center;
+            padding: 100px 20px;
             position: relative;
-            overflow: hidden;
         }
 
-        .hero::before {
+        .page-hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.2;
+            background: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.15;
             z-index: 0;
         }
 
-        .hero-content {
+        .page-hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 1;
         }
 
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero p {
+        .page-hero p {
             font-size: 18px;
             max-width: 700px;
             margin: 0 auto 30px;
             opacity: 0.9;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--secondary);
-            color: var(--white);
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .btn:hover {
-            background-color: #F57C00;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
         }
 
         /* Work Section */
-        .work-content {
+        .work-section {
             padding: 80px 0;
             background-color: var(--white);
         }
@@ -267,156 +245,55 @@
             transform: translateX(-50%);
         }
 
-        .section-title p {
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
+        /* Status Tabs */
+        .status-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
         }
 
-        /* Work Status Cards */
-        .work-status {
+        .status-tab {
+            padding: 12px 30px;
+            background: var(--light);
+            border: none;
+            border-radius: 30px;
+            color: var(--text);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-tab:hover,
+        .status-tab.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Work Projects Grid */
+        .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
             margin-bottom: 50px;
         }
 
-        .status-card {
-            background: var(--light);
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            border-left: 4px solid var(--primary);
-        }
-
-        .status-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .status-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: var(--primary);
-            font-size: 28px;
-            border: 3px solid var(--primary);
-        }
-
-        .status-number {
-            font-size: 42px;
-            font-weight: bold;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .status-label {
-            font-size: 18px;
-            color: var(--text);
-            font-weight: 600;
-        }
-
-        /* Work Progress */
-        .work-progress {
-            background: var(--light);
-            padding: 50px;
-            border-radius: 15px;
-            margin-bottom: 50px;
-        }
-
-        .progress-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .progress-header h3 {
-            color: var(--primary);
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .progress-bars {
-            display: grid;
-            gap: 25px;
-        }
-
-        .progress-item {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-
-        .progress-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .progress-title {
-            font-size: 18px;
-            color: var(--primary);
-            font-weight: 600;
-        }
-
-        .progress-percentage {
-            font-size: 16px;
-            color: var(--text);
-            font-weight: 600;
-        }
-
-        .progress-bar {
-            height: 12px;
-            background: #e0e0e0;
-            border-radius: 6px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: var(--gradient);
-            border-radius: 6px;
-            transition: width 0.3s ease;
-        }
-
-        .progress-details {
-            margin-top: 15px;
-            display: flex;
-            justify-content: space-between;
-            color: var(--text-light);
-            font-size: 14px;
-        }
-
-        /* Ongoing Projects */
-        .ongoing-projects {
-            margin-bottom: 50px;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-        }
-
         .project-card {
-            background: white;
+            background: var(--white);
             border-radius: 15px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
+            border: 2px solid var(--light);
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
 
         .project-image {
@@ -428,7 +305,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            transition: transform 0.5s ease;
         }
 
         .project-card:hover .project-image img {
@@ -439,183 +316,196 @@
             padding: 25px;
         }
 
-        .project-title {
-            font-size: 20px;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .project-category {
+        .project-status {
             display: inline-block;
-            background: var(--light);
-            color: var(--primary);
-            padding: 4px 12px;
-            border-radius: 15px;
+            padding: 5px 15px;
+            border-radius: 20px;
             font-size: 12px;
             font-weight: 600;
             margin-bottom: 15px;
         }
 
-        .project-description {
-            color: var(--text);
-            margin-bottom: 20px;
-            line-height: 1.6;
+        .status-completed {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-ongoing {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-planned {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .project-content h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 20px;
         }
 
         .project-details {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
             margin-bottom: 20px;
         }
 
         .detail-item {
             display: flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--text-light);
-            font-size: 14px;
+            margin-bottom: 8px;
         }
 
-        .detail-item i {
-            color: var(--primary);
-        }
-
-        .project-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .action-btn {
-            padding: 8px 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .action-btn.primary {
-            background: var(--primary);
-            color: white;
-        }
-
-        .action-btn.secondary {
-            background: var(--accent);
-            color: white;
-        }
-
-        .action-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Completed Projects */
-        .completed-projects {
-            background: var(--light);
-            padding: 60px 0;
-        }
-
-        .completed-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .completed-card {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            border-top: 4px solid var(--secondary);
-        }
-
-        .completed-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .completed-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .completed-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--secondary);
-            font-size: 20px;
-        }
-
-        .completed-title {
-            font-size: 18px;
-            color: var(--primary);
+        .detail-label {
             font-weight: 600;
-        }
-
-        .completed-details {
+            min-width: 120px;
             color: var(--text);
-            margin-bottom: 15px;
-            line-height: 1.6;
         }
 
-        .completed-meta {
+        .progress-container {
+            margin-top: 20px;
+        }
+
+        .progress-info {
             display: flex;
             justify-content: space-between;
-            color: var(--text-light);
-            font-size: 14px;
-            border-top: 1px solid #e0e0e0;
-            padding-top: 15px;
+            margin-bottom: 8px;
         }
 
-        /* Statistics */
-        .statistics {
-            padding: 60px 0;
-            background: white;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 30px 20px;
+        .progress-bar {
+            height: 10px;
             background: var(--light);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--secondary);
+            border-radius: 5px;
+            transition: width 0.3s ease;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            background-color: var(--light);
+            padding: 80px 0;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+            width: 50%;
+            padding-right: 40px;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 50%;
+            padding-left: 40px;
+            padding-right: 0;
+        }
+
+        .timeline-date {
+            position: absolute;
+            right: -100px;
+            top: 0;
+            background: var(--primary);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-date {
+            right: auto;
+            left: -100px;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 25px;
             border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
             box-shadow: var(--shadow);
+            position: relative;
         }
 
-        .stat-number {
-            font-size: 42px;
-            font-weight: bold;
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--white);
+            transform: rotate(45deg);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            right: auto;
+            left: -10px;
+        }
+
+        .timeline-content h4 {
             color: var(--primary);
             margin-bottom: 10px;
         }
 
-        .stat-label {
-            color: var(--text);
-            font-size: 16px;
-            font-weight: 600;
+        /* Budget Section */
+        .budget-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .budget-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .budget-card {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .budget-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary);
+            font-size: 28px;
+        }
+
+        .budget-amount {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 10px 0;
         }
 
         /* Footer */
@@ -720,6 +610,37 @@
         }
 
         /* Responsive Design */
+        @media (max-width: 992px) {
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+
+            .timeline-item:nth-child(even) {
+                margin-left: 0;
+                padding-left: 70px;
+            }
+
+            .timeline-date {
+                right: auto;
+                left: 10px;
+            }
+
+            .timeline-item:nth-child(even) .timeline-date {
+                left: 10px;
+            }
+
+            .timeline-content::before {
+                right: auto;
+                left: -10px;
+            }
+        }
+
         @media (max-width: 768px) {
             .top-bar {
                 flex-direction: column;
@@ -749,34 +670,60 @@
 
             .mobile-menu {
                 display: block;
+                margin-left: auto;
             }
 
-            .hero h1 {
+            .page-hero h1 {
                 font-size: 32px;
             }
 
-            .hero p {
+            .page-hero p {
                 font-size: 16px;
-            }
-
-            .work-status {
-                grid-template-columns: 1fr;
             }
 
             .projects-grid {
                 grid-template-columns: 1fr;
             }
 
-            .project-details {
+            .status-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .status-tab {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-hero h1 {
+                font-size: 28px;
+            }
+
+            .section-title h2 {
+                font-size: 26px;
+            }
+
+            .budget-cards {
                 grid-template-columns: 1fr;
             }
 
-            .project-actions {
-                flex-direction: column;
+            .footer-content {
+                grid-template-columns: 1fr;
             }
 
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .logo-text h1 {
+                font-size: 20px;
+            }
+
+            .logo-text p {
+                font-size: 12px;
+            }
+
+            .contact-item {
+                font-size: 12px;
             }
         }
     </style>
@@ -789,11 +736,11 @@
             <div class="top-bar">
                 <div class="logo">
                     <div class="logo-img">
-                        <i class="fas fa-landmark"></i>
+                        <i class="fas fa-village"></i>
                     </div>
                     <div class="logo-text">
-                        <h1>सावंगी देवळी ग्रामपंचायत</h1>
-                        <p>विकास आणि प्रगतीचे प्रतीक</p>
+                        <h1>वाघोडा ग्रामपंचायत</h1>
+                        <p>नागपूर, सावनेर, महाराष्ट्र</p>
                     </div>
                 </div>
                 <div class="contact-info">
@@ -803,16 +750,17 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>sawangidevali@gmail.com</span>
+                        <span>waghodapanchayat@gmail.com</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>सावंगी देवळी, महाराष्ट्र</span>
+                        <span>वाघोडा, सावनेर</span>
                     </div>
                 </div>
             </div>
         </div>
     </header>
+
     <!-- Navigation -->
     <nav>
         <div class="container nav-container">
@@ -821,21 +769,22 @@
                 <li class="dropdown">
                     <a href="#">आमच्याबद्दल <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="about.html">परिचय</a>
+                        <a href="about.html">गावाचा इतिहास</a>
                         <a href="team.html">पंचायत मंडळ</a>
+                        <a href="demographics.html">लोकसंख्या</a>
                     </div>
                 </li>
-                <!-- <li><a href="announcements.html">सूचना</a></li> -->
                 <li class="dropdown">
                     <a href="#">सेवा <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
                         <a href="service.html">नागरिक सेवा</a>
-                        <a href="facilities.html">स्थानीय सुविधा</a>
+                        <a href="facilities.html">पायाभूत सुविधा</a>
                         <a href="rti.html">माहिती अधिकार</a>
                         <a href="govt-schemes.html">शासकीय योजना</a>
                     </div>
                 </li>
                 <li><a href="gallery.html">गॅलरी</a></li>
+                <li><a href="weather.html">हवामान</a></li>
                 <li><a href="contact.html">संपर्क</a></li>
                 <li class="dropdown">
                     <a href="#" class="active">अधिक <i class="fas fa-chevron-down"></i></a>
@@ -851,329 +800,332 @@
             </div>
         </div>
     </nav>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
             <h1>कामांची माहिती</h1>
-            <p>ग्रामपंचायतीने केलेल्या विविध कामांची तपशीलवार माहिती</p>
+            <p>वाघोडा ग्रामपंचायतीतर्फे चालू असलेली व पूर्ण झालेली विकास कामे</p>
         </div>
     </section>
-    <!-- Work Content Section -->
-    <section class="work-content">
+
+    <!-- Work Projects Section -->
+    <section class="work-section">
         <div class="container">
             <div class="section-title">
-                <h2>आमची कामे</h2>
-                <p>ग्रामपंचायतीतर्फे राबविण्यात येणाऱ्या सर्व विकास कामांची माहिती</p>
+                <h2>विकास प्रकल्प</h2>
+                <p>वाघोडा गावातील विकास कामांची तपशीलवार माहिती</p>
             </div>
-            <!-- Work Status -->
-            <div class="work-status">
-                <div class="status-card">
-                    <div class="status-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <div class="status-number">१२</div>
-                    <div class="status-label">सुरू असलेली कामे</div>
-                </div>
-                <div class="status-card">
-                    <div class="status-icon">
-                        <i class="fas fa-check-circle"></i>
-                    </div>
-                    <div class="status-number">२५</div>
-                    <div class="status-label">पूर्ण झालेली कामे</div>
-                </div>
-                <div class="status-card">
-                    <div class="status-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div class="status-number">८</div>
-                    <div class="status-label">योजनाबद्ध कामे</div>
-                </div>
-                <div class="status-card">
-                    <div class="status-icon">
-                        <i class="fas fa-rupee-sign"></i>
-                    </div>
-                    <div class="status-number">₹८५ लाख</div>
-                    <div class="status-label">एकूण खर्च</div>
-                </div>
+
+            <!-- Status Tabs -->
+            <div class="status-tabs">
+                <button class="status-tab active" data-status="all">
+                    <i class="fas fa-layer-group"></i> सर्व कामे
+                </button>
+                <button class="status-tab" data-status="ongoing">
+                    <i class="fas fa-spinner"></i> चालू कामे
+                </button>
+                <button class="status-tab" data-status="completed">
+                    <i class="fas fa-check-circle"></i> पूर्ण कामे
+                </button>
+                <button class="status-tab" data-status="planned">
+                    <i class="fas fa-calendar-alt"></i> प्रस्तावित कामे
+                </button>
             </div>
-            <!-- Work Progress -->
-            <div class="work-progress">
-                <div class="progress-header">
-                    <h3>कामांची प्रगती</h3>
-                    <p>विविध प्रकल्पांची सद्य स्थिती</p>
-                </div>
-                <div class="progress-bars">
-                    <div class="progress-item">
-                        <div class="progress-info">
-                            <div class="progress-title">मुख्य रस्ते दुरुस्ती</div>
-                            <div class="progress-percentage">९५%</div>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 95%"></div>
-                        </div>
-                        <div class="progress-details">
-                            <span>सुरूवात: १५ जानेवारी २०२३</span>
-                            <span>अंदाजे पूर्ण: ३१ डिसेंबर २०२३</span>
-                        </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-status="completed">
+                    <div class="project-image">
+                        <img src="./image/G26.jpg" alt="बालवाडी उद्यान">
                     </div>
-                    <div class="progress-item">
-                        <div class="progress-info">
-                            <div class="progress-title">पाणीपुरवठा योजना</div>
-                            <div class="progress-percentage">८५%</div>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 85%"></div>
-                        </div>
-                        <div class="progress-details">
-                            <span>सुरूवात: १ मार्च २०२३</span>
-                            <span>अंदाजे पूर्ण: २८ फेब्रुवारी २०२४</span>
-                        </div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-info">
-                            <div class="progress-title">स्ट्रीट लाईट प्रकल्प</div>
-                            <div class="progress-percentage">७०%</div>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 70%"></div>
-                        </div>
-                        <div class="progress-details">
-                            <span>सुरूवात: १ एप्रिल २०२३</span>
-                            <span>अंदाजे पूर्ण: ३१ मार्च २०२४</span>
-                        </div>
-                    </div>
-                    <div class="progress-item">
-                        <div class="progress-info: १५ मे २०२३</span>
-                            <span>अंदाजे पूर्ण: ३० एप्रिल २०२४</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Ongoing Projects -->
-            <div class=" ongoing-projects">
-                            <div class="section-title">
-                                <h2>सुरू असलेली कामे</h2>
-                                <p>सध्या चालू असलेले विकास प्रकल्प</p>
+                    <div class="project-content">
+                        <span class="project-status status-completed">पूर्ण</span>
+                        <h3>बालवाडी उद्यान निर्मिती</h3>
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <span class="detail-label">काम क्रमांक:</span>
+                                <span>WAG/2024/001</span>
                             </div>
-                            <div class="projects-grid">
-                                <!-- रस्ते दुरुस्ती -->
-                                <div class="project-card">
-                                    <div class="project-image">
-                                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-                                            alt="रस्ते दुरुस्ती">
-                                    </div>
-                                    <div class="project-content">
-                                        <h3 class="project-title">मुख्य रस्ते दुरुस्ती</h3>
-                                        <span class="project-category">पायाभूत सुविधा</span>
-                                        <p class="project-description">
-                                            गावातील मुख्य रस्त्याची काँक्रीटीकरण कामे. एकूण २.५ किमी लांबीचा रस्ता
-                                            दुरुस्ती करण्यात येत आहे.
-                                        </p>
-                                        <div class="project-details">
-                                            <div class="detail-item">
-                                                <i class="fas fa-calendar"></i>
-                                                <span १५ जानेवारी २०२३</span>
-                                            </div>
-                                            <div class="detail-item">
-                                                <i class="fas fa-rupee-sign"></i>
-                                                <span>₹२५ लाख</span>
-                                            </div>
-                                            <div class="detail-item">
-                                                <i class="fas fa-hard-hat"></i>
-                                                <span>एबीसी कॉन्ट्रॅक्टर्स</span>
-                                            </div>
-                                            <div class="detail-item">
-                                                <i class="fas fa-percentage"></i>
-                                                <span>९५% पूर्ण</span>
-                                            </div>
-                                        </div>
-                                        <div class="project-actions">
-                                            <a href="#" class="action-btn primary"><i class="fas fa-eye"></i> तपशील
-                                                पहा</a>
-                                            <a href="#" class="action-btn secondary"><i class="fas fa-download"></i>
-                                                अहवाल</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- पाणीपुरवठा -->
-                                <div class="project-card">
-                                    <div class="project-image">
-                                        <img src="https://images.unsplash.com/photo-1549056572-75914d6d7e1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-                                            alt="पाणीपुरवठा">
-                                    </div>
-                                    <div class="project-content">
-                                        <h3 class="project-title">पाणीपुरवठा योजना</h3>
-                                        <span class="project-category">पाणी सुविधा</span>
-                                        <p class="project-description">
-                                            नवीन पाणी टाकी बांधकाम आणि पाईपलाईन जाळे विस्तार. ५ लाख लिटर क्षमतेची टाकी.
-                                        </p>
-                                        <div class="project-details">
-                                            <div class="detail-item">
-                                                <i class="fas fa-calendar"></i>
-                                                <span>१ मार्च २०२३</span>
-                                            </div>
-                                            <div class="detail-item">
-                                                <i class="fas fa-rupee-sign"></i>
-                                                <span>₹३५ लाख</span>
-                                            </div>
-                                            <div class="detail-item">
-                                                <i class="fas fa-hard-hat"></i>
-                                                <span>एक्सवायझेड इंजिनिअर्स</span>
-                                            </div>
-                                            <div class="detail-item">
-                                                <i class="fas fa-percentage"></i>
-                                                <span>८५% पूर्ण</span>
-                                            </div>
-                                        </div>
-                                        <!-- <div class="project-actions">
-                                            <a href="#" class="action-btn primary"><i class="fas fa-eye"></i> तपशील
-                                                पहा</a>
-                                            <a href="#" class="action-btn secondary"><i class="fas fa-download"></i>
-                                                अहवाल</a>
-                                        </div> -->
-                                    </div>
-                                </div>
-                                <!-- स्ट्रीट लाईट -->
-                                <div class="project-card">
-                                    <div class="project-image">
-                                        <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
-                                            alt="स्ट्रीट लाईट">
-                                    </div>
-                                    <div class="project-content">
-                                        <h3 class="project-title">LED स्ट्रीट लाईट प्रकल्प</h3>
-                                        <span class="project-category">विद्युत सुविधा</span>
-                                        <p class="project-description">
-                                            गावातील सर्व जुन्या स्ट्रीट लाईट्सची जागा नवीन LED लाईट्सने घेण्याचा
-                                            प्रकल्प.
-                                        </p>
-                                        <div class="project-details">
-                                            <div class="detail-item">
-                                                <i class="fas fa-calendar"></i>
-                                                <span>१ एप्रिल २०२३</span>
-                                            </div>
-                                            <div class="detail-item">
-                                                <i class="fas fa-rupee-sign"></i>
-                                                <span>₹१५ लाख</span>
-                                            </div>
-                                            <div class="detail-item">
-                                                <i class="fas fa-hard-hat"></i>
-                                                <span>पीक्यूआर इलेक्ट्रिकल</span>
-                                            </div>
-                                            <div class="detail-item">
-                                                <i class="fas fa-percentage"></i>
-                                                <span>७०% पूर्ण</span>
-                                            </div>
-                                        </div>
-                                        <div class="project-actions">
-                                            <a href="#" class="action-btn primary"><i class="fas fa-eye"></i> तपशील
-                                                पहा</a>
-                                            <a href="#" class="action-btn secondary"><i class="fas fa-download"></i>
-                                                अहवाल</a>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="detail-item">
+                                <span class="detail-label">खर्च:</span>
+                                <span>₹२,५०,०००</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">कालावधी:</span>
+                                <span>२ महिने</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">ठेकेदार:</span>
+                                <span>श्री. राजेश बानोटे</span>
+                            </div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-info">
+                                <span>पूर्णता:</span>
+                                <span>१००%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
                             </div>
                         </div>
                     </div>
-    </section>
-    <!-- Completed Projects Section -->
-    <section class="completed-projects">
-        <div class="container">
-            <div class="section-title">
-                <h2>पूर्ण झालेली कामे</h2>
-                <p>यशस्वीरित्या पूर्ण झालेले विकास प्रकल्प</p>
-            </div>
-            <div class="completed-grid">
-                <div class="completed-card">
-                    <div class="completed-header">
-                        <div class="completed-icon">
-                            <i class="fas fa-school"></i>
-                        </div>
-                        <div class="completed-title">शाळा दुरुस्ती व नूतनीकरण</div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card" data-status="ongoing">
+                    <div class="project-image">
+                        <img src="./image/G27.jpg" alt="सामुदायिक भवन">
                     </div>
-                    <p class="completed-details">
-                        गावातील प्राथमिक शाळेच्या इमारतीची संपूर्ण दुरुस्ती, नवीन वर्गखोल्या, शौचालये आणि खेळाचे मैदान
-                        बांधकाम. विद्यार्थ्यांसाठी उत्तम सुविधा उपलब्ध.
-                    </p>
-                    <div class="completed-meta">
-                        <span><i class="fas fa-calendar-check"></i> पूर्ण: १५ डिसेंबर २०२२</span>
-                        <span><i class="fas fa-rupee-sign"></i> खर्च: ₹४५ लाख</span>
+                    <div class="project-content">
+                        <span class="project-status status-ongoing">चालू</span>
+                        <h3>नवीन सामुदायिक भवन</h3>
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <span class="detail-label">काम क्रमांक:</span>
+                                <span>WAG/2024/002</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">खर्च:</span>
+                                <span>₹१५,००,०००</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">कालावधी:</span>
+                                <span>६ महिने</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">ठेकेदार:</span>
+                                <span>M/s. विदर्भ बिल्डर्स</span>
+                            </div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-info">
+                                <span>पूर्णता:</span>
+                                <span>६५%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 65%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="completed-card">
-                    <div class="completed-header">
-                        <div class="completed-icon">
-                            <i class="fas fa-clinic-medical"></i>
-                        </div>
-                        <div class="completed-title">आरोग्य केंद्र सुसज्जता</div>
+
+                <!-- Project 3 -->
+                <div class="project-card" data-status="ongoing">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="रस्ता दुरुस्ती">
                     </div>
-                    <p class="completed-details">
-                        ग्रामपंचायत आरोग्य केंद्रात नवीन उपकरणे, बेड्स, औषध साठा आणि वैद्यकीय कर्मचाऱ्यांसाठी प्रशिक्षण
-                        सुविधा उपलब्ध करून देणे.
-                    </p>
-                    <div class="completed-meta">
-                        <span><i class="fas fa-calendar-check"></i> पूर्ण: ३० नोव्हेंबर २०२२</span>
-                        <span><i class="fas fa-rupee-sign"></i> खर्च: ₹२२ लाख</span>
+                    <div class="project-content">
+                        <span class="project-status status-ongoing">चालू</span>
+                        <h3>ग्रामीण रस्ते दुरुस्ती</h3>
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <span class="detail-label">काम क्रमांक:</span>
+                                <span>WAG/2024/003</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">खर्च:</span>
+                                <span>₹८,००,०००</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">कालावधी:</span>
+                                <span>३ महिने</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">ठेकेदार:</span>
+                                <span>श्री. संजय पाटील</span>
+                            </div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-info">
+                                <span>पूर्णता:</span>
+                                <span>४०%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 40%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="completed-card">
-                    <div class="completed-header">
-                        <div class="completed-icon">
-                            <i class="fas fa-tree"></i>
-                        </div>
-                        <div class="completed-title">वृक्षारोपण मोहीम</div>
+
+                <!-- Project 4 -->
+                <div class="project-card" data-status="planned">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1500917832468-298fa6292e2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="सोलर स्ट्रीट लाइट">
                     </div>
-                    <p class="completed-details">
-                        गावात ५,००० हून अधिक झाडे लावली आणि त्यांची देखभाल व्यवस्था उभी केली. पर्यावरण संवर्धनासाठी
-                        जनजागृती कार्यक्रम आयोजित.
-                    </p>
-                    <div class="completed-meta">
-                        <span><i class="fas fa-calendar-check"></i> पूर्ण: ५ ऑगस्ट २०२२</span>
-                        <span><i class="fas fa-rupee-sign"></i> खर्च: ₹८ लाख</span>
+                    <div class="project-content">
+                        <span class="project-status status-planned">प्रस्तावित</span>
+                        <h3>सोलर स्ट्रीट लाइट</h3>
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <span class="detail-label">काम क्रमांक:</span>
+                                <span>WAG/2024/004</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">खर्च:</span>
+                                <span>₹५,००,०००</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">कालावधी:</span>
+                                <span>२ महिने</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">ठेकेदार:</span>
+                                <span>प्रस्तावित</span>
+                            </div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-info">
+                                <span>पूर्णता:</span>
+                                <span>०%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="completed-card">
-                    <div class="completed-header">
-                        <div class="completed-icon">
-                            <i class="fas fa-trash-alt"></i>
-                        </div>
-                        <div class="completed-title">कचरा व्यवस्थापन प्रणाली</div>
+
+                <!-- Project 5 -->
+                <div class="project-card" data-status="completed">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="पाणी टाकी">
                     </div>
-                    <p class="completed-details">
-                        घरगुती कचरा संकलन, वर्गीकरण आणि पुनर्वापर केंद्र स्थापना. गाव स्वच्छता मोहिमेत १००% सहभाग.
-                    </p>
-                    <div class="completed-meta">
-                        <span><i class="fas fa-calendar-check"></i> पूर्ण: २० सप्टेंबर २०२२</span>
-                        <span><i class="fas fa-rupee-sign"></i> खर्च: ₹१८ लाख</span>
+                    <div class="project-content">
+                        <span class="project-status status-completed">पूर्ण</span>
+                        <h3>पाणी टाकी निर्मिती</h3>
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <span class="detail-label">काम क्रमांक:</span>
+                                <span>WAG/2023/005</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">खर्च:</span>
+                                <span>₹३,५०,०००</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">कालावधी:</span>
+                                <span>४५ दिवस</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">ठेकेदार:</span>
+                                <span>श्री. विजय कुंभारे</span>
+                            </div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-info">
+                                <span>पूर्णता:</span>
+                                <span>१००%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Statistics Section -->
-    <section class="statistics">
+    <!-- Timeline Section -->
+    <section class="timeline-section">
         <div class="container">
             <div class="section-title">
-                <h2>आमचे यश</h2>
-                <p>ग्रामपंचायतीच्या विकास कामांचे संक्षिप्त आकडेवारी</p>
+                <h2>विकास कालमाप</h2>
+                <p>वाघोडा गावाच्या विकासाची कालरेषा</p>
             </div>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">४५+</div>
-                    <div class="stat-label">पूर्ण प्रकल्प</div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">जानेवारी २०२४</div>
+                    <div class="timeline-content">
+                        <h4>बालवाडी उद्यान पूर्ण</h4>
+                        <p>बालवाडीसाठी नवीन उद्यानाचे काम पूर्ण. खेळणी, बाका आणि हिरवळीचे क्षेत्र तयार.</p>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">₹१.५ कोटी</div>
-                    <div class="stat-label">एकूण गुंतवणूक</div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">मार्च २०२४</div>
+                    <div class="timeline-content">
+                        <h4>सामुदायिक भवन सुरू</h4>
+                        <p>नवीन सामुदायिक भवनाचे बांधकाम सुरू. एकूण २००० चौरस फुट क्षेत्र.</p>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">९५%</div>
-                    <div class="stat-label">नागरिक समाधान</div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">जून २०२४</div>
+                    <div class="timeline-content">
+                        <h4>रस्ता दुरुस्ती सुरू</h4>
+                        <p>२ किमी लांबीच्या ग्रामीण रस्त्याची दुरुस्ती सुरू. CC रोड तयार करणे.</p>
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">१२</div>
-                    <div class="stat-label">चालू प्रकल्प</div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">सप्टेंबर २०२४</div>
+                    <div class="timeline-content">
+                        <h4>पाणी टाकी पूर्ण</h4>
+                        <p>१ लाख लिटर क्षमतेची पाणी टाकी पूर्ण. गावातील पाणीपुरवठा सुधारणा.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">डिसेंबर २०२४</div>
+                    <div class="timeline-content">
+                        <h4>सोलर लाईट प्रकल्प प्रस्तावित</h4>
+                        <p>२० सोलर स्ट्रीट लाइट्सचा प्रकल्प मंजूर. तयारी सुरू.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Budget Section -->
+    <section class="budget-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>आर्थिक तपशील</h2>
+                <p>विकास कामांसाठीचे निधी व खर्च</p>
+            </div>
+
+            <div class="budget-cards">
+                <div class="budget-card">
+                    <div class="budget-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h4>एकूण निधी</h4>
+                    <div class="budget-amount">₹३० लाख</div>
+                    <p>२०२४-२५ चे विकास निधी</p>
+                </div>
+
+                <div class="budget-card">
+                    <div class="budget-icon">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                    <h4>वापरलेला निधी</h4>
+                    <div class="budget-amount">₹२१.५ लाख</div>
+                    <p>७१% निधी वापर</p>
+                </div>
+
+                <div class="budget-card">
+                    <div class="budget-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h4>उर्वरित निधी</h4>
+                    <div class="budget-amount">₹८.५ लाख</div>
+                    <p>२९% निधी शिल्लक</p>
+                </div>
+
+                <div class="budget-card">
+                    <div class="budget-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h4>एकूण प्रकल्प</h4>
+                    <div class="budget-amount">१२</div>
+                    <p>५ पूर्ण, ३ चालू, ४ प्रस्तावित</p>
                 </div>
             </div>
         </div>
@@ -1184,30 +1136,21 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>जलद दुवे</h3>
+                    <h3>झटपट दुवे</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-home"></i> मुख्यपृष्ठ</a></li>
-                        <li><a href="about.html"><i class="fas fa-info-circle"></i> आमच्याबद्दल</a></li>
-                        <li><a href="work.html"><i class="fas fa-tools"></i> कामांची माहिती</a></li>
-                        <li><a href="contact.html"><i class="fas fa-phone"></i> संपर्क</a></li>
+                        <li><a href="team.html"><i class="fas fa-chevron-right"></i> पंचायत मंडळ</a></li>
+                        <li><a href="service.html"><i class="fas fa-chevron-right"></i> नागरिक सेवा</a></li>
+                        <li><a href="govt-schemes.html"><i class="fas fa-chevron-right"></i> शासकीय योजना</a></li>
+                        <li><a href="fund.html"><i class="fas fa-chevron-right"></i> आर्थिक माहिती</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>सेवा</h3>
-                    <ul class="footer-links">
-                        <li><a href="service.html"><i class="fas fa-user-check"></i> नागरिक सेवा</a></li>
-                        <li><a href="rti.html"><i class="fas fa-file-alt"></i> माहिती अधिकार</a></li>
-                        <li><a href="govt-schemes.html"><i class="fas fa-gift"></i> शासकीय योजना</a></li>
-                        <li><a href="complaint.html"><i class="fas fa-exclamation-triangle"></i> तक्रार नोंद</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>संपर्क</h3>
+                    <h3>संपर्क माहिती</h3>
                     <div class="contact-details">
-                        <p><i class="fas fa-map-marker-alt"></i> सावंगी देवळी, ता. चंदूर रेल्वे, जि. अमरावती, महाराष्ट्र
-                        </p>
+                        <p><i class="fas fa-map-marker-alt"></i> वाघोडा, सावनेर, नागपूर, महाराष्ट्र</p>
                         <p><i class="fas fa-phone"></i> आपत्कालीन: १०८</p>
-                        <p><i class="fas fa-envelope"></i> sawangidevali@gmail.com</p>
+                        <p><i class="fas fa-envelope"></i> waghodapanchayat@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> कार्यालयीन वेळ: सकाळी 10 ते दुपारी 6</p>
                     </div>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1216,20 +1159,89 @@
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
+                <div class="footer-column">
+                    <h3>काम संपर्क</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-hard-hat"></i> अभियंता: श्री. रोहित शर्मा</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> दूरध्वनी: ९८८१२३४५६७</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> engineer.waghoda@gmail.com</a></li>
+                        <li><a href="#"><i class="fas fa-download"></i> कामाचा अहवाल डाउनलोड</a></li>
+                    </ul>
+                </div>
             </div>
             <div class="copyright">
-                © २०२५ सावंगी देवळी ग्रामपंचायत. सर्व हक्क राखीव.
+                <p>&copy; २०२५ वाघोडा ग्रामपंचायत. सर्व हक्क राखीव.</p>
+                <p style="margin-top: 10px; font-size: 12px;">विदर्भ प्रदेश, महाराष्ट्र राज्य, भारत</p>
             </div>
         </div>
     </footer>
 
-    <!-- Mobile Menu Script -->
     <script>
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function () {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
 
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+        // Project Filter
+        const statusTabs = document.querySelectorAll('.status-tab');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        statusTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                statusTabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                tab.classList.add('active');
+
+                const statusValue = tab.getAttribute('data-status');
+
+                projectCards.forEach(card => {
+                    if (statusValue === 'all' || card.getAttribute('data-status') === statusValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Progress bar animation on scroll
+        function animateProgressBars() {
+            const progressBars = document.querySelectorAll('.progress-fill');
+
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 300);
+            });
+        }
+
+        // Animate progress bars when page loads
+        window.addEventListener('load', animateProgressBars);
+
+        // Animate progress bars when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBar = entry.target.querySelector('.progress-fill');
+                    if (progressBar) {
+                        const width = progressBar.getAttribute('data-width') || progressBar.style.width;
+                        progressBar.style.width = '0%';
+
+                        setTimeout(() => {
+                            progressBar.style.width = width;
+                        }, 300);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // Observe all project cards
+        projectCards.forEach(card => {
+            observer.observe(card);
         });
     </script>
 </body>

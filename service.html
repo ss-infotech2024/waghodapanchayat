@@ -4,19 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>नागरिक सेवा - सावंगी देवळी ग्रामपंचायत</title>
+    <title>नागरिक सेवा - वाघोडा ग्रामपंचायत</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&display=swap"
         rel="stylesheet">
     <style>
+        /* Same CSS as index.html */
         :root {
-            --primary: #2E7D32;
-            --secondary: #FF9800;
-            --accent: #2196F3;
-            --light: #F1F8E9;
-            --dark: #1B5E20;
-            --text: #212121;
-            --text-light: #757575;
+            --primary: #8B4513;
+            --secondary: #D2691E;
+            --accent: #CD853F;
+            --light: #FAEBD7;
+            --dark: #654321;
+            --text: #2F4F4F;
+            --text-light: #696969;
             --white: #ffffff;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --gradient: linear-gradient(135deg, var(--primary), var(--dark));
@@ -108,13 +109,14 @@
             box-shadow: var(--shadow);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 15px;
         }
 
         .nav-links {
@@ -173,76 +175,48 @@
             display: none;
             font-size: 24px;
             cursor: pointer;
+            color: var(--text);
         }
 
-        /* Hero Section */
-        .hero {
+        /* Page Hero */
+        .page-hero {
             background: var(--gradient);
             color: var(--white);
-            padding: 80px 0;
             text-align: center;
+            padding: 100px 20px;
             position: relative;
-            overflow: hidden;
         }
 
-        .hero::before {
+        .page-hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.2;
+            background: url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.15;
             z-index: 0;
         }
 
-        .hero-content {
+        .page-hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 1;
         }
 
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero p {
+        .page-hero p {
             font-size: 18px;
-            max-width: 700px;
-            margin: 0 auto 30px;
             opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--secondary);
-            color: var(--white);
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .btn:hover {
-            background-color: #F57C00;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Services Section */
-        .services-content {
-            padding: 80px 0;
-            background-color: var(--white);
-        }
-
+        /* Section Title */
         .section-title {
             text-align: center;
             margin-bottom: 50px;
@@ -267,217 +241,149 @@
             transform: translateX(-50%);
         }
 
-        .section-title p {
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .services-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .category-card {
-            background: var(--light);
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border-bottom: 4px solid var(--primary);
-        }
-
-        .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow);
-        }
-
-        .category-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: var(--primary);
-            font-size: 32px;
-            border: 3px solid var(--primary);
-        }
-
-        .category-card h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 22px;
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: var(--white);
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
 
         .service-card {
-            background: white;
+            background: var(--white);
             border-radius: 10px;
-            padding: 25px;
+            overflow: hidden;
             box-shadow: var(--shadow);
+            border-top: 4px solid var(--primary);
             transition: all 0.3s ease;
-            border-left: 4px solid var(--accent);
-            position: relative;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
 
-        .service-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 15px;
+        .service-image {
+            height: 180px;
+            overflow: hidden;
         }
 
-        .service-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--light);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent);
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
             font-size: 20px;
-            flex-shrink: 0;
-        }
-
-        .service-title {
-            font-size: 18px;
             color: var(--primary);
-            margin-bottom: 5px;
+            margin-bottom: 12px;
         }
 
-        .service-description {
+        .service-content p {
             color: var(--text-light);
             margin-bottom: 15px;
         }
 
         .service-details {
             background: var(--light);
-            padding: 15px;
+            padding: 12px;
             border-radius: 8px;
+            font-size: 14px;
             margin-bottom: 15px;
         }
 
-        .detail-item {
+        .detail-row {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 8px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .detail-item:last-child {
-            margin-bottom: 0;
-            border-bottom: none;
+            margin-bottom: 6px;
         }
 
         .detail-label {
             font-weight: 600;
-            color: var(--text);
         }
 
         .detail-value {
             color: var(--primary);
         }
 
-        .service-actions {
-            display: flex;
-            gap: 10px;
-            justify-content: flex-end;
-        }
-
-        .action-btn {
-            padding: 8px 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        .service-link {
+            color: var(--accent);
+            font-weight: 600;
             text-decoration: none;
-            font-size: 14px;
-            transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
             gap: 5px;
+            transition: all 0.3s;
         }
 
-        .action-btn.primary {
-            background: var(--primary);
-            color: white;
+        .service-link:hover {
+            color: var(--primary);
         }
 
-        .action-btn.secondary {
-            background: var(--accent);
-            color: white;
-        }
-
-        .action-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        .service-link:hover i {
+            transform: translateX(5px);
         }
 
         /* Process Section */
-        .process-section {
+        .process {
+            padding: 80px 0;
             background: var(--light);
-            padding: 60px 0;
         }
 
-        .process-steps {
+        .process-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
-            margin-top: 40px;
         }
 
         .process-step {
-            background: white;
+            background: var(--white);
             padding: 30px;
             border-radius: 10px;
             text-align: center;
             box-shadow: var(--shadow);
-            position: relative;
         }
 
         .step-number {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             background: var(--primary);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 15px;
+            margin: 0 auto 20px;
+            font-size: 20px;
             font-weight: bold;
-            font-size: 18px;
         }
 
         .process-step h4 {
             color: var(--primary);
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         /* Online Services */
         .online-services {
-            padding: 60px 0;
-            background: white;
+            padding: 80px 0;
+            background-color: var(--white);
         }
 
-        .online-grid {
+        .online-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
@@ -485,22 +391,35 @@
 
         .online-card {
             background: var(--light);
-            padding: 25px;
+            padding: 30px;
             border-radius: 10px;
             text-align: center;
+            box-shadow: var(--shadow);
             transition: all 0.3s ease;
-            border: 2px solid transparent;
         }
 
         .online-card:hover {
-            border-color: var(--primary);
             transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
         .online-icon {
-            font-size: 40px;
+            width: 70px;
+            height: 70px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
             color: var(--primary);
-            margin-bottom: 15px;
+            font-size: 28px;
+            border: 3px solid var(--primary);
+        }
+
+        .online-card h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
         }
 
         /* Footer */
@@ -534,20 +453,13 @@
             left: 0;
         }
 
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
         .footer-links a {
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
-            transition: all 0.3s ease;
             display: flex;
             align-items: center;
+            margin-bottom: 12px;
+            transition: all 0.3s;
         }
 
         .footer-links a:hover {
@@ -573,29 +485,6 @@
             width: 20px;
         }
 
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: var(--white);
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background-color: var(--secondary);
-            transform: translateY(-3px);
-        }
-
         .copyright {
             text-align: center;
             padding: 20px 0;
@@ -604,7 +493,6 @@
             font-size: 14px;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .top-bar {
                 flex-direction: column;
@@ -624,7 +512,7 @@
                 position: absolute;
                 top: 100%;
                 left: 0;
-                background-color: var(--white);
+                background: white;
                 box-shadow: var(--shadow);
             }
 
@@ -636,25 +524,16 @@
                 display: block;
             }
 
-            .hero h1 {
+            .page-hero h1 {
                 font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 16px;
             }
 
             .services-grid {
                 grid-template-columns: 1fr;
             }
 
-            .service-actions {
-                flex-direction: column;
-            }
-
-            .action-btn {
-                text-align: center;
-                justify-content: center;
+            .online-cards {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -667,26 +546,17 @@
             <div class="top-bar">
                 <div class="logo">
                     <div class="logo-img">
-                        <i class="fas fa-landmark"></i>
+                        <i class="fas fa-village"></i>
                     </div>
                     <div class="logo-text">
-                        <h1>सावंगी देवळी ग्रामपंचायत</h1>
-                        <p>विकास आणि प्रगतीचे प्रतीक</p>
+                        <h1>वाघोडा ग्रामपंचायत</h1>
+                        <p>नागपूर, सावनेर, महाराष्ट्र</p>
                     </div>
                 </div>
                 <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>आपत्कालीन: १०८</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>sawangidevali@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>सावंगी देवळी, महाराष्ट्र</span>
-                    </div>
+                    <div class="contact-item"><i class="fas fa-phone"></i> आपत्कालीन: १०८</div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i> waghodapanchayat@gmail.com</div>
+                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i> वाघोडा, सावनेर</div>
                 </div>
             </div>
         </div>
@@ -700,21 +570,22 @@
                 <li class="dropdown">
                     <a href="#">आमच्याबद्दल <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="about.html">परिचय</a>
+                        <a href="about.html">गावाचा इतिहास</a>
                         <a href="team.html">पंचायत मंडळ</a>
+                        <a href="demographics.html">लोकसंख्या</a>
                     </div>
                 </li>
-                <!-- <li><a href="announcements.html">सूचना</a></li> -->
                 <li class="dropdown">
                     <a href="#" class="active">सेवा <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
                         <a href="service.html" class="active">नागरिक सेवा</a>
-                        <a href="facilities.html">स्थानीय सुविधा</a>
+                        <a href="facilities.html">पायाभूत सुविधा</a>
                         <a href="rti.html">माहिती अधिकार</a>
                         <a href="govt-schemes.html">शासकीय योजना</a>
                     </div>
                 </li>
                 <li><a href="gallery.html">गॅलरी</a></li>
+                <li><a href="weather.html">हवामान</a></li>
                 <li><a href="contact.html">संपर्क</a></li>
                 <li class="dropdown">
                     <a href="#">अधिक <i class="fas fa-chevron-down"></i></a>
@@ -725,316 +596,228 @@
                     </div>
                 </li>
             </ul>
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
+            <div class="mobile-menu"><i class="fas fa-bars"></i></div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
             <h1>नागरिक सेवा</h1>
-            <p>ग्रामपंचायतकडून उपलब्ध असलेल्या विविध नागरिक सेवा</p>
+            <p>वाघोडा ग्रामपंचायतकडून उपलब्ध असलेल्या विविध नागरिक सुविधा व प्रमाणपत्रे</p>
         </div>
     </section>
 
-    <!-- Services Content Section -->
-    <section class="services-content">
+    <!-- Services Section -->
+    <section class="services">
         <div class="container">
             <div class="section-title">
-                <h2>आमच्या सेवा</h2>
-                <p>ग्रामपंचायत कार्यालयातर्फे पुरवल्या जाणाऱ्या सर्व सेवा</p>
-            </div>
-
-            <div class="services-categories">
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>निवासी सेवा</h3>
-                    <p>घर, जमीन आणि निवासाशी संबंधित सेवा</p>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-file-contract"></i>
-                    </div>
-                    <h3>प्रमाणपत्रे</h3>
-                    <p>विविध सरकारी प्रमाणपत्रे आणि दाखले</p>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-hand-holding-usd"></i>
-                    </div>
-                    <h3>आर्थिक सेवा</h3>
-                    <p>कर, फी आणि आर्थिक सेवा</p>
-                </div>
+                <h2>उपलब्ध नागरिक सेवा</h2>
+                <p>ग्रामपंचायत कार्यालयातून मिळणारी महत्त्वाची प्रमाणपत्रे व सेवा</p>
             </div>
 
             <div class="services-grid">
-                <!-- जन्म नोंदणी -->
                 <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">
-                            <i class="fas fa-baby"></i>
-                        </div>
-                        <div>
-                            <h3 class="service-title">जन्म नोंदणी</h3>
-                            <p class="service-description">बालकाच्या जन्माची अधिकृत नोंदणी</p>
-                        </div>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="जन्म नोंदणी">
                     </div>
-                    <div class="service-details">
-                        <div class="detail-item">
-                            <span class="detail-label">अर्ज शुल्क:</span>
-                            <span class="detail-value">₹२०</span>
+                    <div class="service-content">
+                        <h3>जन्म नोंदणी</h3>
+                        <p>नवजात बालकाची अधिकृत नोंदणी</p>
+                        <div class="service-details">
+                            <div class="detail-row"><span class="detail-label">शुल्क:</span><span
+                                    class="detail-value">₹२०</span></div>
+                            <div class="detail-row"><span class="detail-label">कालावधी:</span><span
+                                    class="detail-value">२१ दिवसांत</span></div>
+                            <div class="detail-row"><span class="detail-label">कागदपत्रे:</span><span
+                                    class="detail-value">रुग्णालय प्रमाणपत्र, आधार</span></div>
                         </div>
-                        <div class="detail-item">
-                            <span class="detail-label">वेळ मर्यादा:</span>
-                            <span class="detail-value">२१ दिवस</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">आवश्यक कागदपत्रे:</span>
-                            <span class="detail-value">आरोग्य केंद्र प्रमाणपत्र, पालक ओळखपत्र</span>
-                        </div>
+                        <a href="downloads/birth-certificate-form.pdf" class="service-link">अर्ज फॉर्म डाउनलोड <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
-                    <!-- <div class="service-actions">
-                        <a href="#" class="action-btn primary"><i class="fas fa-download"></i> अर्ज फॉर्म</a>
-                        <a href="#" class="action-btn secondary"><i class="fas fa-info-circle"></i> मार्गदर्शन</a>
-                    </div> -->
                 </div>
 
-                <!-- मृत्यू नोंदणी -->
                 <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">
-                            <i class="fas fa-cross"></i>
-                        </div>
-                        <div>
-                            <h3 class="service-title">मृत्यू नोंदणी</h3>
-                            <p class="service-description">मृत्यूची अधिकृत नोंदणी</p>
-                        </div>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="मृत्यू नोंदणी">
                     </div>
-                    <div class="service-details">
-                        <div class="detail-item">
-                            <span class="detail-label">अर्ज शुल्क:</span>
-                            <span class="detail-value">₹२०</span>
+                    <div class="service-content">
+                        <h3>मृत्यू नोंदणी</h3>
+                        <p>मृत्यूची अधिकृत नोंदणी व प्रमाणपत्र</p>
+                        <div class="service-details">
+                            <div class="detail-row"><span class="detail-label">शुल्क:</span><span
+                                    class="detail-value">₹२०</span></div>
+                            <div class="detail-row"><span class="detail-label">कालावधी:</span><span
+                                    class="detail-value">२१ दिवसांत</span></div>
+                            <div class="detail-row"><span class="detail-label">कागदपत्रे:</span><span
+                                    class="detail-value">डॉक्टरचे प्रमाणपत्र</span></div>
                         </div>
-                        <div class="detail-item">
-                            <span class="detail-label">वेळ मर्यादा:</span>
-                            <span class="detail-value">२१ दिवस</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">आवश्यक कागदपत्रे:</span>
-                            <span class="detail-value">मृत्यू प्रमाणपत्र, ओळखपत्र</span>
-                        </div>
+                        <a href="downloads/death-certificate-form.pdf" class="service-link">अर्ज फॉर्म डाउनलोड <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
-                    <!-- <div class="service-actions">
-                        <a href="#" class="action-btn primary"><i class="fas fa-download"></i> अर्ज फॉर्म</a>
-                        <a href="#" class="action-btn secondary"><i class="fas fa-info-circle"></i> मार्गदर्शन</a>
-                    </div> -->
                 </div>
 
-                <!-- घटस्फोट प्रमाणपत्र -->
                 <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">
-                            <i class="fas fa-ring"></i>
-                        </div>
-                        <div>
-                            <h3 class="service-title">घटस्फोट प्रमाणपत्र</h3>
-                            <p class="service-description">वैवाहिक स्थितीचे प्रमाणपत्र</p>
-                        </div>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1581287056254-4eda2f40f82b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="राहिवाशी दाखला">
                     </div>
-                    <div class="service-details">
-                        <div class="detail-item">
-                            <span class="detail-label">अर्ज शुल्क:</span>
-                            <span class="detail-value">₹१००</span>
+                    <div class="service-content">
+                        <h3>राहिवाशी दाखला</h3>
+                        <p>गावात राहण्याचा अधिकृत पुरावा</p>
+                        <div class="service-details">
+                            <div class="detail-row"><span class="detail-label">शुल्क:</span><span
+                                    class="detail-value">₹५०</span></div>
+                            <div class="detail-row"><span class="detail-label">कालावधी:</span><span
+                                    class="detail-value">३ दिवस</span></div>
+                            <div class="detail-row"><span class="detail-label">कागदपत्रे:</span><span
+                                    class="detail-value">वीज बिल, आधार कार्ड</span></div>
                         </div>
-                        <div class="detail-item">
-                            <span class="detail-label">वेळ मर्यादा:</span>
-                            <span class="detail-value">७ कामकाजाचे दिवस</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">आवश्यक कागदपत्रे:</span>
-                            <span class="detail-value">ओळखपत्र, राहिवाशी दाखला</span>
-                        </div>
+                        <a href="downloads/residence-certificate-form.pdf" class="service-link">अर्ज फॉर्म डाउनलोड <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
-                    <!-- <div class="service-actions">
-                        <a href="#" class="action-btn primary"><i class="fas fa-download"></i> अर्ज फॉर्म</a>
-                        <a href="#" class="action-btn secondary"><i class="fas fa-info-circle"></i> मार्गदर्शन</a>
-                    </div> -->
                 </div>
 
-                <!-- राहिवाशी दाखला -->
                 <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">
-                            <i class="fas fa-house-user"></i>
-                        </div>
-                        <div>
-                            <h3 class="service-title">राहिवाशी दाखला</h3>
-                            <p class="service-description">निवासस्थानाचा पुरावा</p>
-                        </div>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1579621970588-a35d0e95ab90?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="जातीचा दाखला">
                     </div>
-                    <div class="service-details">
-                        <div class="detail-item">
-                            <span class="detail-label">अर्ज शुल्क:</span>
-                            <span class="detail-value">₹५०</span>
+                    <div class="service-content">
+                        <h3>जातीचा दाखला</h3>
+                        <p>जात प्रमाणपत्र (OBC/SC/ST)</p>
+                        <div class="service-details">
+                            <div class="detail-row"><span class="detail-label">शुल्क:</span><span
+                                    class="detail-value">₹३०</span></div>
+                            <div class="detail-row"><span class="detail-label">कालावधी:</span><span
+                                    class="detail-value">७ दिवस</span></div>
+                            <div class="detail-row"><span class="detail-label">कागदपत्रे:</span><span
+                                    class="detail-value">वडिलांचा दाखला, शाळा सोडल्याचा दाखला</span></div>
                         </div>
-                        <div class="detail-item">
-                            <span class="detail-label">वेळ मर्यादा:</span>
-                            <span class="detail-value">३ कामकाजाचे दिवस</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">आवश्यक कागदपत्रे:</span>
-                            <span class="detail-value">वीज बिल, ओळखपत्र</span>
-                        </div>
+                        <a href="downloads/caste-certificate-form.pdf" class="service-link">अर्ज फॉर्म डाउनलोड <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
-                    <!-- <div class="service-actions">
-                        <a href="#" class="action-btn primary"><i class="fas fa-download"></i> अर्ज फॉर्म</a>
-                        <a href="#" class="action-btn secondary"><i class="fas fa-info-circle"></i> मार्गदर्शन</a>
-                    </div> -->
                 </div>
 
-                <!-- आर्थिक मागासलेपणा दाखला -->
                 <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">
-                            <i class="fas fa-hand-holding-heart"></i>
-                        </div>
-                        <div>
-                            <h3 class="service-title">आर्थिक मागासलेपणा दाखला</h3>
-                            <p class="service-description">आर्थिक स्थितीचे प्रमाणपत्र</p>
-                        </div>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="आर्थिक मागास दाखला">
                     </div>
-                    <div class="service-details">
-                        <div class="detail-item">
-                            <span class="detail-label">अर्ज शुल्क:</span>
-                            <span class="detail-value">₹३०</span>
+                    <div class="service-content">
+                        <h3>आर्थिकदृष्ट्या मागासलेपणा दाखला (EWS)</h3>
+                        <p>आर्थिक मागासवर्गीयांसाठी प्रमाणपत्र</p>
+                        <div class="service-details">
+                            <div class="detail-row"><span class="detail-label">शुल्क:</span><span
+                                    class="detail-value">₹३०</span></div>
+                            <div class="detail-row"><span class="detail-label">कालावधी:</span><span
+                                    class="detail-value">७ दिवस</span></div>
+                            <div class="detail-row"><span class="detail-label">कागदपत्रे:</span><span
+                                    class="detail-value">उत्पन्नाचा दाखला, आधार</span></div>
                         </div>
-                        <div class="detail-item">
-                            <span class="detail-label">वेळ मर्यादा:</span>
-                            <span class="detail-value">७ कामकाजाचे दिवस</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">आवश्यक कागदपत्रे:</span>
-                            <span class="detail-value">ओळखपत्र, आयकर रिटर्न, राहिवाशी दाखला</span>
-                        </div>
+                        <a href="downloads/ews-certificate-form.pdf" class="service-link">अर्ज फॉर्म डाउनलोड <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
-                    <!-- <div class="service-actions">
-                        <a href="#" class="action-btn primary"><i class="fas fa-download"></i> अर्ज फॉर्म</a>
-                        <a href="#" class="action-btn secondary"><i class="fas fa-info-circle"></i> मार्गदर्शन</a>
-                    </div> -->
                 </div>
 
-                <!-- जातीचा दाखला -->
                 <div class="service-card">
-                    <div class="service-header">
-                        <div class="service-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div>
-                            <h3 class="service-title">जातीचा दाखला</h3>
-                            <p class="service-description">जातीचे प्रमाणपत्र</p>
-                        </div>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1517248135467-107e96e1fa21?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                            alt="विवाह नोंदणी">
                     </div>
-                    <div class="service-details">
-                        <div class="detail-item">
-                            <span class="detail-label">अर्ज शुल्क:</span>
-                            <span class="detail-value">₹३०</span>
+                    <div class="service-content">
+                        <h3>विवाह नोंदणी</h3>
+                        <p>वैवाहिक नोंदणी व प्रमाणपत्र</p>
+                        <div class="service-details">
+                            <div class="detail-row"><span class="detail-label">शुल्क:</span><span
+                                    class="detail-value">₹१००</span></div>
+                            <div class="detail-row"><span class="detail-label">कालावधी:</span><span
+                                    class="detail-value">१५ दिवस</span></div>
+                            <div class="detail-row"><span class="detail-label">कागदपत्रे:</span><span
+                                    class="detail-value">आधार, फोटो, साक्षीदार</span></div>
                         </div>
-                        <div class="detail-item">
-                            <span class="detail-label">वेळ मर्यादा:</span>
-                            <span class="detail-value">७ कामकाजाचे दिवस</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">आवश्यक कागदपत्रे:</span>
-                            <span class="detail-value">ओळखपत्र, वडिलांचा जाती दाखला</span>
-                        </div>
+                        <a href="downloads/marriage-certificate-form.pdf" class="service-link">अर्ज फॉर्म डाउनलोड <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
-                    <!-- <div class="service-actions">
-                        <a href="#" class="action-btn primary"><i class="fas fa-download"></i> अर्ज फॉर्म</a>
-                        <a href="#" class="action-btn secondary"><i class="fas fa-info-circle"></i> मार्गदर्शन</a>
-                    </div> -->
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="process-section">
+    <!-- Application Process -->
+    <section class="process">
         <div class="container">
             <div class="section-title">
-                <h2>सेवा मिळविण्याची प्रक्रिया</h2>
-                <p>कोणतीही सेवा मिळविण्यासाठी खालील पायऱ्या पार कराव्यात</p>
+                <h2>अर्ज प्रक्रिया</h2>
+                <p>कोणत्याही सेवेसाठी अर्ज कसा करावा</p>
             </div>
-
-            <div class="process-steps">
+            <div class="process-grid">
                 <div class="process-step">
                     <div class="step-number">१</div>
-                    <h4>अर्ज भरा</h4>
-                    <p>संबंधित सेवेचा अर्ज ग्रामपंचायत कार्यालयातून मिळवा किंवा ऑनलाइन डाउनलोड करा</p>
+                    <h4>अर्ज फॉर्म घ्या</h4>
+                    <p>ग्रामपंचायत कार्यालयातून किंवा वेबसाइटवरून फॉर्म डाउनलोड करा</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">२</div>
-                    <h4>कागदपत्रे जमा करा</h4>
-                    <p>सर्व आवश्यक कागदपत्रे आणि फोटोकॉपीज तयार करा</p>
+                    <h4>कागदपत्रे जोडा</h4>
+                    <p>सर्व आवश्यक कागदपत्रांची झेरॉक्स जोडा</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">३</div>
-                    <h4>अर्ज सादर करा</h4>
-                    <p>अर्जासह सर्व कागदपत्रे ग्रामपंचायत कार्यालयात सादर करा</p>
+                    <h4>शुल्क भरा</h4>
+                    <p>निर्धारित शुल्क रोख किंवा चालानद्वारे भरा</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">४</div>
-                    <h4>शुल्क भरा</h4>
-                    <p>निर्धारित शुल्क भरा आणि पावती घ्या</p>
+                    <h4>अर्ज सादर करा</h4>
+                    <p>ग्रामसेवक किंवा सरपंचांकडे अर्ज जमा करा</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">५</div>
                     <h4>प्रमाणपत्र मिळवा</h4>
-                    <p>निर्धारित कालावधीनंतर प्रमाणपत्र मिळवा</p>
+                    <p>ठरलेल्या वेळेत प्रमाणपत्र घेऊन जा</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Online Services Section -->
+    <!-- Online Services -->
     <section class="online-services">
         <div class="container">
             <div class="section-title">
-                <h2>ऑनलाइन सेवा</h2>
-                <p>घरबसल्या पुरवल्या जाणाऱ्या सेवा</p>
+                <h2>ऑनलाईन सेवा</h2>
+                <p>घर बसल्या मिळणाऱ्या डिजिटल सेवा</p>
             </div>
-
-            <div class="online-grid">
-                <!-- <div class="online-card">
+            <div class="online-cards">
+                <div class="online-card">
                     <div class="online-icon">
-                        <i class="fas fa-file-download"></i>
+                        <i class="fas fa-edit"></i>
                     </div>
-                    <h3>फॉर्म डाउनलोड</h3>
-                    <p>सर्व सेवांचे अर्ज फॉर्म ऑनलाइन डाउनलोड करा</p>
-                </div> -->
+                    <h4>ऑनलाईन अर्ज</h4>
+                    <p>कोणतेही प्रमाणपत्रासाठी ऑनलाईन अर्ज करा</p>
+                </div>
                 <div class="online-card">
                     <div class="online-icon">
                         <i class="fas fa-search"></i>
                     </div>
-                    <h3>अर्ज स्थिती तपासा</h3>
-                    <p>आपल्या अर्जाची स्थिती ऑनलाइन तपासा</p>
+                    <h4>अर्ज स्थिती तपासा</h4>
+                    <p>तुमच्या अर्जाची स्थिती ऑनलाईन तपासा</p>
                 </div>
                 <div class="online-card">
                     <div class="online-icon">
-                        <i class="fas fa-money-check-alt"></i>
+                        <i class="fas fa-download"></i>
                     </div>
-                    <h3>ऑनलाइन पेमेंट</h3>
-                    <p>सेवा शुल्क ऑनलाइन भरा</p>
+                    <h4>फॉर्म डाउनलोड</h4>
+                    <p>सर्व प्रमाणपत्रांची फॉर्मे डाउनलोड करा</p>
                 </div>
                 <div class="online-card">
                     <div class="online-icon">
-                        <i class="fas fa-calendar-check"></i>
+                        <i class="fas fa-comments"></i>
                     </div>
-                    <h3>अपॉइंटमेंट बुक करा</h3>
-                    <p>कार्यालय भेटीसाठी अपॉइंटमेंट बुक करा</p>
+                    <h4>प्रतिसाद</h4>
+                    <p>तक्रार किंवा सूचना ऑनलाईन द्या</p>
                 </div>
             </div>
         </div>
@@ -1047,49 +830,33 @@
                 <div class="footer-column">
                     <h3>झटपट दुवे</h3>
                     <ul class="footer-links">
-                        <li><a href="team.html"><i class="fas fa-chevron-right"></i> ग्रामपंचायत सदस्य</a></li>
-                        <li><a href="schools.html"><i class="fas fa-chevron-right"></i> शाळा व अंगणवाडी</a></li>
-                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> विकास प्रकल्प</a></li>
-                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> फोटो गॅलरी</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> आपत्कालीन संपर्क</a></li>
+                        <li><a href="team.html"><i class="fas fa-chevron-right"></i> पंचायत मंडळ</a></li>
+                        <li><a href="govt-schemes.html"><i class="fas fa-chevron-right"></i> शासकीय योजना</a></li>
+                        <li><a href="rti.html"><i class="fas fa-chevron-right"></i> माहितीचा अधिकार</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> गॅलरी</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>संपर्क माहिती</h3>
                     <div class="contact-details">
-                        <p><i class="fas fa-map-marker-alt"></i> सावंगी देवळी, महाराष्ट्र</p>
+                        <p><i class="fas fa-map-marker-alt"></i> वाघोडा, सावनेर, नागपूर, महाराष्ट्र</p>
                         <p><i class="fas fa-phone"></i> आपत्कालीन: १०८</p>
-                        <p><i class="fas fa-envelope"></i> sawangidevali@gmail.com</p>
-                        <p><i class="fas fa-clock"></i> कार्यालयीन वेळ: सकाळी 10 ते दुपारी 6</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <p><i class="fas fa-envelope"></i> waghodapanchayat@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> सकाळी १० ते संध्याकाळी ६</p>
                     </div>
                 </div>
                 <div class="footer-column">
                     <h3>आपत्कालीन संपर्क</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-phone"></i> पोलीस स्टेशन: १००</a></li>
-                        <li><a href="#"><i class="fas fa-ambulance"></i> एम्ब्युलन्स: १०८</a></li>
-                        <li><a href="#"><i class="fas fa-fire-extinguisher"></i> फायर ब्रिगेड: १०१</a></li>
-                        <li><a href="#"><i class="fas fa-hospital"></i> ग्रामीण रुग्णालय</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>डाउनलोड</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> ग्रामसभा नोंदी (PDF)</a></li>
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> वार्षिक आर्थिक अहवाल</a></li>
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> कर विवरण</a></li>
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> विकास आराखडा (DP)</a></li>
+                        <li><a href="tel:100"><i class="fas fa-phone"></i> पोलीस: १००</a></li>
+                        <li><a href="tel:108"><i class="fas fa-ambulance"></i> रुग्णवाहिका: १०८</a></li>
+                        <li><a href="tel:101"><i class="fas fa-fire-extinguisher"></i> अग्निशमन: १०१</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 सावंगी देवळी ग्रामपंचायत. सर्व हक्क राखीव.</p>
+                <p>&copy; २०२५ वाघोडा ग्रामपंचायत. सर्व हक्क राखीव.</p>
+                <p style="margin-top: 10px; font-size: 12px;">विदर्भ प्रदेश, महाराष्ट्र राज्य, भारत</p>
             </div>
         </div>
     </footer>

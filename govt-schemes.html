@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>शासकीय योजना - सावंगी देवळी ग्रामपंचायत</title>
+    <title>शासकीय योजना - वाघोडा ग्रामपंचायत</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&display=swap"
         rel="stylesheet">
     <style>
         :root {
-            --primary: #2E7D32;
-            --secondary: #FF9800;
-            --accent: #2196F3;
-            --light: #F1F8E9;
-            --dark: #1B5E20;
-            --text: #212121;
-            --text-light: #757575;
+            --primary: #8B4513;
+            --secondary: #D2691E;
+            --accent: #CD853F;
+            --light: #FAEBD7;
+            --dark: #654321;
+            --text: #2F4F4F;
+            --text-light: #696969;
             --white: #ffffff;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --gradient: linear-gradient(135deg, var(--primary), var(--dark));
@@ -108,13 +108,14 @@
             box-shadow: var(--shadow);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 15px;
         }
 
         .nav-links {
@@ -173,72 +174,49 @@
             display: none;
             font-size: 24px;
             cursor: pointer;
+            color: var(--text);
         }
 
-        /* Hero Section */
-        .hero {
+        /* Page Hero */
+        .page-hero {
             background: var(--gradient);
             color: var(--white);
-            padding: 80px 0;
             text-align: center;
+            padding: 100px 20px;
             position: relative;
-            overflow: hidden;
         }
 
-        .hero::before {
+        .page-hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.2;
+            background: url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.15;
             z-index: 0;
         }
 
-        .hero-content {
+        .page-hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 1;
         }
 
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero p {
+        .page-hero p {
             font-size: 18px;
             max-width: 700px;
             margin: 0 auto 30px;
             opacity: 0.9;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--secondary);
-            color: var(--white);
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .btn:hover {
-            background-color: #F57C00;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
         }
 
         /* Schemes Section */
-        .schemes-content {
+        .schemes-section {
             padding: 80px 0;
             background-color: var(--white);
         }
@@ -267,277 +245,171 @@
             transform: translateX(-50%);
         }
 
-        .section-title p {
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .schemes-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .category-card {
-            background: var(--light);
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: 3px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .category-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient);
-        }
-
-        .category-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            border-color: var(--primary);
-        }
-
-        .category-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--white);
-            border-radius: 50%;
+        /* Filter Tabs */
+        .scheme-filters {
             display: flex;
-            align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
-            color: var(--primary);
-            font-size: 32px;
-            border: 3px solid var(--primary);
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
         }
 
-        .category-card h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 22px;
+        .filter-btn {
+            padding: 10px 25px;
+            background: var(--light);
+            border: none;
+            border-radius: 30px;
+            color: var(--text);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        .scheme-count {
+        .filter-btn:hover,
+        .filter-btn.active {
             background: var(--primary);
             color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
         }
 
         /* Schemes Grid */
         .schemes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
             margin-bottom: 50px;
         }
 
         .scheme-card {
-            background: white;
+            background: var(--white);
             border-radius: 15px;
-            padding: 25px;
+            overflow: hidden;
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
-            border-left: 4px solid var(--accent);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .scheme-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient);
+            border: 1px solid var(--light);
         }
 
         .scheme-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
 
         .scheme-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 15px;
+            background: var(--gradient);
+            color: white;
+            padding: 25px;
+            text-align: center;
         }
 
         .scheme-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--light);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent);
-            font-size: 24px;
-            flex-shrink: 0;
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: var(--secondary);
         }
 
-        .scheme-title {
-            font-size: 20px;
-            color: var(--primary);
-            margin-bottom: 5px;
+        .scheme-header h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
         }
 
-        .scheme-category {
-            color: var(--text-light);
-            font-size: 14px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .scheme-description {
-            color: var(--text);
-            margin-bottom: 20px;
-            line-height: 1.6;
+        .scheme-content {
+            padding: 25px;
         }
 
         .scheme-details {
-            background: var(--light);
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
-        .detail-row {
+        .detail-item {
             display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .detail-row:last-child {
-            margin-bottom: 0;
-            border-bottom: none;
+            margin-bottom: 10px;
         }
 
         .detail-label {
             font-weight: 600;
-            color: var(--text);
-        }
-
-        .detail-value {
+            min-width: 120px;
             color: var(--primary);
-            text-align: right;
         }
 
-        .scheme-actions {
-            display: flex;
-            gap: 10px;
-            justify-content: flex-end;
+        .scheme-benefits {
+            background: var(--light);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
         }
 
-        .action-btn {
-            padding: 8px 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        .scheme-benefits h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .scheme-benefits ul {
+            padding-left: 20px;
+        }
+
+        .scheme-benefits li {
+            margin-bottom: 5px;
+        }
+
+        .apply-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: var(--secondary);
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
             text-decoration: none;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 20px;
         }
 
-        .action-btn.primary {
+        .apply-btn:hover {
             background: var(--primary);
-            color: white;
-        }
-
-        .action-btn.secondary {
-            background: var(--accent);
-            color: white;
-        }
-
-        .action-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* Application Process */
         .process-section {
-            background: var(--light);
-            padding: 60px 0;
+            background-color: var(--light);
+            padding: 80px 0;
         }
 
         .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .process-step {
-            background: white;
-            padding: 30px;
+            flex: 1;
+            min-width: 200px;
+            background: var(--white);
+            padding: 25px;
             border-radius: 10px;
             text-align: center;
             box-shadow: var(--shadow);
-            position: relative;
         }
 
-        .step-number {
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
-            color: white;
+        .step-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--light);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 15px;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        .process-step h4 {
             color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        /* Important Notice */
-        .important-notice {
-            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
-            border: 2px solid #ff9800;
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .important-notice h3 {
-            color: #f57c00;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            font-size: 24px;
         }
 
         /* Statistics */
-        .statistics {
-            padding: 60px 0;
-            background: white;
+        .stats-section {
+            padding: 80px 0;
+            background-color: var(--white);
         }
 
         .stats-grid {
@@ -548,28 +420,17 @@
 
         .stat-card {
             text-align: center;
-            padding: 30px 20px;
+            padding: 30px;
             background: var(--light);
             border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
             box-shadow: var(--shadow);
         }
 
         .stat-number {
-            font-size: 42px;
-            font-weight: bold;
+            font-size: 48px;
+            font-weight: 700;
             color: var(--primary);
             margin-bottom: 10px;
-        }
-
-        .stat-label {
-            color: var(--text);
-            font-size: 16px;
-            font-weight: 600;
         }
 
         /* Footer */
@@ -703,13 +564,14 @@
 
             .mobile-menu {
                 display: block;
+                margin-left: auto;
             }
 
-            .hero h1 {
+            .page-hero h1 {
                 font-size: 32px;
             }
 
-            .hero p {
+            .page-hero p {
                 font-size: 16px;
             }
 
@@ -717,17 +579,48 @@
                 grid-template-columns: 1fr;
             }
 
-            .scheme-actions {
+            .process-steps {
                 flex-direction: column;
             }
+        }
 
-            .action-btn {
-                text-align: center;
-                justify-content: center;
+        @media (max-width: 480px) {
+            .page-hero h1 {
+                font-size: 28px;
+            }
+
+            .section-title h2 {
+                font-size: 26px;
+            }
+
+            .scheme-filters {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .filter-btn {
+                width: 100%;
+                max-width: 250px;
             }
 
             .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-text h1 {
+                font-size: 20px;
+            }
+
+            .logo-text p {
+                font-size: 12px;
+            }
+
+            .contact-item {
+                font-size: 12px;
             }
         }
     </style>
@@ -740,11 +633,11 @@
             <div class="top-bar">
                 <div class="logo">
                     <div class="logo-img">
-                        <i class="fas fa-landmark"></i>
+                        <i class="fas fa-village"></i>
                     </div>
                     <div class="logo-text">
-                        <h1>सावंगी देवळी ग्रामपंचायत</h1>
-                        <p>विकास आणि प्रगतीचे प्रतीक</p>
+                        <h1>वाघोडा ग्रामपंचायत</h1>
+                        <p>नागपूर, सावनेर, महाराष्ट्र</p>
                     </div>
                 </div>
                 <div class="contact-info">
@@ -754,11 +647,11 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>sawangidevali@gmail.com</span>
+                        <span>waghodapanchayat@gmail.com</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>सावंगी देवळी, महाराष्ट्र</span>
+                        <span>वाघोडा, सावनेर</span>
                     </div>
                 </div>
             </div>
@@ -773,21 +666,22 @@
                 <li class="dropdown">
                     <a href="#">आमच्याबद्दल <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="about.html">परिचय</a>
+                        <a href="about.html">गावाचा इतिहास</a>
                         <a href="team.html">पंचायत मंडळ</a>
+                        <a href="demographics.html">लोकसंख्या</a>
                     </div>
                 </li>
-                <!-- <li><a href="announcements.html">सूचना</a></li> -->
                 <li class="dropdown">
                     <a href="#" class="active">सेवा <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
                         <a href="service.html">नागरिक सेवा</a>
-                        <a href="facilities.html">स्थानीय सुविधा</a>
+                        <a href="facilities.html">पायाभूत सुविधा</a>
                         <a href="rti.html">माहिती अधिकार</a>
                         <a href="govt-schemes.html" class="active">शासकीय योजना</a>
                     </div>
                 </li>
                 <li><a href="gallery.html">गॅलरी</a></li>
+                <li><a href="weather.html">हवामान</a></li>
                 <li><a href="contact.html">संपर्क</a></li>
                 <li class="dropdown">
                     <a href="#">अधिक <i class="fas fa-chevron-down"></i></a>
@@ -804,390 +698,315 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
             <h1>शासकीय योजना</h1>
-            <p>केंद्र आणि राज्य शासनाच्या विविध योजनांची माहिती</p>
+            <p>वाघोडा गावासाठी उपलब्ध केंद्र व राज्य शासनाच्या योजना</p>
         </div>
     </section>
 
-    <!-- Schemes Content Section -->
-    <section class="schemes-content">
+    <!-- Schemes Section -->
+    <section class="schemes-section">
         <div class="container">
             <div class="section-title">
-                <h2>सरकारी योजना</h2>
-                <p>ग्रामपंचायतीतर्फे राबविण्यात येणाऱ्या सर्व शासकीय योजना</p>
+                <h2>लाभार्थी योजना</h2>
+                <p>विविध वर्गांसाठी उपलब्ध शासकीय योजना</p>
             </div>
 
-            <div class="important-notice">
-                <h3><i class="fas fa-exclamation-circle"></i> महत्वाची सूचना</h3>
-                <p>सर्व योजनांसाठी अर्ज करण्याची अंतिम मुदत ३१ डिसेंबर २०२३ पर्यंत आहे. लवकरात लवकर अर्ज करावे.</p>
+            <!-- Filter Buttons -->
+            <div class="scheme-filters">
+                <button class="filter-btn active" data-filter="all">सर्व योजना</button>
+                <button class="filter-btn" data-filter="agriculture">शेती</button>
+                <button class="filter-btn" data-filter="women">महिला</button>
+                <button class="filter-btn" data-filter="student">विद्यार्थी</button>
+                <button class="filter-btn" data-filter="health">आरोग्य</button>
+                <button class="filter-btn" data-filter="housing">गृहनिर्माण</button>
             </div>
 
-            <div class="schemes-categories">
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <h3>गृहनिर्माण योजना</h3>
-                    <p>घर बांधकाम आणि सुधारणा योजना</p>
-                    <div class="scheme-count">३ योजना</div>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <h3>कृषी योजना</h3>
-                    <p>शेती आणि पिक संवर्धन योजना</p>
-                    <div class="scheme-count">५ योजना</div>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>शिक्षण योजना</h3>
-                    <p>विद्यार्थी आणि शिक्षण योजना</p>
-                    <div class="scheme-count">४ योजना</div>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-hand-holding-heart"></i>
-                    </div>
-                    <h3>कल्याण योजना</h3>
-                    <p>सामाजिक कल्याण आणि सहाय्य योजना</p>
-                    <div class="scheme-count">६ योजना</div>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3>रोजगार योजना</h3>
-                    <p>रोजगार निर्मिती आणि स्वरोजगार योजना</p>
-                    <div class="scheme-count">३ योजना</div>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">
-                        <i class="fas fa-female"></i>
-                    </div>
-                    <h3>महिला योजना</h3>
-                    <p>महिला सक्षमीकरण आणि कल्याण योजना</p>
-                    <div class="scheme-count">४ योजना</div>
-                </div>
-            </div>
-
+            <!-- Schemes Grid -->
             <div class="schemes-grid">
-                <!-- पीएम आवास योजना -->
-                <div class="scheme-card">
-                    <div class="scheme-header">
-                        <div class="scheme-icon">
-                            <i class="fas fa-house-user"></i>
-                        </div>
-                        <div>
-                            <h3 class="scheme-title">प्रधानमंत्री आवास योजना</h3>
-                            <p class="scheme-category">
-                                <i class="fas fa-tag"></i> गृहनिर्माण योजना
-                            </p>
-                        </div>
-                    </div>
-                    <div class="scheme-description">
-                        <p>ग्रामीण भागातील Economically Weaker Section (EWS) आणि Lower Income Group (LIG) कुटुंबांसाठी
-                            घर बांधण्यासाठी आर्थिक सहाय्य.</p>
-                    </div>
-                    <div class="scheme-details">
-                        <div class="detail-row">
-                            <span class="detail-label">लाभ रक्कम:</span>
-                            <span class="detail-value">₹१,२०,०००</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">वयोमर्यादा:</span>
-                            <span class="detail-value">२१ - ५५ वर्ष</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">अर्ज शुल्क:</span>
-                            <span class="detail-value">₹५०</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">अंतिम मुदत:</span>
-                            <span class="detail-value">३१-१२-२०२३</span>
-                        </div>
-                    </div>
-                    <!-- <div class="scheme-actions">
-                        <a href="#" class="action-btn primary"><i class="fas fa-download"></i> अर्ज फॉर्म</a>
-                        <a href="#" class="action-btn secondary"><i class="fas fa-info-circle"></i> मार्गदर्शन</a>
-                    </div> -->
-                </div>
-
-                <!-- उज्ज्वला योजना -->
-                <div class="scheme-card">
-                    <div class="scheme-header">
-                        <div class="scheme-icon">
-                            <i class="fas fa-fire"></i>
-                        </div>
-                        <div>
-                            <h3 class="scheme-title">प्रधानमंत्री उज्ज्वला योजना</h3>
-                            <p class="scheme-category">
-                                <i class="fas fa-tag"></i> महिला योजना
-                            </p>
-                        </div>
-                    </div>
-                    <div class="scheme-description">
-                        <p>Below Poverty Line (BPL) कुटुंबांमधील महिलांसाठी एलपीजी गॅस कनेक्शन मोफत पुरवण्याची योजना.
-                        </p>
-                    </div>
-                    <div class="scheme-details">
-                        <div class="detail-row">
-                            <span class="detail-label">लाभ रक्कम:</span>
-                            <span class="detail-value">₹१,६००</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">लाभार्थी:</span>
-                            <span class="detail-value">महिला</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">अर्ज शुल्क:</span>
-                            <span class="detail-value">मोफत</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">अंतिम मुदत:</span>
-                            <span class="detail-value">३१-१२-२०२३</span>
-                        </div>
-                    </div>
-                    <!-- <div class="scheme-actions">
-                        <a href="#" class="action-btn primary"><i class="fas fa-download"></i> अर्ज फॉर्म</a>
-                        <a href="#" class="action-btn secondary"><i class="fas fa-info-circle"></i> मार्गदर्शन</a>
-                    </div> -->
-                </div>
-
-                <!-- किसान सम्मान निधी -->
-                <div class="scheme-card">
+                <!-- PM Kisan -->
+                <div class="scheme-card" data-category="agriculture">
                     <div class="scheme-header">
                         <div class="scheme-icon">
                             <i class="fas fa-tractor"></i>
                         </div>
-                        <div>
-                            <h3 class="scheme-title">किसान सम्मान निधी</h3>
-                            <p class="scheme-category">
-                                <i class="fas fa-tag"></i> कृषी योजना
-                            </p>
-                        </div>
+                        <h3>पीएम किसान सम्मान निधी</h3>
                     </div>
-                    <div class="scheme-description">
-                        <p>लहान आणि सीमांत शेतकऱ्यांसाठी दर वर्षी ₹६,००० आर्थिक सहाय्य. तीन हप्त्यांमध्ये ₹२,००० दराने.
-                        </p>
+                    <div class="scheme-content">
+                        <div class="scheme-details">
+                            <div class="detail-item">
+                                <span class="detail-label">योजना प्रकार:</span>
+                                <span>केंद्रीय योजना</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">लाभ:</span>
+                                <span>₹६,०००/वर्ष</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">पात्रता:</span>
+                                <span>लहान व सीमांत शेतकरी</span>
+                            </div>
+                        </div>
+                        <div class="scheme-benefits">
+                            <h4>लाभ:</h4>
+                            <ul>
+                                <li>₹२,००० प्रति तिमाही हस्तांतरण</li>
+                                <li>थेट बँक खात्यात रक्कम</li>
+                                <li>कोणत्याही तरतुदीशिवाय</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="apply-btn">अर्ज करा</a>
                     </div>
-                    <div class="scheme-details">
-                        <div class="detail-row">
-                            <span class="detail-label">लाभ रक्कम:</span>
-                            <span class="detail-value">₹६,०००/वर्ष</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">जमीन मर्यादा:</span>
-                            <span class="detail-value">२ हेक्टर</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">अर्ज शुल्क:</span>
-                            <span class="detail-value">मोफत</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">अंतिम मुदत:</span>
-                            <span class="detail-value">३१-१२-२०२३</span>
-                        </div>
-                    </div>
-                    <!-- <div class="scheme-actions">
-                        <a href="#" class="action-btn primary"><i class="fas fa-download"></i> अर्ज फॉर्म</a>
-                        <a href="#" class="action-btn secondary"><i class="fas fa-info-circle"></i> मार्गदर्शन</a>
-                    </div> -->
                 </div>
 
-                <!-- स्वच्छ भारत अभियान -->
-                <div class="scheme-card">
+                <!-- Ujjwala Yojana -->
+                <div class="scheme-card" data-category="women">
                     <div class="scheme-header">
                         <div class="scheme-icon">
-                            <i class="fas fa-broom"></i>
+                            <i class="fas fa-fire"></i>
                         </div>
-                        <div>
-                            <h3 class="scheme-title">स्वच्छ भारत अभियान</h3>
-                            <p class="scheme-category">
-                                <i class="fas fa-tag"></i> कल्याण योजना
-                            </p>
-                        </div>
+                        <h3>उज्ज्वला योजना</h3>
                     </div>
-                    <div class="scheme-description">
-                        <p>शौचालय निर्मिती आणि स्वच्छता प्रसारासाठी आर्थिक सहाय्य. Individual Household Latrine (IHHL)
-                            बांधकामासाठी अनुदान.</p>
+                    <div class="scheme-content">
+                        <div class="scheme-details">
+                            <div class="detail-item">
+                                <span class="detail-label">योजना प्रकार:</span>
+                                <span>केंद्रीय योजना</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">लाभ:</span>
+                                <span>मोफत गॅस कनेक्शन</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">पात्रता:</span>
+                                <span>BPL महिला</span>
+                            </div>
+                        </div>
+                        <div class="scheme-benefits">
+                            <h4>लाभ:</h4>
+                            <ul>
+                                <li>मोफत LPG कनेक्शन</li>
+                                <li>स्टोव्ह आणि रेग्युलेटर</li>
+                                <li>प्रथम रिफिल सबसिडी</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="apply-btn">अर्ज करा</a>
                     </div>
-                    <div class="scheme-details">
-                        <div class="detail-row">
-                            <span class="detail-label">लाभ रक्कम:</span>
-                            <span class="detail-value">₹१२,०००</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">लाभार्थी:</span>
-                            <span class="detail-value">सर्व वर्ग</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">अर्ज शुल्क:</span>
-                            <span class="detail-value">मोफत</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">अंतिम मुदत:</span>
-                            <span class="detail-value">३१-१२-२०२३</span>
-                        </div>
-                    </div>
-                    <!-- <div class="scheme-actions">
-                        <a href="#" class="action-btn primary"><i class="fas fa-download"></i> अर्ज फॉर्म</a>
-                        <a href="#" class="action-btn secondary"><i class="fas fa-info-circle"></i> मार्गदर्शन</a>
-                    </div> -->
                 </div>
 
-                <!-- मुद्रा योजना -->
-                <div class="scheme-card">
+                <!-- Ayushman Bharat -->
+                <div class="scheme-card" data-category="health">
                     <div class="scheme-header">
                         <div class="scheme-icon">
-                            <i class="fas fa-hand-holding-usd"></i>
+                            <i class="fas fa-heartbeat"></i>
                         </div>
-                        <div>
-                            <h3 class="scheme-title">मुद्रा योजना</h3>
-                            <p class="scheme-category">
-                                <i class="fas fa-tag"></i> रोजगार योजना
-                            </p>
-                        </div>
+                        <h3>आयुष्मान भारत</h3>
                     </div>
-                    <div class="scheme-description">
-                        <p>लहान उद्योग, व्यवसाय सुरू करण्यासाठी कर्ज सुविधा. शिशु, किशोर आणि तरुण या तीन श्रेणींमध्ये
-                            कर्ज.</p>
+                    <div class="scheme-content">
+                        <div class="scheme-details">
+                            <div class="detail-item">
+                                <span class="detail-label">योजना प्रकार:</span>
+                                <span>केंद्रीय योजना</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">लाभ:</span>
+                                <span>₹५ लाख आरोग्य विमा</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">पात्रता:</span>
+                                <span>सर्व नागरिक</span>
+                            </div>
+                        </div>
+                        <div class="scheme-benefits">
+                            <h4>लाभ:</h4>
+                            <ul>
+                                <li>प्रति कुटुंब ₹५ लाख विमा</li>
+                                <li>१,५००+ प्रक्रिया कव्हर</li>
+                                <li>सरकारी व खाजगी रुग्णालये</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="apply-btn">अर्ज करा</a>
                     </div>
-                    <div class="scheme-details">
-                        <div class="detail-row">
-                            <span class="detail-label">कर्ज मर्यादा:</span>
-                            <span class="detail-value">₹१० लाख</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">व्याज दर:</span>
-                            <span class="detail-value">८.५%</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">मुदत:</span>
-                            <span class="detail-value">५ वर्ष</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">अंतिम मुदत:</span>
-                            <span class="detail-value">३१-१२-२०२३</span>
-                        </div>
-                    </div>
-                    <!-- <div class="scheme-actions">
-                        <a href="#" class="action-btn primary"><i class="fas fa-download"></i> अर्ज फॉर्म</a>
-                        <a href="#" class="action-btn secondary"><i class="fas fa-info-circle"></i> मार्गदर्शन</a>
-                    </div> -->
                 </div>
 
-                <!-- बेटी बचाओ बेटी पढाओ -->
-                <div class="scheme-card">
+                <!-- PM Awas Yojana -->
+                <div class="scheme-card" data-category="housing">
                     <div class="scheme-header">
                         <div class="scheme-icon">
-                            <i class="fas fa-female"></i>
+                            <i class="fas fa-home"></i>
                         </div>
-                        <div>
-                            <h3 class="scheme-title">बेटी बचाओ बेटी पढाओ</h3>
-                            <p class="scheme-category">
-                                <i class="fas fa-tag"></i> शिक्षण योजना
-                            </p>
-                        </div>
+                        <h3>पीएम आवास योजना</h3>
                     </div>
-                    <div class="scheme-description">
-                        <p>मुलींच्या जन्म, संरक्षण आणि शिक्षणासाठी योजना. सुकन्या समृद्धी खात्यात गुंतवणूक आणि कर लाभ.
-                        </p>
+                    <div class="scheme-content">
+                        <div class="scheme-details">
+                            <div class="detail-item">
+                                <span class="detail-label">योजना प्रकार:</span>
+                                <span>केंद्रीय योजना</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">लाभ:</span>
+                                <span>₹१.५ लाख अनुदान</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">पात्रता:</span>
+                                <span>ग्रामीण BPL कुटुंब</span>
+                            </div>
+                        </div>
+                        <div class="scheme-benefits">
+                            <h4>लाभ:</h4>
+                            <ul>
+                                <li>गृहनिर्माण अनुदान</li>
+                                <li>शौचालय निर्मिती</li>
+                                <li>LPG कनेक्शन सहाय्य</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="apply-btn">अर्ज करा</a>
                     </div>
-                    <div class="scheme-details">
-                        <div class="detail-row">
-                            <span class="detail-label">जमा रक्कम:</span>
-                            <span class="detail-value">₹१,५०,०००</span>
+                </div>
+
+                <!-- Scholarship -->
+                <div class="scheme-card" data-category="student">
+                    <div class="scheme-header">
+                        <div class="scheme-icon">
+                            <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <div class="detail-row">
-                            <span class="detail-label">मुलीचे वय:</span>
-                            <span class="detail-value">१० वर्षांपर्यंत</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">मुदत:</span>
-                            <span class="detail-value">२१ वर्ष</span>
-                        </div>
-                        <div class="detail-row">
-                            <span class="detail-label">अंतिम मुदत:</span>
-                            <span class="detail-value">३१-१२-२०२३</span>
-                        </div>
+                        <h3>प्रतिभावंत विद्यार्थी योजना</h3>
                     </div>
-                    <!-- <div class="scheme-actions">
-                        <a href="#" class="action-btn primary"><i class="fas fa-download"></i> अर्ज फॉर्म</a>
-                        <a href="#" class="action-btn secondary"><i class="fas fa-info-circle"></i> मार्गदर्शन</a>
-                    </div> -->
+                    <div class="scheme-content">
+                        <div class="scheme-details">
+                            <div class="detail-item">
+                                <span class="detail-label">योजना प्रकार:</span>
+                                <span>राज्य योजना</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">लाभ:</span>
+                                <span>शिष्यवृत्ती</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">पात्रता:</span>
+                                <span>SC/ST/OBC विद्यार्थी</span>
+                            </div>
+                        </div>
+                        <div class="scheme-benefits">
+                            <h4>लाभ:</h4>
+                            <ul>
+                                <li>वार्षिक शिष्यवृत्ती</li>
+                                <li>पुस्तक खरेदी सहाय्य</li>
+                                <li>युनिफॉर्म सहाय्य</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="apply-btn">अर्ज करा</a>
+                    </div>
+                </div>
+
+                <!-- Crop Insurance -->
+                <div class="scheme-card" data-category="agriculture">
+                    <div class="scheme-header">
+                        <div class="scheme-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3>पीएम फसल बीमा योजना</h3>
+                    </div>
+                    <div class="scheme-content">
+                        <div class="scheme-details">
+                            <div class="detail-item">
+                                <span class="detail-label">योजना प्रकार:</span>
+                                <span>केंद्रीय योजना</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">लाभ:</span>
+                                <span>पिकाचे विमा</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">पात्रता:</span>
+                                <span>सर्व शेतकरी</span>
+                            </div>
+                        </div>
+                        <div class="scheme-benefits">
+                            <h4>लाभ:</h4>
+                            <ul>
+                                <li>नैसर्गिक आपत्ती विमा</li>
+                                <li>कमी प्रीमियम दर</li>
+                                <li>त्वरित दावा सेटलमेंट</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="apply-btn">अर्ज करा</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Application Process Section -->
+    <!-- Application Process -->
     <section class="process-section">
         <div class="container">
             <div class="section-title">
                 <h2>अर्ज प्रक्रिया</h2>
-                <p>कोणत्याही योजनेसाठी अर्ज करण्याची संपूर्ण प्रक्रिया</p>
+                <p>कोणत्याही योजनेसाठी अर्ज करण्याची पायरीवार प्रक्रिया</p>
             </div>
 
             <div class="process-steps">
                 <div class="process-step">
-                    <div class="step-number">१</div>
-                    <h4>पात्रता तपासा</h4>
-                    <p>योजनेच्या सर्व पात्रता निकषांसाठी स्वत:ला पात्र असल्याचे तपासा</p>
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h4>योजना शोधा</h4>
+                    <p>तुमच्या पात्रतेनुसार योग्य योजना शोधा</p>
                 </div>
+
                 <div class="process-step">
-                    <div class="step-number">२</div>
-                    <h4>कागदपत्रे जमा करा</h4>
-                    <p>आवश्यक असलेली सर्व कागदपत्रे आणि फोटोकॉपीज तयार करा</p>
+                    <div class="step-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h4>कागदपत्रे तयार करा</h4>
+                    <p>आवश्यक कागदपत्रांच्या प्रती जोडा</p>
                 </div>
+
                 <div class="process-step">
-                    <div class="step-number">३</div>
+                    <div class="step-icon">
+                        <i class="fas fa-edit"></i>
+                    </div>
                     <h4>अर्ज भरा</h4>
-                    <p>अर्ज फॉर्म काळजीपूर्वक भरा आणि सही करा</p>
+                    <p>अर्ज फॉर्म योग्यरित्या भरा</p>
                 </div>
+
                 <div class="process-step">
-                    <div class="step-number">४</div>
+                    <div class="step-icon">
+                        <i class="fas fa-paper-plane"></i>
+                    </div>
                     <h4>अर्ज सादर करा</h4>
-                    <p>सर्व कागदपत्रांसह अर्ज ग्रामपंचायत कार्यालयात सादर करा</p>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">५</div>
-                    <h4>अर्ज स्थिती तपासा</h4>
-                    <p>अर्जाची स्थिती ऑनलाइन किंवा कार्यालयातून तपासा</p>
+                    <p>ग्रामपंचायत कार्यालयात अर्ज जमा करा</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Statistics Section -->
-    <section class="statistics">
+    <!-- Statistics -->
+    <section class="stats-section">
         <div class="container">
             <div class="section-title">
                 <h2>योजना आकडेवारी</h2>
-                <p>ग्रामपंचायतीतर्फे राबविण्यात येणाऱ्या योजनांची संपूर्ण माहिती</p>
+                <p>वाघोडा गावातील योजनांची कामगिरी</p>
             </div>
 
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">२५</div>
-                    <div class="stat-label">एकूण योजना</div>
+                    <div class="stat-number">१५०+</div>
+                    <div class="stat-text">लाभार्थी कुटुंबे</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">१८९</div>
-                    <div class="stat-label">लाभार्थी</div>
+                    <div class="stat-number">२५ लाख+</div>
+                    <div class="stat-text">वितरित रक्कम</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">₹२५ लाख</div>
-                    <div class="stat-label">वितरित रक्कम</div>
+                    <div class="stat-number">९८%</div>
+                    <div class="stat-text">अर्ज मंजूरी दर</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">९५%</div>
-                    <div class="stat-label">यशस्वी अर्ज</div>
+                    <div class="stat-number">१२</div>
+                    <div class="stat-text">सक्रिय योजना</div>
                 </div>
             </div>
         </div>
@@ -1200,19 +1019,18 @@
                 <div class="footer-column">
                     <h3>झटपट दुवे</h3>
                     <ul class="footer-links">
-                        <li><a href="team.html"><i class="fas fa-chevron-right"></i> ग्रामपंचायत सदस्य</a></li>
-                        <li><a href="schools.html"><i class="fas fa-chevron-right"></i> शाळा व अंगणवाडी</a></li>
-                        <li><a href="projects.html"><i class="fas fa-chevron-right"></i> विकास प्रकल्प</a></li>
-                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> फोटो गॅलरी</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> आपत्कालीन संपर्क</a></li>
+                        <li><a href="team.html"><i class="fas fa-chevron-right"></i> पंचायत मंडळ</a></li>
+                        <li><a href="service.html"><i class="fas fa-chevron-right"></i> नागरिक सेवा</a></li>
+                        <li><a href="rti.html"><i class="fas fa-chevron-right"></i> माहिती अधिकार</a></li>
+                        <li><a href="work.html"><i class="fas fa-chevron-right"></i> विकास प्रकल्प</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>संपर्क माहिती</h3>
                     <div class="contact-details">
-                        <p><i class="fas fa-map-marker-alt"></i> सावंगी देवळी, महाराष्ट्र</p>
+                        <p><i class="fas fa-map-marker-alt"></i> वाघोडा, सावनेर, नागपूर, महाराष्ट्र</p>
                         <p><i class="fas fa-phone"></i> आपत्कालीन: १०८</p>
-                        <p><i class="fas fa-envelope"></i> sawangidevali@gmail.com</p>
+                        <p><i class="fas fa-envelope"></i> waghodapanchayat@gmail.com</p>
                         <p><i class="fas fa-clock"></i> कार्यालयीन वेळ: सकाळी 10 ते दुपारी 6</p>
                     </div>
                     <div class="social-links">
@@ -1223,26 +1041,18 @@
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>आपत्कालीन संपर्क</h3>
+                    <h3>योजना संपर्क</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-phone"></i> पोलीस स्टेशन: १००</a></li>
-                        <li><a href="#"><i class="fas fa-ambulance"></i> एम्ब्युलन्स: १०८</a></li>
-                        <li><a href="#"><i class="fas fa-fire-extinguisher"></i> फायर ब्रिगेड: १०१</a></li>
-                        <li><a href="#"><i class="fas fa-hospital"></i> ग्रामीण रुग्णालय</a></li>
+                        <li><a href="#"><i class="fas fa-user-tie"></i> योजना अधिकारी: ग्रामसेवक</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> हेल्पलाईन: १८००-१००-१००</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> schemes.waghoda@gmail.com</a></li>
+                        <li><a href="#"><i class="fas fa-download"></i> योजना फॉर्म डाउनलोड</a></li>
                     </ul>
                 </div>
-                <!-- <div class="footer-column">
-                    <h3>डाउनलोड</h3>
-                    <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> ग्रामसभा नोंदी (PDF)</a></li>
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> वार्षिक आर्थिक अहवाल</a></li>
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> कर विवरण</a></li>
-                        <li><a href="#"><i class="fas fa-file-pdf"></i> विकास आराखडा (DP)</a></li>
-                    </ul>
-                </div> -->
             </div>
             <div class="copyright">
-                <p>&copy; 2023 सावंगी देवळी ग्रामपंचायत. सर्व हक्क राखीव.</p>
+                <p>&copy; २०२५ वाघोडा ग्रामपंचायत. सर्व हक्क राखीव.</p>
+                <p style="margin-top: 10px; font-size: 12px;">विदर्भ प्रदेश, महाराष्ट्र राज्य, भारत</p>
             </div>
         </div>
     </footer>
@@ -1251,6 +1061,42 @@
         // Mobile menu toggle
         document.querySelector('.mobile-menu').addEventListener('click', function () {
             document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Scheme Filter
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const schemeCards = document.querySelectorAll('.scheme-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                const filterValue = button.getAttribute('data-filter');
+
+                schemeCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Apply button functionality
+        const applyButtons = document.querySelectorAll('.apply-btn');
+        applyButtons.forEach(button => {
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+                const schemeTitle = this.closest('.scheme-card').querySelector('h3').textContent;
+                alert('तुम्ही "' + schemeTitle + '" योजनेसाठी अर्ज करीत आहात.\nअर्ज फॉर्म डाउनलोड होईल.');
+
+                // In a real application, this would redirect to the application form
+                // window.location.href = 'scheme-application.html';
+            });
         });
     </script>
 </body>

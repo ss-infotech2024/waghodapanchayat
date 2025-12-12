@@ -4,25 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>तक्रार / सूचना - सावंगी देवळी ग्रामपंचायत</title>
+    <title>तक्रार / सूचना - वाघोडा ग्रामपंचायत</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&display=swap"
         rel="stylesheet">
     <style>
         :root {
-            --primary: #2E7D32;
-            --secondary: #FF9800;
-            --accent: #2196F3;
-            --light: #F1F8E9;
-            --dark: #1B5E20;
-            --text: #212121;
-            --text-light: #757575;
+            --primary: #8B4513;
+            --secondary: #D2691E;
+            --accent: #CD853F;
+            --light: #FAEBD7;
+            --dark: #654321;
+            --text: #2F4F4F;
+            --text-light: #696969;
             --white: #ffffff;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --gradient: linear-gradient(135deg, var(--primary), var(--dark));
-            --success: #4CAF50;
-            --warning: #FFC107;
-            --danger: #F44336;
         }
 
         * {
@@ -111,13 +108,14 @@
             box-shadow: var(--shadow);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 15px;
         }
 
         .nav-links {
@@ -176,72 +174,49 @@
             display: none;
             font-size: 24px;
             cursor: pointer;
+            color: var(--text);
         }
 
-        /* Hero Section */
-        .hero {
+        /* Page Hero */
+        .page-hero {
             background: var(--gradient);
             color: var(--white);
-            padding: 80px 0;
             text-align: center;
+            padding: 100px 20px;
             position: relative;
-            overflow: hidden;
         }
 
-        .hero::before {
+        .page-hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.2;
+            background: url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.15;
             z-index: 0;
         }
 
-        .hero-content {
+        .page-hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 1;
         }
 
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero p {
+        .page-hero p {
             font-size: 18px;
             max-width: 700px;
             margin: 0 auto 30px;
             opacity: 0.9;
+            position: relative;
+            z-index: 1;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--secondary);
-            color: var(--white);
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .btn:hover {
-            background-color: #F57C00;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Complaint Content */
-        .complaint-content {
+        /* Complaint Section */
+        .complaint-section {
             padding: 80px 0;
             background-color: var(--white);
         }
@@ -270,43 +245,47 @@
             transform: translateX(-50%);
         }
 
-        .section-title p {
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
         /* Complaint Form */
-        .complaint-form-section {
-            background: var(--light);
-            padding: 50px;
-            border-radius: 15px;
-            margin-bottom: 50px;
-            box-shadow: var(--shadow);
-        }
-
-        .form-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .form-header h3 {
-            color: var(--primary);
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .form-header p {
-            color: var(--text-light);
-        }
-
         .complaint-form {
+            background: var(--light);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
             max-width: 800px;
-            margin: 0 auto;
+            margin: 0 auto 50px;
         }
 
         .form-group {
             margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+            background-color: #fafafa;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.1);
+            background-color: var(--white);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
         }
 
         .form-row {
@@ -315,117 +294,62 @@
             gap: 20px;
         }
 
-        .form-label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e0e0e0;
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 14px 30px;
             border-radius: 8px;
             font-size: 16px;
-            transition: all 0.3s ease;
-            background-color: var(--white);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
-        }
-
-        textarea.form-control {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-select {
-            appearance: none;
-            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-            background-repeat: no-repeat;
-            background-position: right 15px center;
-            background-size: 16px;
-        }
-
-        .file-upload {
-            border: 2px dashed #e0e0e0;
-            padding: 20px;
-            text-align: center;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .file-upload:hover {
-            border-color: var(--primary);
-            background-color: rgba(46, 125, 50, 0.05);
-        }
-
-        .file-upload i {
-            font-size: 48px;
-            color: var(--text-light);
-            margin-bottom: 10px;
-        }
-
-        .file-input {
-            display: none;
-        }
-
-        .submit-btn {
-            background: var(--gradient);
-            color: white;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
-            display: block;
-            margin: 30px auto 0;
-            width: 200px;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
         }
 
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        .btn:hover {
+            background: var(--dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
-        /* Complaint Status */
-        .complaint-status {
-            margin-bottom: 50px;
+        .btn-secondary {
+            background: var(--secondary);
+            margin-left: 10px;
         }
 
-        .status-cards {
+        /* Complaint Types */
+        .types-section {
+            background-color: var(--light);
+            padding: 80px 0;
+        }
+
+        .types-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
+            gap: 30px;
         }
 
-        .status-card {
-            background: var(--light);
+        .type-card {
+            background: var(--white);
             padding: 30px;
             border-radius: 15px;
             text-align: center;
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
-            border-top: 4px solid var(--primary);
         }
 
-        .status-card:hover {
+        .type-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
-        .status-icon {
+        .type-icon {
             width: 70px;
             height: 70px;
-            background: var(--white);
+            background: var(--light);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -433,62 +357,47 @@
             margin: 0 auto 20px;
             color: var(--primary);
             font-size: 28px;
-            border: 3px solid var(--primary);
         }
 
-        .status-number {
-            font-size: 42px;
-            font-weight: bold;
+        .type-card h4 {
             color: var(--primary);
-            margin-bottom: 10px;
+            margin-bottom: 15px;
         }
 
-        .status-label {
-            font-size: 18px;
-            color: var(--text);
-            font-weight: 600;
+        /* Status Check */
+        .status-section {
+            padding: 80px 0;
+            background-color: var(--white);
         }
 
-        /* Track Complaint */
-        .track-complaint {
+        .status-check {
             background: var(--light);
             padding: 40px;
             border-radius: 15px;
+            box-shadow: var(--shadow);
+            max-width: 600px;
+            margin: 0 auto;
             text-align: center;
         }
 
-        .track-form {
-            max-width: 500px;
-            margin: 0 auto;
+        .status-input {
             display: flex;
-            gap: 15px;
+            gap: 10px;
+            margin-top: 20px;
         }
 
-        .track-input {
+        .status-input input {
             flex: 1;
             padding: 12px 15px;
-            border: 2px solid #e0e0e0;
+            border: 1px solid #ddd;
             border-radius: 8px;
             font-size: 16px;
         }
 
-        .track-btn {
-            background: var(--primary);
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .track-btn:hover {
-            background: var(--dark);
-        }
-
         /* FAQ Section */
         .faq-section {
-            margin-bottom: 50px;
+            background-color: var(--light);
+            padding: 80px 0;
         }
 
         .faq-container {
@@ -497,21 +406,20 @@
         }
 
         .faq-item {
-            background: white;
+            background: var(--white);
             margin-bottom: 15px;
             border-radius: 10px;
-            box-shadow: var(--shadow);
             overflow: hidden;
+            box-shadow: var(--shadow);
         }
 
         .faq-question {
             padding: 20px;
-            background: var(--light);
+            font-weight: 600;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-weight: 600;
             color: var(--primary);
         }
 
@@ -519,7 +427,7 @@
             padding: 0 20px;
             max-height: 0;
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: max-height 0.3s ease;
         }
 
         .faq-answer.active {
@@ -527,51 +435,31 @@
             max-height: 500px;
         }
 
-        /* Contact Info */
-        .contact-info-section {
-            background: var(--light);
-            padding: 50px;
-            border-radius: 15px;
+        /* Statistics */
+        .stats-section {
+            padding: 80px 0;
+            background-color: var(--white);
         }
 
-        .contact-grid {
+        .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 30px;
         }
 
-        .contact-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
+        .stat-card {
             text-align: center;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .contact-icon {
-            width: 60px;
-            height: 60px;
+            padding: 30px;
             background: var(--light);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: var(--primary);
-            font-size: 24px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
         }
 
-        .contact-title {
-            font-size: 18px;
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
             color: var(--primary);
             margin-bottom: 10px;
-            font-weight: 600;
         }
 
         /* Footer */
@@ -705,34 +593,61 @@
 
             .mobile-menu {
                 display: block;
+                margin-left: auto;
             }
 
-            .hero h1 {
+            .page-hero h1 {
                 font-size: 32px;
             }
 
-            .hero p {
+            .page-hero p {
                 font-size: 16px;
-            }
-
-            .complaint-form-section {
-                padding: 30px 20px;
             }
 
             .form-row {
                 grid-template-columns: 1fr;
             }
 
-            .status-cards {
-                grid-template-columns: 1fr;
+            .complaint-form {
+                padding: 25px 20px;
             }
 
-            .track-form {
+            .status-input {
                 flex-direction: column;
             }
+        }
 
-            .contact-grid {
+        @media (max-width: 480px) {
+            .page-hero h1 {
+                font-size: 28px;
+            }
+
+            .section-title h2 {
+                font-size: 26px;
+            }
+
+            .types-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-text h1 {
+                font-size: 20px;
+            }
+
+            .logo-text p {
+                font-size: 12px;
+            }
+
+            .contact-item {
+                font-size: 12px;
             }
         }
     </style>
@@ -745,11 +660,11 @@
             <div class="top-bar">
                 <div class="logo">
                     <div class="logo-img">
-                        <i class="fas fa-landmark"></i>
+                        <i class="fas fa-village"></i>
                     </div>
                     <div class="logo-text">
-                        <h1>सावंगी देवळी ग्रामपंचायत</h1>
-                        <p>विकास आणि प्रगतीचे प्रतीक</p>
+                        <h1>वाघोडा ग्रामपंचायत</h1>
+                        <p>नागपूर, सावनेर, महाराष्ट्र</p>
                     </div>
                 </div>
                 <div class="contact-info">
@@ -759,11 +674,11 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>sawangidevali@gmail.com</span>
+                        <span>waghodapanchayat@gmail.com</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>सावंगी देवळी, महाराष्ट्र</span>
+                        <span>वाघोडा, सावनेर</span>
                     </div>
                 </div>
             </div>
@@ -778,21 +693,22 @@
                 <li class="dropdown">
                     <a href="#">आमच्याबद्दल <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="about.html">परिचय</a>
+                        <a href="about.html">गावाचा इतिहास</a>
                         <a href="team.html">पंचायत मंडळ</a>
+                        <a href="demographics.html">लोकसंख्या</a>
                     </div>
                 </li>
-                <!-- <li><a href="announcements.html">सूचना</a></li> -->
                 <li class="dropdown">
                     <a href="#">सेवा <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
                         <a href="service.html">नागरिक सेवा</a>
-                        <a href="facilities.html">स्थानीय सुविधा</a>
+                        <a href="facilities.html">पायाभूत सुविधा</a>
                         <a href="rti.html">माहिती अधिकार</a>
                         <a href="govt-schemes.html">शासकीय योजना</a>
                     </div>
                 </li>
                 <li><a href="gallery.html">गॅलरी</a></li>
+                <li><a href="weather.html">हवामान</a></li>
                 <li><a href="contact.html">संपर्क</a></li>
                 <li class="dropdown">
                     <a href="#" class="active">अधिक <i class="fas fa-chevron-down"></i></a>
@@ -809,238 +725,258 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
             <h1>तक्रार / सूचना</h1>
-            <p>आपल्या समस्यांचे निराकरण करण्यासाठी आम्ही सदैव तत्पर आहोत</p>
+            <p>तुमच्या समस्येबाबत किंवा सुधारणेसाठी सूचना द्या</p>
         </div>
     </section>
 
-    <!-- Complaint Content Section -->
-    <section class="complaint-content">
+    <!-- Complaint Form -->
+    <section class="complaint-section">
         <div class="container">
             <div class="section-title">
-                <h2>तक्रार नोंदवा</h2>
-                <p>आपली समस्या किंवा सूचना आम्हाला कळवा. आम्ही शक्य तितक्या लवकर कार्यवाही करू.</p>
+                <h2>तक्रार / सूचना नोंदवा</h2>
+                <p>तुमची समस्या किंवा सूचना आम्हाला कळवा</p>
             </div>
 
-            <!-- Complaint Status Overview -->
-            <div class="complaint-status">
-                <div class="status-cards">
-                    <div class="status-card">
-                        <div class="status-icon">
-                            <i class="fas fa-inbox"></i>
-                        </div>
-                        <div class="status-number">१४८</div>
-                        <div class="status-label">एकूण तक्रारी</div>
-                    </div>
-                    <div class="status-card">
-                        <div class="status-icon">
-                            <i class="fas fa-check-circle"></i>
-                        </div>
-                        <div class="status-number">११२</div>
-                        <div class="status-label">सोडवलेल्या</div>
-                    </div>
-                    <div class="status-card">
-                        <div class="status-icon">
-                            <i class="fas fa-spinner"></i>
-                        </div>
-                        <div class="status-number">२८</div>
-                        <div class="status-label">प्रगतीपथावर</div>
-                    </div>
-                    <div class="status-card">
-                        <div class="status-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="status-number">८</div>
-                        <div class="status-label">नवीन तक्रारी</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Complaint Form -->
-            <div class="complaint-form-section">
-                <div class="form-header">
-                    <h3>तक्रार नोंदणी फॉर्म</h3>
-                    <p>खालील फॉर्म भरून आपली तक्रार / सूचना नोंदवा</p>
-                </div>
-
-                <form class="complaint-form" id="complaintForm">
+            <div class="complaint-form">
+                <form id="complaintForm">
                     <div class="form-row">
                         <div class="form-group">
-                            <label class="form-label" for="name">पूर्ण नाव *</label>
-                            <input type="text" class="form-control" id="name" name="name" required
-                                placeholder="आपले पूर्ण नाव">
+                            <label for="complainantName">नाव *</label>
+                            <input type="text" id="complainantName" class="form-control" required>
                         </div>
-                        <div class="form-group">
-                            <label class="form-label" for="phone">मोबाईल नंबर *</label>
-                            <input type="tel" class="form-control" id="phone" name="phone" required
-                                placeholder="९८७६५४३२१०">
-                        </div>
-                    </div>
 
-                    <div class="form-row">
                         <div class="form-group">
-                            <label class="form-label" for="email">ईमेल</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="आपला ईमेल">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="address">पत्ता *</label>
-                            <input type="text" class="form-control" id="address" name="address" required
-                                placeholder="आपला संपूर्ण पत्ता">
+                            <label for="complainantMobile">मोबाईल नंबर *</label>
+                            <input type="tel" id="complainantMobile" class="form-control" required>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label" for="category">तक्रारीचा प्रकार *</label>
-                        <select class="form-control form-select" id="category" name="category" required>
+                        <label for="complainantAddress">पत्ता</label>
+                        <textarea id="complainantAddress" class="form-control" rows="2"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="complaintType">तक्रार / सूचना प्रकार *</label>
+                        <select id="complaintType" class="form-control" required>
                             <option value="">निवडा</option>
-                            <option value="water">पाणीपुरवठा</option>
-                            <option value="road">रस्ते दुरुस्ती</option>
+                            <option value="water">पाणी पुरवठा</option>
                             <option value="electricity">वीज पुरवठा</option>
+                            <option value="road">रस्ते आणि वाहतूक</option>
                             <option value="sanitation">स्वच्छता</option>
-                            <option value="drainage">ड्रेनेज सिस्टीम</option>
-                            <option value="streetlight">स्ट्रीट लाईट</option>
+                            <option value="education">शिक्षण</option>
+                            <option value="health">आरोग्य</option>
+                            <option value="corruption">भ्रष्टाचार</option>
+                            <option value="suggestion">सुधारणा सूचना</option>
                             <option value="other">इतर</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label" for="subject">विषय *</label>
-                        <input type="text" class="form-control" id="subject" name="subject" required
-                            placeholder="तक्रारीचा विषय">
+                        <label for="complaintSubject">विषय *</label>
+                        <input type="text" id="complaintSubject" class="form-control" required
+                            placeholder="तक्रार / सूचनेचा विषय">
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label" for="description">तपशीलवार माहिती *</label>
-                        <textarea class="form-control" id="description" name="description" required
-                            placeholder="आपली तक्रार / सूचना तपशीलवार लिहा..."></textarea>
+                        <label for="complaintDescription">तपशीलवार वर्णन *</label>
+                        <textarea id="complaintDescription" class="form-control" required rows="5"
+                            placeholder="तुमची तक्रार / सूचना तपशीलवार लिहा..."></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label">संलग्नक जोडा (ऐच्छिक)</label>
-                        <div class="file-upload" onclick="document.getElementById('fileInput').click()">
-                            <i class="fas fa-cloud-upload-alt"></i>
-                            <p>फोटो किंवा दस्तऐवज अपलोड करा</p>
-                            <input type="file" id="fileInput" class="file-input" accept="image/*,.pdf,.doc,.docx">
-                        </div>
+                        <label for="complaintDocuments">संलग्नक (असल्यास)</label>
+                        <input type="file" id="complaintDocuments" class="form-control" multiple>
+                        <small style="color: var(--text-light);">फोटो, दस्तऐवज इत्यादी (कमाल ५ फाइल, ५MB
+                            प्रत्येकी)</small>
                     </div>
 
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-paper-plane"></i> तक्रार पाठवा
-                    </button>
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn">
+                            <i class="fas fa-paper-plane"></i> तक्रार / सूचना पाठवा
+                        </button>
+                        <button type="reset" class="btn btn-secondary">
+                            <i class="fas fa-redo"></i> रद्द करा
+                        </button>
+                    </div>
                 </form>
             </div>
+        </div>
+    </section>
 
-            <!-- Track Complaint -->
-            <div class="track-complaint">
-                <h3 style="margin-bottom: 20px; color: var(--primary);">तक्रार स्थिती तपासा</h3>
-                <p style="margin-bottom: 25px; color: var(--text-light);">आपला तक्रार आयडी नंबर टाकून स्थिती तपासा</p>
-                <form class="track-form">
-                    <input type="text" class="track-input" placeholder="तक्रार आयडी नंबर (उदा. CMP-2024-001)" required>
-                    <button type="submit" class="track-btn">
-                        <i class="fas fa-search"></i> तपासा
+    <!-- Complaint Types -->
+    <section class="types-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>तक्रार प्रकार</h2>
+                <p>सामान्यत: केल्या जाणाऱ्या तक्रारी</p>
+            </div>
+
+            <div class="types-grid">
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h4>पाणी पुरवठा</h4>
+                    <p>पिण्याच्या पाण्याची समस्या, पाणी गळती, पाणी दाब कमी</p>
+                </div>
+
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h4>वीज पुरवठा</h4>
+                    <p>वीज कट, तारा तुटणे, स्ट्रीट लाईट समस्या</p>
+                </div>
+
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h4>रस्ते आणि वाहतूक</h4>
+                    <p>रस्त्याची दुरुस्ती, खड्डे, वाहतूक व्यवस्था</p>
+                </div>
+
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-trash"></i>
+                    </div>
+                    <h4>स्वच्छता</h4>
+                    <p>कचरा व्यवस्थापन, गटार व्यवस्था, शौचालय</p>
+                </div>
+
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h4>शिक्षण</h4>
+                    <p>शाळा सुविधा, शिक्षक समस्या, शैक्षणिक सामग्री</p>
+                </div>
+
+                <div class="type-card">
+                    <div class="type-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h4>आरोग्य</h4>
+                    <p>आरोग्य केंद्र सुविधा, वैद्यकीय समस्या, स्वच्छता</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Status Check -->
+    <section class="status-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>तक्रार स्थिती तपासा</h2>
+                <p>तुमच्या तक्रारीची स्थिती तपासा</p>
+            </div>
+
+            <div class="status-check">
+                <h3 style="color: var(--primary); margin-bottom: 20px;">तक्रार क्रमांकाने शोधा</h3>
+                <p style="margin-bottom: 20px; color: var(--text-light);">तुमच्या तक्रारीचा क्रमांक प्रविष्ट करा</p>
+
+                <div class="status-input">
+                    <input type="text" id="complaintNumber" placeholder="तक्रार क्रमांक (उदा: COMP/WAG/2024/001)">
+                    <button class="btn" onclick="checkStatus()">
+                        <i class="fas fa-search"></i> शोधा
                     </button>
-                </form>
-            </div>
-
-            <!-- FAQ Section -->
-            <div class="faq-section">
-                <div class="section-title">
-                    <h2>वारंवार विचारले जाणारे प्रश्न</h2>
-                    <p>तक्रार नोंदवण्यासंबंधी सामान्य प्रश्न आणि उत्तरे</p>
                 </div>
 
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>तक्रार नोंदवल्यानंतर किती दिवसात प्रतिसाद मिळेल?</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>सामान्यत: २४ ते ४८ तासांच्या आत आपल्या तक्रारीची पुष्टी होते आणि ७ दिवसांच्या आत
-                                कार्यवाही सुरू होते.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>तक्रार नोंदवण्यासाठी कोणती माहिती आवश्यक आहे?</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>नाव, मोबाईल नंबर, पत्ता, तक्रारीचा प्रकार आणि तपशीलवार माहिती आवश्यक आहे. संलग्नक जोडणे
-                                ऐच्छिक आहे.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>तक्रार नोंदवल्यानंतर तिची स्थिती कशी तपासायची?</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>तक्रार नोंदवल्यानंतर आपल्याला एक अद्वितीय आयडी नंबर मिळेल. तो नंबर वापरून वरील "तक्रार
-                                स्थिती तपासा" विभागातून स्थिती तपासू शकता.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>तक्रार नोंदवण्यासाठी कोणती शुल्क आहे?</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>तक्रार नोंदवणे पूर्णपणे विनामूल्य आहे. कोणत्याही प्रकारचे शुल्क आकारले जात नाही.</p>
-                        </div>
+                <div id="statusResult" style="margin-top: 30px; display: none;">
+                    <div style="background: var(--white); padding: 20px; border-radius: 10px; text-align: left;">
+                        <h4 id="resultTitle" style="color: var(--primary); margin-bottom: 15px;"></h4>
+                        <div id="resultDetails"></div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Contact Information -->
-            <div class="contact-info-section">
-                <div class="section-title">
-                    <h2>संपर्क माहिती</h2>
-                    <p>अधिक माहितीसाठी आमच्याशी संपर्क साधा</p>
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>वारंवार विचारले जाणारे प्रश्न</h2>
+                <p>तक्रार / सूचना यासंबंधी सामान्य प्रश्न</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>तक्रार नोंदवल्यानंतर किती दिवसात प्रतिसाद मिळेल?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>सामान्यत: ३ कामकाजाच्या दिवसांत प्राथमिक प्रतिसाद मिळतो. गंभीर तक्रारींसाठी २४ तासांत कारवाई
+                            केली जाते.</p>
+                    </div>
                 </div>
 
-                <div class="contact-grid">
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <h4 class="contact-title">फोन नंबर</h4>
-                        <p>०२३३-१२३४५६</p>
-                        <p>सोम-शनि: सकाळी १० - संध्याकाळी ६</p>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>तक्रार क्रमांक कसा मिळेल?</span>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
+                    <div class="faq-answer">
+                        <p>तक्रार नोंदवल्यानंतर लगेच तक्रार क्रमांक मिळेल. हा क्रमांक तुमच्या मोबाईल नंबरवर एसएमएस
+                            द्वारे पाठवला जाईल.</p>
+                    </div>
+                </div>
 
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h4 class="contact-title">ईमेल</h4>
-                        <p>sawangidevali@gmail.com</p>
-                        <p>२४ तासांच्या आत प्रतिसाद</p>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>अनामिक तक्रार करू शकतो का?</span>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
+                    <div class="faq-answer">
+                        <p>होय, अनामिक तक्रार करता येते. परंतु कारवाईसाठी संपर्क माहिती असल्यास चांगले परिणाम मिळतात.
+                        </p>
+                    </div>
+                </div>
 
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h4 class="contact-title">पत्ता</h4>
-                        <p>ग्रामपंचायत कार्यालय</p>
-                        <p>सावंगी देवळी, महाराष्ट्र</p>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>तक्रार नोंदवल्यानंतर काय प्रक्रिया आहे?</span>
+                        <i class="fas fa-chevron-down"></i>
                     </div>
+                    <div class="faq-answer">
+                        <p>१. तक्रार प्राप्ती<br>२. प्राथमिक तपासणी<br>३. संबंधित विभागाकडे पाठवणे<br>४. कारवाई<br>५.
+                            तक्रारदाराला माहिती</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <div class="contact-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <h4 class="contact-title">कार्यालयीन वेळ</h4>
-                        <p>सोमवार - शनिवार</p>
-                        <p>सकाळी १०:०० - दुपारी ६:००</p>
-                    </div>
+    <!-- Statistics -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>तक्रार आकडेवारी</h2>
+                <p>२०२४ सालची तक्रार आकडेवारी</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">१८५</div>
+                    <div class="stat-text">एकूण तक्रारी</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">९४%</div>
+                    <div class="stat-text">निकाली तक्रारी</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">२.३</div>
+                    <div class="stat-text">सरासरी दिवस (निकालासाठी)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">९१%</div>
+                    <div class="stat-text">समाधान दर</div>
                 </div>
             </div>
         </div>
@@ -1051,11 +987,21 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>कार्यालय</h3>
+                    <h3>झटपट दुवे</h3>
+                    <ul class="footer-links">
+                        <li><a href="team.html"><i class="fas fa-chevron-right"></i> पंचायत मंडळ</a></li>
+                        <li><a href="service.html"><i class="fas fa-chevron-right"></i> नागरिक सेवा</a></li>
+                        <li><a href="work.html"><i class="fas fa-chevron-right"></i> विकास प्रकल्प</a></li>
+                        <li><a href="fund.html"><i class="fas fa-chevron-right"></i> आर्थिक माहिती</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>संपर्क माहिती</h3>
                     <div class="contact-details">
-                        <p><i class="fas fa-map-marker-alt"></i> ग्रामपंचायत, सावंगी देवळी, महाराष्ट्र</p>
-                        <p><i class="fas fa-phone"></i> ०२३३-१२३४५६</p>
-                        <p><i class="fas fa-envelope"></i> sawangidevali@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> वाघोडा, सावनेर, नागपूर, महाराष्ट्र</p>
+                        <p><i class="fas fa-phone"></i> आपत्कालीन: १०८</p>
+                        <p><i class="fas fa-envelope"></i> waghodapanchayat@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> कार्यालयीन वेळ: सकाळी 10 ते दुपारी 6</p>
                     </div>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1065,104 +1011,147 @@
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>झटपट दुवे</h3>
+                    <h3>तक्रार संपर्क</h3>
                     <ul class="footer-links">
-                        <li><a href="govt-schemes.html"><i class="fas fa-arrow-right"></i> शासकीय योजना</a></li>
-                        <li><a href="facilities.html"><i class="fas fa-arrow-right"></i> सोई-सुविधा</a></li>
-                        <li><a href="fund.html"><i class="fas fa-arrow-right"></i> बजेट आणि निधी</a></li>
-                        <li><a href="work.html"><i class="fas fa-arrow-right"></i> विकास कामे</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>कार्यालयीन वेळा</h3>
-                    <div class="contact-details">
-                        <p><i class="fas fa-clock"></i> सोमवार ते शनिवार</p>
-                        <p>सकाळी १०:०० - दुपारी ६:००</p>
-                        <p><i class="fas fa-clock"></i> रविवार - बंद</p>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>महत्वाचे दुवे</h3>
-                    <ul class="footer-links">
-                        <li><a href="rti.html"><i class="fas fa-arrow-right"></i> माहिती अधिकार</a></li>
-                        <li><a href="complaint.html"><i class="fas fa-arrow-right"></i> तक्रार / सूचना</a></li>
-                        <li><a href="announcements.html"><i class="fas fa-arrow-right"></i> सार्वजनिक सूचना</a></li>
-                        <li><a href="contact.html"><i class="fas fa-arrow-right"></i> संपर्क साधा</a></li>
+                        <li><a href="#"><i class="fas fa-user-tie"></i> तक्रार अधिकारी: ग्रामसेवक</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> हेल्पलाईन: ०७११३-२३४५६</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> complaints.waghoda@gmail.com</a></li>
+                        <li><a href="#"><i class="fas fa-download"></i> तक्रार फॉर्म डाउनलोड</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; २०२४ सावंगी देवळी ग्रामपंचायत. सर्व हक्क राखीव.</p>
+                <p>&copy; २०२५ वाघोडा ग्रामपंचायत. सर्व हक्क राखीव.</p>
+                <p style="margin-top: 10px; font-size: 12px;">विदर्भ प्रदेश, महाराष्ट्र राज्य, भारत</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
+        // Mobile menu toggle
         document.querySelector('.mobile-menu').addEventListener('click', function () {
             document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        // FAQ Toggle
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', function () {
-                const answer = this.nextElementSibling;
-                const icon = this.querySelector('i');
-
-                // Toggle current answer
-                answer.classList.toggle('active');
-
-                // Rotate icon
-                if (answer.classList.contains('active')) {
-                    icon.style.transform = 'rotate(180deg)';
-                } else {
-                    icon.style.transform = 'rotate(0deg)';
-                }
-
-                // Close other answers
-                document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
-                    if (otherAnswer !== answer && otherAnswer.classList.contains('active')) {
-                        otherAnswer.classList.remove('active');
-                        otherAnswer.previousElementSibling.querySelector('i').style.transform = 'rotate(0deg)';
-                    }
-                });
-            });
-        });
-
-        // Form Submission
+        // Complaint Form submission
         document.getElementById('complaintForm').addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // Simple validation
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const category = document.getElementById('category').value;
-            const subject = document.getElementById('subject').value;
-            const description = document.getElementById('description').value;
+            // Get form values
+            const name = document.getElementById('complainantName').value;
+            const mobile = document.getElementById('complainantMobile').value;
+            const type = document.getElementById('complaintType').value;
+            const subject = document.getElementById('complaintSubject').value;
+            const description = document.getElementById('complaintDescription').value;
 
-            if (name && phone && category && subject && description) {
-                // Generate complaint ID
-                const complaintId = 'CMP-' + new Date().getFullYear() + '-' + Math.floor(1000 + Math.random() * 9000);
-
-                // Show success message
-                alert('तक्रार यशस्वीरित्या नोंदवली गेली आहे!\nआपला तक्रार आयडी: ' + complaintId + '\nआम्ही लवकरच आपल्याशी संपर्क साधू.');
-
-                // Reset form
-                this.reset();
-            } else {
-                alert('कृपया सर्व आवश्यक माहिती भरा.');
+            // Basic validation
+            if (!name || !mobile || !type || !subject || !description) {
+                alert('कृपया सर्व आवश्यक माहिती भरा!');
+                return;
             }
+
+            // Mobile validation
+            const phonePattern = /^[0-9]{10}$/;
+            if (!phonePattern.test(mobile)) {
+                alert('कृपया वैध १०-अंकी मोबाईल नंबर प्रविष्ट करा!');
+                return;
+            }
+
+            // Generate complaint number
+            const complaintNumber = 'COMP/WAG/2024/' + Math.floor(Math.random() * 900 + 100);
+
+            // Show success message
+            alert('धन्यवाद! तुमची तक्रार / सूचना यशस्वीरित्या नोंदवली गेली आहे.\nतक्रार क्रमांक: ' + complaintNumber + '\nआम्ही लवकरच तुमच्याशी संपर्क साधू.');
+
+            // Reset form
+            document.getElementById('complaintForm').reset();
         });
 
-        // File upload display
-        document.getElementById('fileInput').addEventListener('change', function (e) {
-            const fileUpload = this.parentElement;
-            if (this.files.length > 0) {
-                fileUpload.innerHTML = `
-                    <i class="fas fa-check-circle" style="color: var(--success);"></i>
-                    <p>${this.files[0].name}</p>
-                    <small>फाइल यशस्वीरित्या निवडली</small>
-                `;
+        // Status check function
+        function checkStatus() {
+            const complaintNumber = document.getElementById('complaintNumber').value;
+            const statusResult = document.getElementById('statusResult');
+            const resultTitle = document.getElementById('resultTitle');
+            const resultDetails = document.getElementById('resultDetails');
+
+            if (!complaintNumber) {
+                alert('कृपया तक्रार क्रमांक प्रविष्ट करा!');
+                return;
+            }
+
+            // Mock data for demonstration
+            const mockData = {
+                'COMP/WAG/2024/001': {
+                    title: 'पाणी पुरवठा समस्या',
+                    status: 'सोडवले',
+                    date: '१५ डिसेंबर २०२४',
+                    details: 'तक्रार प्राप्त: १० डिसेंबर २०२४<br>स्थिती: सोडवले<br>कारवाई: पाणी पंप दुरुस्ती केली<br>अद्यतन: १४ डिसेंबर २०२४'
+                },
+                'COMP/WAG/2024/002': {
+                    title: 'रस्ता दुरुस्ती',
+                    status: 'प्रगतीपथावर',
+                    date: '१२ डिसेंबर २०२४',
+                    details: 'तक्रार प्राप्त: ५ डिसेंबर २०२४<br>स्थिती: प्रगतीपथावर<br>कारवाई: ठेकेदार नेमणूक केली<br>अद्यतन: ११ डिसेंबर २०२४'
+                },
+                'COMP/WAG/2024/003': {
+                    title: 'स्ट्रीट लाईट समस्या',
+                    status: 'प्राप्त',
+                    date: '१० डिसेंबर २०२४',
+                    details: 'तक्रार प्राप्त: १० डिसेंबर २०२४<br>स्थिती: प्राप्त<br>कारवाई: तपासणी सुरू<br>अद्यतन: १० डिसेंबर २०२४'
+                }
+            };
+
+            if (mockData[complaintNumber]) {
+                const data = mockData[complaintNumber];
+                resultTitle.textContent = data.title + ' - ' + complaintNumber;
+                resultDetails.innerHTML = data.details;
+                statusResult.style.display = 'block';
+            } else {
+                resultTitle.textContent = 'तक्रार सापडली नाही';
+                resultDetails.textContent = 'प्रविष्ट केलेला तक्रार क्रमांक सापडला नाही. कृपया तक्रार क्रमांक तपासा.';
+                statusResult.style.display = 'block';
+            }
+        }
+
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+
+                // Close all other answers
+                document.querySelectorAll('.faq-answer').forEach(otherAnswer => {
+                    if (otherAnswer !== answer) {
+                        otherAnswer.classList.remove('active');
+                        otherAnswer.previousElementSibling.querySelector('i').classList.remove('fa-chevron-up');
+                        otherAnswer.previousElementSibling.querySelector('i').classList.add('fa-chevron-down');
+                    }
+                });
+
+                // Toggle current answer
+                answer.classList.toggle('active');
+                if (answer.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+
+        // Phone number validation
+        const phoneInput = document.getElementById('complainantMobile');
+        phoneInput.addEventListener('input', function () {
+            const phone = this.value;
+            const phonePattern = /^[0-9]{10}$/;
+
+            if (phone && !phonePattern.test(phone)) {
+                this.style.borderColor = '#e74c3c';
+                this.style.boxShadow = '0 0 0 3px rgba(231, 76, 60, 0.1)';
+            } else {
+                this.style.borderColor = '#ddd';
+                this.style.boxShadow = 'none';
             }
         });
     </script>

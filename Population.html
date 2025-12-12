@@ -4,12 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>पंचायत मंडळ - वाघोडा ग्रामपंचायत</title>
+    <title>लोकसंख्या - वाघोडा ग्रामपंचायत</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&display=swap"
         rel="stylesheet">
     <style>
-        /* Same CSS as index.html */
         :root {
             --primary: #8B4513;
             --secondary: #D2691E;
@@ -187,10 +186,24 @@
             position: relative;
         }
 
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.15;
+            z-index: 0;
+        }
+
         .page-hero h1 {
             font-size: 42px;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
         }
 
         .page-hero p {
@@ -198,31 +211,14 @@
             max-width: 700px;
             margin: 0 auto 30px;
             opacity: 0.9;
+            position: relative;
+            z-index: 1;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--secondary);
-            color: var(--white);
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .btn:hover {
-            background-color: #B35900;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Section Common */
-        section {
+        /* Demographics Section */
+        .demo-section {
             padding: 80px 0;
+            background-color: var(--white);
         }
 
         .section-title {
@@ -249,134 +245,165 @@
             transform: translateX(-50%);
         }
 
-        /* Team Section */
-        .team-section {
-            background-color: var(--white);
-        }
-
-        .team-grid {
+        /* Population Overview */
+        .population-overview {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin-bottom: 50px;
         }
 
-        .team-card {
-            background-color: var(--white);
-            border-radius: 10px;
+        .population-card {
+            background: var(--light);
             padding: 30px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-            border-top: 4px solid var(--primary);
-        }
-
-        .team-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .team-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            background-color: var(--light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 50px;
-            overflow: hidden;
-            border: 3px solid var(--primary);
-        }
-
-        .team-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .team-card h3 {
-            font-size: 22px;
-            margin-bottom: 5px;
-            color: var(--primary);
-        }
-
-        .team-card .position {
-            color: var(--secondary);
-            font-weight: 600;
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
-
-        .team-contact {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid #eee;
-        }
-
-        .contact-info-team {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 10px;
-        }
-
-        .contact-info-team p {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            color: var(--text-light);
-            font-size: 14px;
-        }
-
-        .contact-info-team i {
-            color: var(--accent);
-        }
-
-        /* Committee Section */
-        .committee-section {
-            background-color: var(--light);
-        }
-
-        .committee-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .committee-card {
-            background-color: var(--white);
-            border-radius: 10px;
-            padding: 25px;
+            border-radius: 15px;
             text-align: center;
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
         }
 
-        .committee-card:hover {
+        .population-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
-        .committee-icon {
-            width: 60px;
-            height: 60px;
-            background-color: var(--light);
+        .population-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 15px;
+            margin: 0 auto 20px;
             color: var(--primary);
-            font-size: 24px;
+            font-size: 28px;
         }
 
-        .committee-card h4 {
+        .population-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+
+        /* Charts Section */
+        .charts-section {
+            background-color: var(--light);
+            padding: 80px 0;
+        }
+
+        .charts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .chart-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .chart-title {
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .chart-container {
+            height: 250px;
+            position: relative;
+        }
+
+        .chart-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .bar-label {
+            width: 100px;
+            font-weight: 600;
+        }
+
+        .bar-value {
+            flex: 1;
+            height: 20px;
+            background: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bar-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+
+        /* Literacy Section */
+        .literacy-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .literacy-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .literacy-item {
+            text-align: center;
+            padding: 25px;
+            background: var(--light);
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .literacy-percent {
+            font-size: 42px;
+            font-weight: 700;
             color: var(--primary);
             margin-bottom: 10px;
+        }
+
+        /* Age Distribution */
+        .age-section {
+            background-color: var(--light);
+            padding: 80px 0;
+        }
+
+        .age-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .age-group {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+
+        .age-range {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .age-percentage {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin: 15px 0;
         }
 
         /* Footer */
@@ -521,11 +548,7 @@
                 font-size: 16px;
             }
 
-            .team-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .committee-grid {
+            .charts-container {
                 grid-template-columns: 1fr;
             }
         }
@@ -537,6 +560,18 @@
 
             .section-title h2 {
                 font-size: 26px;
+            }
+
+            .population-overview {
+                grid-template-columns: 1fr;
+            }
+
+            .literacy-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .age-grid {
+                grid-template-columns: 1fr;
             }
 
             .footer-content {
@@ -599,8 +634,8 @@
                     <a href="#" class="active">आमच्याबद्दल <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
                         <a href="about.html">गावाचा इतिहास</a>
-                        <a href="team.html" class="active">पंचायत मंडळ</a>
-                        <a href="demographics.html">लोकसंख्या</a>
+                        <a href="team.html">पंचायत मंडळ</a>
+                        <a href="demographics.html" class="active">लोकसंख्या</a>
                     </div>
                 </li>
                 <li class="dropdown">
@@ -633,139 +668,216 @@
     <!-- Page Hero -->
     <section class="page-hero">
         <div class="container">
-            <h1>पंचायत मंडळ</h1>
-            <p>वाघोडा ग्रामपंचायतीचे सध्याचे माननीय पदाधिकारी व सदस्य</p>
+            <h1>लोकसंख्या माहिती</h1>
+            <p>वाघोडा गावाची जनगणना २०११ नुसार लोकसंख्या तपशील</p>
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section class="team-section">
+    <!-- Population Overview -->
+    <section class="demo-section">
         <div class="container">
             <div class="section-title">
-                <h2>आमचे पंचायत मंडळ (२०२५-२०३०)</h2>
-                <p>ग्रामपंचायतीचे सदस्य आणि त्यांची जबाबदारी</p>
+                <h2>लोकसंख्या आढावा</h2>
+                <p>२०११ च्या जनगणनेनुसार संपूर्ण लोकसंख्या तपशील</p>
             </div>
 
-            <div class="team-grid">
-                <!-- सरपंच -->
-                <div class="team-card">
-                    <div class="team-image">
-                        <i class="fas fa-female"></i>
+            <div class="population-overview">
+                <div class="population-card">
+                    <div class="population-icon">
+                        <i class="fas fa-users"></i>
                     </div>
-                    <h3>शिप्रा मिलिंद खेडेकर</h3>
-                    <div class="position">सरपंच</div>
-                    <p>ग्रामपंचायतीचे मुख्य प्रशासकीय प्रमुख</p>
-                    <div class="team-contact">
-                        <div class="contact-info-team">
-                            <p><i class="fas fa-phone"></i> ९८७६५४३२१०</p>
-                            <p><i class="fas fa-envelope"></i> sarpanch.waghoda@gmail.com</p>
-                        </div>
-                    </div>
+                    <h3>एकूण लोकसंख्या</h3>
+                    <div class="population-number">१,८४५</div>
+                    <p>गावातील एकूण रहिवाशी</p>
                 </div>
 
-                <!-- उपसरपंच -->
-                <div class="team-card">
-                    <div class="team-image">
+                <div class="population-card">
+                    <div class="population-icon">
                         <i class="fas fa-male"></i>
                     </div>
-                    <h3>अजय गोविंदराव काळमेघ</h3>
-                    <div class="position">उपसरपंच</div>
-                    <p>सरपंचांच्या अनुपस्थितीत कार्यभार सांभाळतात</p>
-                    <div class="team-contact">
-                        <div class="contact-info-team">
-                            <p><i class="fas fa-phone"></i> ९८७६५४३२११</p>
-                        </div>
-                    </div>
+                    <h3>पुरुष लोकसंख्या</h3>
+                    <div class="population-number">९४५</div>
+                    <p>५१.२% एकूण लोकसंख्येपैकी</p>
                 </div>
 
-                <!-- ग्रामसेवक -->
-                <div class="team-card">
-                    <div class="team-image">
-                        <i class="fas fa-user-tie"></i>
+                <div class="population-card">
+                    <div class="population-icon">
+                        <i class="fas fa-female"></i>
                     </div>
-                    <h3>श्री. पी. एम. घुगे</h3>
-                    <div class="position">ग्रामसेवक</div>
-                    <p>ग्रामपंचायत कार्यालयाचे प्रशासकीय प्रमुख</p>
-                    <div class="team-contact">
-                        <div class="contact-info-team">
-                            <p><i class="fas fa-phone"></i> ०७११३-२३४५६</p>
-                            <p><i class="fas fa-envelope"></i> waghodapanchayat@gmail.com</p>
-                        </div>
-                    </div>
+                    <h3>महिला लोकसंख्या</h3>
+                    <div class="population-number">९००</div>
+                    <p>४८.८% एकूण लोकसंख्येपैकी</p>
                 </div>
 
-                <!-- पंच सदस्य 1 -->
-                <div class="team-card">
-                    <div class="team-image">
-                        <i class="fas fa-user"></i>
+                <div class="population-card">
+                    <div class="population-icon">
+                        <i class="fas fa-home"></i>
                     </div>
-                    <h3>सौ. सुनीता बाबुराव वानखेडे</h3>
-                    <div class="position">पंच सदस्य (महिला)</div>
-                    <p>महिला व बाल विकास समिती सदस्य</p>
-                </div>
-
-                <!-- पंच सदस्य 2 -->
-                <div class="team-card">
-                    <div class="team-image">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h3>श्री. रमेश तुकाराम राऊत</h3>
-                    <div class="position">पंच सदस्य</div>
-                    <p>सार्वजनिक बांधकाम समिती सदस्य</p>
-                </div>
-
-                <!-- पंच सदस्य 3 -->
-                <div class="team-card">
-                    <div class="team-image">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h3>श्रीमती. रेखा संजय भगत</h3>
-                    <div class="position">पंच सदस्य (महिला)</div>
-                    <p>शिक्षण समिती सदस्य</p>
+                    <h3>कुटुंब संख्या</h3>
+                    <div class="population-number">३८०</div>
+                    <p>गावातील एकूण कुटुंबे</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Committee Section -->
-    <section class="committee-section">
+    <!-- Charts Section -->
+    <section class="charts-section">
         <div class="container">
             <div class="section-title">
-                <h2>समित्या</h2>
-                <p>विविध कार्यासाठी गठित केलेल्या समित्या</p>
+                <h2>लोकसंख्या संरचना</h2>
+                <p>विविध पैलूंनुसार लोकसंख्या विभागणी</p>
             </div>
 
-            <div class="committee-grid">
-                <div class="committee-card">
-                    <div class="committee-icon">
-                        <i class="fas fa-road"></i>
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h3 class="chart-title">लिंग गुणोत्तर</h3>
+                    <div class="chart-container">
+                        <div class="chart-bar">
+                            <div class="bar-label">पुरुष</div>
+                            <div class="bar-value">
+                                <div class="bar-fill" style="width: 51.2%; background: var(--primary);"></div>
+                            </div>
+                            <div style="margin-left: 10px; font-weight: 600;">५१.२%</div>
+                        </div>
+                        <div class="chart-bar">
+                            <div class="bar-label">महिला</div>
+                            <div class="bar-value">
+                                <div class="bar-fill" style="width: 48.8%; background: var(--secondary);"></div>
+                            </div>
+                            <div style="margin-left: 10px; font-weight: 600;">४८.८%</div>
+                        </div>
                     </div>
-                    <h4>सार्वजनिक बांधकाम समिती</h4>
-                    <p>रस्ते, पूल, इमारती यांच्या बांधकामावर देखरेख</p>
                 </div>
 
-                <div class="committee-card">
-                    <div class="committee-icon">
-                        <i class="fas fa-female"></i>
+                <div class="chart-card">
+                    <h3 class="chart-title">साक्षरता दर</h3>
+                    <div class="chart-container">
+                        <div class="chart-bar">
+                            <div class="bar-label">एकूण</div>
+                            <div class="bar-value">
+                                <div class="bar-fill" style="width: 82.5%; background: #4CAF50;"></div>
+                            </div>
+                            <div style="margin-left: 10px; font-weight: 600;">८२.५%</div>
+                        </div>
+                        <div class="chart-bar">
+                            <div class="bar-label">पुरुष</div>
+                            <div class="bar-value">
+                                <div class="bar-fill" style="width: 88.3%; background: #2196F3;"></div>
+                            </div>
+                            <div style="margin-left: 10px; font-weight: 600;">८८.३%</div>
+                        </div>
+                        <div class="chart-bar">
+                            <div class="bar-label">महिला</div>
+                            <div class="bar-value">
+                                <div class="bar-fill" style="width: 76.4%; background: #FF9800;"></div>
+                            </div>
+                            <div style="margin-left: 10px; font-weight: 600;">७६.४%</div>
+                        </div>
                     </div>
-                    <h4>महिला व बाल विकास समिती</h4>
-                    <p>महिला व बालकांच्या कल्याणासाठी कार्यक्रम</p>
                 </div>
 
-                <div class="committee-card">
-                    <div class="committee-icon">
-                        <i class="fas fa-book"></i>
+                <div class="chart-card">
+                    <h3 class="chart-title">कामगार गुणोत्तर</h3>
+                    <div class="chart-container">
+                        <div class="chart-bar">
+                            <div class="bar-label">एकूण कामगार</div>
+                            <div class="bar-value">
+                                <div class="bar-fill" style="width: 42.5%; background: #9C27B0;"></div>
+                            </div>
+                            <div style="margin-left: 10px; font-weight: 600;">४२.५%</div>
+                        </div>
+                        <div class="chart-bar">
+                            <div class="bar-label">मुख्य कामगार</div>
+                            <div class="bar-value">
+                                <div class="bar-fill" style="width: 35.8%; background: #E91E63;"></div>
+                            </div>
+                            <div style="margin-left: 10px; font-weight: 600;">३५.८%</div>
+                        </div>
+                        <div class="chart-bar">
+                            <div class="bar-label">सीमांत कामगार</div>
+                            <div class="bar-value">
+                                <div class="bar-fill" style="width: 6.7%; background: #00BCD4;"></div>
+                            </div>
+                            <div style="margin-left: 10px; font-weight: 600;">६.७%</div>
+                        </div>
                     </div>
-                    <h4>शिक्षण समिती</h4>
-                    <p>शैक्षणिक सुविधा व साक्षरता अभियान</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Literacy Section -->
+    <section class="literacy-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>साक्षरता तपशील</h2>
+                <p>वयोगट आणि लिंगानुसार साक्षरता दर</p>
+            </div>
+
+            <div class="literacy-stats">
+                <div class="literacy-item">
+                    <div class="literacy-percent">८२.५%</div>
+                    <h4>एकूण साक्षरता</h4>
+                    <p>७+ वयोगटातील साक्षरता</p>
                 </div>
 
-                <div class="committee-card">
-                    <div class="committee-icon">
-                        <i class="fas fa-hand-holding-heart"></i>
-                    </div>
-                    <h4>स्वच्छता समिती</h4>
-                    <p>गाव स्वच्छता व कचरा व्यवस्थापन</p>
+                <div class="literacy-item">
+                    <div class="literacy-percent">८८.३%</div>
+                    <h4>पुरुष साक्षरता</h4>
+                    <p>पुरुष साक्षरता दर</p>
+                </div>
+
+                <div class="literacy-item">
+                    <div class="literacy-percent">७६.४%</div>
+                    <h4>महिला साक्षरता</h4>
+                    <p>महिला साक्षरता दर</p>
+                </div>
+
+                <div class="literacy-item">
+                    <div class="literacy-percent">९२.१%</div>
+                    <h4>शहरी साक्षरता</h4>
+                    <p>सावनेर तालुका सरासरी</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Age Distribution -->
+    <section class="age-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>वयोगट वितरण</h2>
+                <p>वयानुसार लोकसंख्या विभागणी</p>
+            </div>
+
+            <div class="age-grid">
+                <div class="age-group">
+                    <div class="age-range">०-६ वर्षे</div>
+                    <div class="age-percentage">१२.८%</div>
+                    <p>बालवयीन लोकसंख्या</p>
+                    <p style="margin-top: 10px; font-size: 14px;">लिंग गुणोत्तर: ९४७</p>
+                </div>
+
+                <div class="age-group">
+                    <div class="age-range">७-१८ वर्षे</div>
+                    <div class="age-percentage">२२.३%</div>
+                    <p>शालेय वयोगट</p>
+                    <p style="margin-top: 10px; font-size: 14px;">शाळा उपस्थिती: ९५%</p>
+                </div>
+
+                <div class="age-group">
+                    <div class="age-range">१९-६० वर्षे</div>
+                    <div class="age-percentage">५४.६%</div>
+                    <p>कार्यक्षम वयोगट</p>
+                    <p style="margin-top: 10px; font-size: 14px;">कामगार: ४२.५%</p>
+                </div>
+
+                <div class="age-group">
+                    <div class="age-range">६०+ वर्षे</div>
+                    <div class="age-percentage">१०.३%</div>
+                    <p>वृद्ध वयोगट</p>
+                    <p style="margin-top: 10px; font-size: 14px;">वृद्धपण निवृत्ती: ८.५%</p>
                 </div>
             </div>
         </div>
@@ -779,11 +891,9 @@
                     <h3>झटपट दुवे</h3>
                     <ul class="footer-links">
                         <li><a href="team.html"><i class="fas fa-chevron-right"></i> पंचायत मंडळ</a></li>
-                        <li><a href="facilities.html#education"><i class="fas fa-chevron-right"></i> शैक्षणिक संस्था</a>
-                        </li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> गावाचा इतिहास</a></li>
+                        <li><a href="facilities.html"><i class="fas fa-chevron-right"></i> पायाभूत सुविधा</a></li>
                         <li><a href="work.html"><i class="fas fa-chevron-right"></i> विकास प्रकल्प</a></li>
-                        <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> फोटो गॅलरी</a></li>
-                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> आपत्कालीन संपर्क</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -802,12 +912,12 @@
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>आपत्कालीन संपर्क</h3>
+                    <h3>लोकसंख्या तपशील</h3>
                     <ul class="footer-links">
-                        <li><a href="#"><i class="fas fa-phone"></i> पोलीस स्टेशन: १००</a></li>
-                        <li><a href="#"><i class="fas fa-ambulance"></i> एम्ब्युलन्स: १०८</a></li>
-                        <li><a href="#"><i class="fas fa-fire-extinguisher"></i> फायर ब्रिगेड: १०१</a></li>
-                        <li><a href="#"><i class="fas fa-hospital"></i> सावनेर रुग्णालय</a></li>
+                        <li><a href="#"><i class="fas fa-download"></i> जनगणना अहवाल २०११</a></li>
+                        <li><a href="#"><i class="fas fa-chart-bar"></i> लोकसंख्या आकडेवारी</a></li>
+                        <li><a href="#"><i class="fas fa-book"></i> साक्षरता अहवाल</a></li>
+                        <li><a href="#"><i class="fas fa-users"></i> कामगार सांख्यिकी</a></li>
                     </ul>
                 </div>
             </div>
@@ -822,6 +932,45 @@
         // Mobile menu toggle
         document.querySelector('.mobile-menu').addEventListener('click', function () {
             document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Animate bar charts on scroll
+        function animateBars() {
+            const bars = document.querySelectorAll('.bar-fill');
+
+            bars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 300);
+            });
+        }
+
+        // Animate bars when page loads
+        window.addEventListener('load', animateBars);
+
+        // Animate bars when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bars = entry.target.querySelectorAll('.bar-fill');
+                    bars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 300);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // Observe all chart cards
+        document.querySelectorAll('.chart-card').forEach(card => {
+            observer.observe(card);
         });
     </script>
 </body>

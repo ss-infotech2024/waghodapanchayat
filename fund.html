@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>आर्थिक माहिती - सावंगी देवळी ग्रामपंचायत</title>
+    <title>आर्थिक माहिती - वाघोडा ग्रामपंचायत</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Marathi:ital@0;1&display=swap"
         rel="stylesheet">
     <style>
         :root {
-            --primary: #2E7D32;
-            --secondary: #FF9800;
-            --accent: #2196F3;
-            --light: #F1F8E9;
-            --dark: #1B5E20;
-            --text: #212121;
-            --text-light: #757575;
+            --primary: #8B4513;
+            --secondary: #D2691E;
+            --accent: #CD853F;
+            --light: #FAEBD7;
+            --dark: #654321;
+            --text: #2F4F4F;
+            --text-light: #696969;
             --white: #ffffff;
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --gradient: linear-gradient(135deg, var(--primary), var(--dark));
@@ -108,13 +108,14 @@
             box-shadow: var(--shadow);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 15px;
         }
 
         .nav-links {
@@ -173,72 +174,49 @@
             display: none;
             font-size: 24px;
             cursor: pointer;
+            color: var(--text);
         }
 
-        /* Hero Section */
-        .hero {
+        /* Page Hero */
+        .page-hero {
             background: var(--gradient);
             color: var(--white);
-            padding: 80px 0;
             text-align: center;
+            padding: 100px 20px;
             position: relative;
-            overflow: hidden;
         }
 
-        .hero::before {
+        .page-hero::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.2;
+            background: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.15;
             z-index: 0;
         }
 
-        .hero-content {
+        .page-hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 1;
         }
 
-        .hero h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero p {
+        .page-hero p {
             font-size: 18px;
             max-width: 700px;
             margin: 0 auto 30px;
             opacity: 0.9;
+            position: relative;
+            z-index: 1;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: var(--secondary);
-            color: var(--white);
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .btn:hover {
-            background-color: #F57C00;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Financial Content */
-        .financial-content {
+        /* Financial Section */
+        .financial-section {
             padding: 80px 0;
             background-color: var(--white);
         }
@@ -267,36 +245,29 @@
             transform: translateX(-50%);
         }
 
-        .section-title p {
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Financial Overview */
-        .financial-overview {
+        /* Budget Overview */
+        .budget-overview {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
+            gap: 30px;
             margin-bottom: 50px;
         }
 
-        .finance-card {
+        .budget-card {
             background: var(--light);
             padding: 30px;
             border-radius: 15px;
             text-align: center;
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
-            border-top: 4px solid var(--primary);
         }
 
-        .finance-card:hover {
+        .budget-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
-        .finance-icon {
+        .budget-icon {
             width: 70px;
             height: 70px;
             background: var(--white);
@@ -307,207 +278,226 @@
             margin: 0 auto 20px;
             color: var(--primary);
             font-size: 28px;
-            border: 3px solid var(--primary);
-        }
-
-        .finance-amount {
-            font-size: 32px;
-            font-weight: bold;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .finance-label {
-            font-size: 18px;
-            color: var(--text);
-            font-weight: 600;
-        }
-
-        /* Budget Section */
-        .budget-section {
-            background: var(--light);
-            padding: 50px;
-            border-radius: 15px;
-            margin-bottom: 50px;
-        }
-
-        .budget-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .budget-header h3 {
-            color: var(--primary);
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .budget-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .budget-card {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            transition: all 0.3s ease;
-        }
-
-        .budget-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .budget-title {
-            font-size: 20px;
-            color: var(--primary);
-            margin-bottom: 15px;
-            text-align: center;
         }
 
         .budget-amount {
-            font-size: 28px;
-            font-weight: bold;
-            color: var(--dark);
-            text-align: center;
-            margin-bottom: 20px;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 10px 0;
         }
 
-        .budget-details {
-            list-style: none;
+        /* Income Section */
+        .income-section {
+            background-color: var(--light);
+            padding: 80px 0;
         }
 
-        .budget-details li {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .budget-details li:last-child {
-            border-bottom: none;
-        }
-
-        /* Documents Section */
-        .documents-section {
+        .income-chart {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
             margin-bottom: 50px;
         }
 
-        .documents-grid {
+        .income-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: #f8f9fa;
+        }
+
+        .income-label {
+            flex: 1;
+            font-weight: 600;
+        }
+
+        .income-amount {
+            font-weight: 700;
+            color: var(--primary);
+            margin-right: 20px;
+        }
+
+        .income-percentage {
+            width: 100px;
+            text-align: right;
+            font-weight: 600;
+        }
+
+        .income-bar {
+            flex: 2;
+            height: 20px;
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 0 20px;
+        }
+
+        .income-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+
+        /* Expenses Section */
+        .expenses-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .expenses-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .expense-category {
+            background: var(--light);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary);
+        }
+
+        .category-title {
+            color: var(--primary);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .category-amount {
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .expense-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding: 8px 0;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        /* Grants Section */
+        .grants-section {
+            background-color: var(--light);
+            padding: 80px 0;
+        }
+
+        .grants-table {
+            width: 100%;
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .grants-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .grants-table th {
+            background: var(--primary);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .grants-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .grants-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .status-received {
+            color: #28a745;
+            font-weight: 600;
+        }
+
+        .status-pending {
+            color: #ffc107;
+            font-weight: 600;
+        }
+
+        /* Reports Section */
+        .reports-section {
+            padding: 80px 0;
+            background-color: var(--white);
+        }
+
+        .reports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
         }
 
-        .document-card {
-            background: white;
-            border-radius: 15px;
+        .report-card {
+            background: var(--light);
             padding: 25px;
+            border-radius: 10px;
+            text-align: center;
             box-shadow: var(--shadow);
             transition: all 0.3s ease;
-            border-left: 4px solid var(--accent);
         }
 
-        .document-card:hover {
+        .report-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
 
-        .document-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .document-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--light);
+        .report-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--white);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--accent);
-            font-size: 20px;
-        }
-
-        .document-title {
-            font-size: 18px;
+            margin: 0 auto 15px;
             color: var(--primary);
-            font-weight: 600;
+            font-size: 24px;
         }
 
-        .document-description {
-            color: var(--text);
-            margin-bottom: 20px;
-            line-height: 1.6;
+        .report-card h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
         }
 
-        .document-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .doc-btn {
-            padding: 8px 16px;
+        .btn {
+            background: var(--primary);
+            color: white;
             border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 14px;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .doc-btn.primary {
-            background: var(--primary);
-            color: white;
-        }
-
-        .doc-btn.secondary {
-            background: var(--accent);
-            color: white;
-        }
-
-        .doc-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Financial Year Selector */
-        .year-selector {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-
-        .year-btn {
             padding: 10px 20px;
-            background: var(--light);
-            border: 2px solid var(--primary);
-            border-radius: 25px;
-            color: var(--primary);
-            cursor: pointer;
-            transition: all 0.3s ease;
+            border-radius: 8px;
+            font-size: 14px;
             font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 15px;
         }
 
-        .year-btn.active {
-            background: var(--primary);
-            color: white;
-        }
-
-        .year-btn:hover {
+        .btn:hover {
+            background: var(--dark);
             transform: translateY(-2px);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         /* Footer */
@@ -641,31 +631,71 @@
 
             .mobile-menu {
                 display: block;
+                margin-left: auto;
             }
 
-            .hero h1 {
+            .page-hero h1 {
                 font-size: 32px;
             }
 
-            .hero p {
+            .page-hero p {
                 font-size: 16px;
             }
 
-            .financial-overview {
-                grid-template-columns: 1fr;
-            }
-
-            .budget-cards {
-                grid-template-columns: 1fr;
-            }
-
-            .documents-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .year-selector {
+            .income-item {
                 flex-direction: column;
-                align-items: center;
+                align-items: flex-start;
+            }
+
+            .income-bar {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .income-percentage {
+                text-align: left;
+            }
+
+            .grants-table {
+                overflow-x: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-hero h1 {
+                font-size: 28px;
+            }
+
+            .section-title h2 {
+                font-size: 26px;
+            }
+
+            .budget-overview {
+                grid-template-columns: 1fr;
+            }
+
+            .expenses-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .reports-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .logo-text h1 {
+                font-size: 20px;
+            }
+
+            .logo-text p {
+                font-size: 12px;
+            }
+
+            .contact-item {
+                font-size: 12px;
             }
         }
     </style>
@@ -678,11 +708,11 @@
             <div class="top-bar">
                 <div class="logo">
                     <div class="logo-img">
-                        <i class="fas fa-landmark"></i>
+                        <i class="fas fa-village"></i>
                     </div>
                     <div class="logo-text">
-                        <h1>सावंगी देवळी ग्रामपंचायत</h1>
-                        <p>विकास आणि प्रगतीचे प्रतीक</p>
+                        <h1>वाघोडा ग्रामपंचायत</h1>
+                        <p>नागपूर, सावनेर, महाराष्ट्र</p>
                     </div>
                 </div>
                 <div class="contact-info">
@@ -692,11 +722,11 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>sawangidevali@gmail.com</span>
+                        <span>waghodapanchayat@gmail.com</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>सावंगी देवळी, महाराष्ट्र</span>
+                        <span>वाघोडा, सावनेर</span>
                     </div>
                 </div>
             </div>
@@ -711,21 +741,22 @@
                 <li class="dropdown">
                     <a href="#">आमच्याबद्दल <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="about.html">परिचय</a>
+                        <a href="about.html">गावाचा इतिहास</a>
                         <a href="team.html">पंचायत मंडळ</a>
+                        <a href="demographics.html">लोकसंख्या</a>
                     </div>
                 </li>
-                <!-- <li><a href="announcements.html">सूचना</a></li> -->
                 <li class="dropdown">
                     <a href="#">सेवा <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
                         <a href="service.html">नागरिक सेवा</a>
-                        <a href="facilities.html">स्थानीय सुविधा</a>
+                        <a href="facilities.html">पायाभूत सुविधा</a>
                         <a href="rti.html">माहिती अधिकार</a>
                         <a href="govt-schemes.html">शासकीय योजना</a>
                     </div>
                 </li>
                 <li><a href="gallery.html">गॅलरी</a></li>
+                <li><a href="weather.html">हवामान</a></li>
                 <li><a href="contact.html">संपर्क</a></li>
                 <li class="dropdown">
                     <a href="#" class="active">अधिक <i class="fas fa-chevron-down"></i></a>
@@ -742,111 +773,332 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container hero-content">
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
             <h1>आर्थिक माहिती</h1>
-            <p>ग्रामपंचायतीची आर्थिक माहिती, बजेट आणि आर्थिक अहवाल</p>
+            <p>वाघोडा ग्रामपंचायतीची आर्थिक बाबी, उत्पन्न, खर्च आणि निधी माहिती</p>
         </div>
     </section>
 
-    <!-- Financial Content Section -->
-    <section class="financial-content">
+    <!-- Budget Overview -->
+    <section class="financial-section">
         <div class="container">
             <div class="section-title">
-                <h2>आर्थिक विहंगावलोकन</h2>
-                <p>ग्रामपंचायतीची वार्षिक आर्थिक स्थिती आणि बजेट माहिती</p>
+                <h2>२०२४-२५ बजेट आढावा</h2>
+                <p>वित्तीय वर्ष २०२४-२५ साठीचा अंदाजे बजेट</p>
             </div>
 
-            <!-- Financial Year Selector -->
-            <div class="year-selector">
-                <button class="year-btn active">२०२४-२०२५</button>
-                <button class="year-btn">२०२३-२०२४</button>
-                <button class="year-btn">२०२२-२०२३</button>
-                <button class="year-btn">२०२१-२०२२</button>
-            </div>
-
-            <!-- Financial Overview -->
-            <div class="financial-overview">
-                <div class="finance-card">
-                    <div class="finance-icon">
-                        <i class="fas fa-wallet"></i>
+            <div class="budget-overview">
+                <div class="budget-card">
+                    <div class="budget-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
                     </div>
-                    <div class="finance-amount">₹८५.५ लाख</div>
-                    <div class="finance-label">एकूण बजेट</div>
+                    <h3>एकूण बजेट</h3>
+                    <div class="budget-amount">₹३० लाख</div>
+                    <p>वार्षिक अंदाजे बजेट</p>
                 </div>
-                <div class="finance-card">
-                    <div class="finance-icon">
+
+                <div class="budget-card">
+                    <div class="budget-icon">
                         <i class="fas fa-money-bill-wave"></i>
                     </div>
-                    <div class="finance-amount">₹६२.३ लाख</div>
-                    <div class="finance-label">खर्च केलेली रक्कम</div>
+                    <h3>एकूण उत्पन्न</h3>
+                    <div class="budget-amount">₹२८.५ लाख</div>
+                    <p>अंदाजे वार्षिक उत्पन्न</p>
                 </div>
-                <div class="finance-card">
-                    <div class="finance-icon">
+
+                <div class="budget-card">
+                    <div class="budget-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <div class="finance-amount">₹२३.२ लाख</div>
-                    <div class="finance-label">उर्वरित बजेट</div>
+                    <h3>एकूण खर्च</h3>
+                    <div class="budget-amount">₹२७ लाख</div>
+                    <p>अंदाजे वार्षिक खर्च</p>
                 </div>
-                <div class="finance-card">
-                    <div class="finance-icon">
-                        <i class="fas fa-percentage"></i>
+
+                <div class="budget-card">
+                    <div class="budget-icon">
+                        <i class="fas fa-balance-scale"></i>
                     </div>
-                    <div class="finance-amount">७३%</div>
-                    <div class="finance-label">बजेट वापर</div>
+                    <h3>बचत/तूट</h3>
+                    <div class="budget-amount">₹१.५ लाख</div>
+                    <p>अंदाजे वार्षिक बचत</p>
                 </div>
             </div>
-
-            <!-- Budget Section -->
-            <div class="budget-section">
-                <div class="budget-header">
-                    <h3>वार्षिक बजेट विभागणी</h3>
-                    <p>विविध विकास कामांसाठी बजेट वाटप</p>
-                </div>
-                <div class="budget-cards">
-                    <div class="budget-card">
-                        <h4 class="budget-title">पायाभूत सुविधा</h4>
-                        <div class="budget-amount">₹३५ लाख</div>
-                        <ul class="budget-details">
-                            <li>रस्ते दुरुस्ती <span>₹१५ लाख</span></li>
-                            <li>पाणीपुरवठा <span>₹१२ लाख</span></li>
-                            <li>स्ट्रीट लाईट <span>₹८ लाख</span></li>
-                        </ul>
-                    </div>
-                    <div class="budget-card">
-                        <h4 class="budget-title">सामाजिक विकास</h4>
-                        <div class="budget-amount">₹२५ लाख</div>
-                        <ul class="budget-details">
-                            <li>शिक्षण <span>₹१० लाख</span></li>
-                            <li>आरोग्य <span>₹८ लाख</span></li>
-                            <li>क्रीडा <span>₹७ लाख</span></li>
-                        </ul>
-                    </div>
-                    <div class="budget-card">
-                        <h4 class="budget-title">कृषी विकास</h4>
-                        <div class="budget-amount">₹१५ लाख</div>
-                        <ul class="budget-details">
-                            <li>सिंचन <span>₹८ लाख</span></li>
-                            <li>कृषी उपकरणे <span>₹५ लाख</span></li>
-                            <li>बियाणे वितरण <span>₹२ लाख</span></li>
-                        </ul>
-                    </div>
-                    <div class="budget-card">
-                        <h4 class="budget-title">प्रशासकीय खर्च</h4>
-                        <div class="budget-amount">₹१०.५ लाख</div>
-                        <ul class="budget-details">
-                            <li>कर्मचारी पगार <span>₹७ लाख</span></li>
-                            <li>कार्यालयीन खर्च <span>₹२.५ लाख</span></li>
-                            <li>इतर खर्च <span>₹१ लाख</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Documents Section -->
-
         </div>
+    </section>
+
+    <!-- Income Section -->
+    <section class="income-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>उत्पन्न स्त्रोत</h2>
+                <p>वाघोडा ग्रामपंचायतीचे मुख्य उत्पन्न स्त्रोत</p>
+            </div>
+
+            <div class="income-chart">
+                <div class="income-item">
+                    <div class="income-label">सरकारी अनुदान</div>
+                    <div class="income-bar">
+                        <div class="income-fill" style="width: 65%; background: var(--primary);"></div>
+                    </div>
+                    <div class="income-amount">₹१८.५ लाख</div>
+                    <div class="income-percentage">६५%</div>
+                </div>
+
+                <div class="income-item">
+                    <div class="income-label">जमीन महसूल</div>
+                    <div class="income-bar">
+                        <div class="income-fill" style="width: 15%; background: var(--secondary);"></div>
+                    </div>
+                    <div class="income-amount">₹४.३ लाख</div>
+                    <div class="income-percentage">१५%</div>
+                </div>
+
+                <div class="income-item">
+                    <div class="income-label">दंड आणि फी</div>
+                    <div class="income-bar">
+                        <div class="income-fill" style="width: 10%; background: #4CAF50;"></div>
+                    </div>
+                    <div class="income-amount">₹२.९ लाख</div>
+                    <div class="income-percentage">१०%</div>
+                </div>
+
+                <div class="income-item">
+                    <div class="income-label">इतर उत्पन्न</div>
+                    <div class="income-bar">
+                        <div class="income-fill" style="width: 5%; background: #2196F3;"></div>
+                    </div>
+                    <div class="income-amount">₹१.४ लाख</div>
+                    <div class="income-percentage">५%</div>
+                </div>
+
+                <div class="income-item">
+                    <div class="income-label">निधी उर्वरित</div>
+                    <div class="income-bar">
+                        <div class="income-fill" style="width: 5%; background: #FF9800;"></div>
+                    </div>
+                    <div class="income-amount">₹१.४ लाख</div>
+                    <div class="income-percentage">५%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expenses Section -->
+    <section class="expenses-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>खर्च विभागणी</h2>
+                <p>विविध श्रेणीनुसार खर्चाची विभागणी</p>
+            </div>
+
+            <div class="expenses-grid">
+                <div class="expense-category">
+                    <div class="category-header">
+                        <div class="category-title">विकास कामे</div>
+                        <div class="category-amount">₹१२ लाख</div>
+                    </div>
+                    <div class="expense-item">
+                        <span>रस्ते दुरुस्ती</span>
+                        <span>₹३.५ लाख</span>
+                    </div>
+                    <div class="expense-item">
+                        <span>पाणी पुरवठा</span>
+                        <span>₹२.८ लाख</span>
+                    </div>
+                    <div class="expense-item">
+                        <span>सामुदायिक भवन</span>
+                        <span>₹४.२ लाख</span>
+                    </div>
+                    <div class="expense-item">
+                        <span>इतर कामे</span>
+                        <span>₹१.५ लाख</span>
+                    </div>
+                </div>
+
+                <div class="expense-category">
+                    <div class="category-header">
+                        <div class="category-title">प्रशासकीय खर्च</div>
+                        <div class="category-amount">₹६.५ लाख</div>
+                    </div>
+                    <div class="expense-item">
+                        <span>कर्मचारी पगार</span>
+                        <span>₹४.२ लाख</span>
+                    </div>
+                    <div class="expense-item">
+                        <span>कार्यालयीन खर्च</span>
+                        <span>₹१.२ लाख</span>
+                    </div>
+                    <div class="expense-item">
+                        <span>वाहतूक खर्च</span>
+                        <span>₹०.८ लाख</span>
+                    </div>
+                    <div class="expense-item">
+                        <span>इतर खर्च</span>
+                        <span>₹०.३ लाख</span>
+                    </div>
+                </div>
+
+                <div class="expense-category">
+                    <div class="category-header">
+                        <div class="category-title">सामाजिक क्षेत्र</div>
+                        <div class="category-amount">₹५ लाख</div>
+                    </div>
+                    <div class="expense-item">
+                        <span>शिक्षण</span>
+                        <span>₹२.२ लाख</span>
+                    </div>
+                    <div class="expense-item">
+                        <span>आरोग्य</span>
+                        <span>₹१.५ लाख</span>
+                    </div>
+                    <div class="expense-item">
+                        <span>स्वच्छता</span>
+                        <span>₹०.८ लाख</span>
+                    </div>
+                    <div class="expense-item">
+                        <span>क्रीडा संस्कृती</span>
+                        <span>₹०.५ लाख</span>
+                    </div>
+                </div>
+
+                <div class="expense-category">
+                    <div class="category-header">
+                        <div class="category-title">इतर खर्च</div>
+                        <div class="category-amount">₹३.५ लाख</div>
+                    </div>
+                    <div class="expense-item">
+                        <span>कर्ज व्याज</span>
+                        <span>₹१.२ लाख</span>
+                    </div>
+                    <div class="expense-item">
+                        <span>निधी राखीव</span>
+                        <span>₹१.५ लाख</span>
+                    </div>
+                    <div class="expense-item">
+                        <span>अनपेक्षित खर्च</span>
+                        <span>₹०.८ लाख</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grants Section -->
+    <section class="grants-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>सरकारी अनुदान</h2>
+                <p>विविध योजनांतर्गत प्राप्त अनुदान</p>
+            </div>
+
+            <div class="grants-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>अनुदान क्रमांक</th>
+                            <th>योजना नाव</th>
+                            <th>रक्कम (₹)</th>
+                            <th>स्थिती</th>
+                            <th>तारीख</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GNT/2024/001</td>
+                            <td>पीएम आवास योजना</td>
+                            <td>४,५०,०००</td>
+                            <td class="status-received">प्राप्त</td>
+                            <td>१५ जाने २०२४</td>
+                        </tr>
+                        <tr>
+                            <td>GNT/2024/002</td>
+                            <td>स्वच्छ भारत मिशन</td>
+                            <td>३,२०,०००</td>
+                            <td class="status-received">प्राप्त</td>
+                            <td>२० फेब्रु २०२४</td>
+                        </tr>
+                        <tr>
+                            <td>GNT/2024/003</td>
+                            <td>महात्मा गांधी रोजगार योजना</td>
+                            <td>५,००,०००</td>
+                            <td class="status-received">प्राप्त</td>
+                            <td>१० मार्च २०२४</td>
+                        </tr>
+                        <tr>
+                            <td>GNT/2024/004</td>
+                            <td>ग्रामीण रस्ता विकास</td>
+                            <td>६,००,०००</td>
+                            <td class="status-pending">प्रलंबित</td>
+                            <td>१५ एप्रिल २०२४</td>
+                        </tr>
+                        <tr>
+                            <td>GNT/2024/005</td>
+                            <td>जल जीवन मिशन</td>
+                            <td>४,००,०००</td>
+                            <td class="status-received">प्राप्त</td>
+                            <td>२० मे २०२४</td>
+                        </tr>
+                        <tr>
+                            <td>GNT/2024/006</td>
+                            <td>सोलर उर्जा प्रकल्प</td>
+                            <td>३,५०,०००</td>
+                            <td class="status-pending">प्रलंबित</td>
+                            <td>१० जून २०२४</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reports Section -->
+    <section class="reports-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>आर्थिक अहवाल</h2>
+                <p>डाउनलोड करण्यासाठी उपलब्ध अहवाल</p>
+            </div>
+
+            <div class="reports-grid">
+                <div class="report-card">
+                    <div class="report-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h4>वार्षिक बजेट</h4>
+                    <p>२०२४-२५ चा संपूर्ण बजेट अहवाल</p>
+                    <a href="#" class="btn">डाउनलोड</a>
+                </div>
+
+                <div class="report-card">
+                    <div class="report-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h4>उत्पन्न-खर्च अहवाल</h4>
+                    <p>मासिक उत्पन्न-खर्च तपशील</p>
+                    <a href="#" class="btn">डाउनलोड</a>
+                </div>
+
+                <div class="report-card">
+                    <div class="report-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h4>ताळेबंद अहवाल</h4>
+                    <p>वार्षिक ताळेबंद आणि ऑडीट अहवाल</p>
+                    <a href="#" class="btn">डाउनलोड</a>
+                </div>
+
+                <div class="report-card">
+                    <div class="report-icon">
+                        <i class="fas fa-receipt"></i>
+                    </div>
+                    <h4>बिले आणि पावत्या</h4>
+                    <p>सर्व बिले आणि पावतींची यादी</p>
+                    <a href="#" class="btn">डाउनलोड</a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -855,11 +1107,21 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>कार्यालय</h3>
+                    <h3>झटपट दुवे</h3>
+                    <ul class="footer-links">
+                        <li><a href="team.html"><i class="fas fa-chevron-right"></i> पंचायत मंडळ</a></li>
+                        <li><a href="work.html"><i class="fas fa-chevron-right"></i> विकास प्रकल्प</a></li>
+                        <li><a href="demographics.html"><i class="fas fa-chevron-right"></i> लोकसंख्या</a></li>
+                        <li><a href="complaint.html"><i class="fas fa-chevron-right"></i> तक्रार / सूचना</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>संपर्क माहिती</h3>
                     <div class="contact-details">
-                        <p><i class="fas fa-map-marker-alt"></i> ग्रामपंचायत, सावंगी देवळी, महाराष्ट्र</p>
-                        <p><i class="fas fa-phone"></i> ०२३३-१२३४५६</p>
-                        <p><i class="fas fa-envelope"></i> sawangidevali@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> वाघोडा, सावनेर, नागपूर, महाराष्ट्र</p>
+                        <p><i class="fas fa-phone"></i> आपत्कालीन: १०८</p>
+                        <p><i class="fas fa-envelope"></i> waghodapanchayat@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> कार्यालयीन वेळ: सकाळी 10 ते दुपारी 6</p>
                     </div>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -869,51 +1131,67 @@
                     </div>
                 </div>
                 <div class="footer-column">
-                    <h3>झटपट दुवे</h3>
+                    <h3>आर्थिक संपर्क</h3>
                     <ul class="footer-links">
-                        <li><a href="govt-schemes.html"><i class="fas fa-arrow-right"></i> शासकीय योजना</a></li>
-                        <li><a href="facilities.html"><i class="fas fa-arrow-right"></i> सोई-सुविधा</a></li>
-                        <li><a href="fund.html"><i class="fas fa-arrow-right"></i> बजेट आणि निधी</a></li>
-                        <li><a href="work.html"><i class="fas fa-arrow-right"></i> विकास कामे</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>कार्यालयीन वेळा</h3>
-                    <div class="contact-details">
-                        <p><i class="fas fa-clock"></i> सोमवार ते शनिवार</p>
-                        <p>सकाळी १०:०० - दुपारी ६:००</p>
-                        <p><i class="fas fa-clock"></i> रविवार - बंद</p>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h3>महत्वाचे दुवे</h3>
-                    <ul class="footer-links">
-                        <li><a href="rti.html"><i class="fas fa-arrow-right"></i> माहिती अधिकार</a></li>
-                        <li><a href="complaint.html"><i class="fas fa-arrow-right"></i> तक्रार / सूचना</a></li>
-                        <li><a href="announcements.html"><i class="fas fa-arrow-right"></i> सार्वजनिक सूचना</a></li>
-                        <li><a href="contact.html"><i class="fas fa-arrow-right"></i> संपर्क साधा</a></li>
+                        <li><a href="#"><i class="fas fa-user-tie"></i> आर्थिक सल्लागार: श्री. अजित कुलकर्णी</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> दूरध्वनी: ९८८१२३४५६८</a></li>
+                        <li><a href="#"><i class="fas fa-envelope"></i> finance.waghoda@gmail.com</a></li>
+                        <li><a href="#"><i class="fas fa-download"></i> आर्थिक अहवाल डाउनलोड</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; २०२४ सावंगी देवळी ग्रामपंचायत. सर्व हक्क राखीव.</p>
+                <p>&copy; २०२५ वाघोडा ग्रामपंचायत. सर्व हक्क राखीव.</p>
+                <p style="margin-top: 10px; font-size: 12px;">विदर्भ प्रदेश, महाराष्ट्र राज्य, भारत</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
+        // Mobile menu toggle
         document.querySelector('.mobile-menu').addEventListener('click', function () {
             document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        // Year Selector
-        document.querySelectorAll('.year-btn').forEach(button => {
-            button.addEventListener('click', function () {
-                document.querySelectorAll('.year-btn').forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
+        // Animate income bars on scroll
+        function animateIncomeBars() {
+            const bars = document.querySelectorAll('.income-fill');
+
+            bars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 300);
             });
-        });
+        }
+
+        // Animate bars when page loads
+        window.addEventListener('load', animateIncomeBars);
+
+        // Animate bars when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bars = entry.target.querySelectorAll('.income-fill');
+                    bars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 300);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // Observe income chart
+        const incomeChart = document.querySelector('.income-chart');
+        if (incomeChart) {
+            observer.observe(incomeChart);
+        }
     </script>
 </body>
 
