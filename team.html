@@ -555,6 +555,83 @@
                 font-size: 12px;
             }
         }
+        /* ------------------------------------------ */
+       
+
+       
+      
+        .section-title {
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: #7f1d1d;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: #c2410c;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-top: 5px solid #7f1d1d;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .team-img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .team-card:hover .team-img {
+            transform: scale(1.08);
+        }
+
+        .team-info {
+            padding: 24px;
+            text-align: center;
+        }
+
+        .team-info h3 {
+            font-size: 1.5rem;
+            color: #450a0a;
+            margin-bottom: 10px;
+        }
+
+        .team-role {
+            display: inline-block;
+            background: linear-gradient(135deg, #7f1d1d, #c2410c);
+            color: white;
+            padding: 10px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+      
+
+        
     </style>
 </head>
 
@@ -639,93 +716,158 @@
     </section>
 
     <!-- Team Section -->
-    <section class="team-section">
+   <section class="team-section">
         <div class="container">
             <div class="section-title">
-                <h2>आमचे पंचायत मंडळ (२०२५-२०३०)</h2>
-                <p>ग्रामपंचायतीचे सदस्य आणि त्यांची जबाबदारी</p>
+                <h2>पंचायत मंडळ २०२५</h2>
+                <p>निवडून आलेले सरपंच, उपसरपंच, सचिव व सदस्य</p>
             </div>
 
-            <div class="team-grid">
-                <!-- सरपंच -->
-                <div class="team-card">
-                    <div class="team-image">
-                        <i class="fas fa-female"></i>
+            <div class="row g-4 justify-content-center">
+                <!-- ग्रामसेवक / सचिव -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="team-card">
+                        <img src="/image/t1.jpg" alt="श्री. पी. एम. घुगे - ग्रामसेवक" class="team-img">
+                        <div class="team-info">
+                            <h3>श्री. पी. एम. घुगे</h3>
+                            <div class="team-role">ग्रामसेवक / सचिव</div>
+                        </div>
                     </div>
-                    <h3>शिप्रा मिलिंद खेडेकर</h3>
-                    <div class="position">सरपंच</div>
-                    <p>ग्रामपंचायतीचे मुख्य प्रशासकीय प्रमुख</p>
-                    <div class="team-contact">
-                        <div class="contact-info-team">
-                            <p><i class="fas fa-phone"></i> ९८७६५४३२१०</p>
-                            <p><i class="fas fa-envelope"></i> sarpanch.waghoda@gmail.com</p>
+                </div>
+
+                <!-- सरपंच -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="team-card">
+                        <img src="/image/t2.jpg" alt="सौ. शिप्रा मिलिंद खेडेकर - सरपंच" class="team-img">
+                        <div class="team-info">
+                            <h3>सौ. शिप्रा मिलिंद खेडेकर</h3>
+                            <div class="team-role">सरपंच</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- उपसरपंच -->
-                <div class="team-card">
-                    <div class="team-image">
-                        <i class="fas fa-male"></i>
-                    </div>
-                    <h3>अजय गोविंदराव काळमेघ</h3>
-                    <div class="position">उपसरपंच</div>
-                    <p>सरपंचांच्या अनुपस्थितीत कार्यभार सांभाळतात</p>
-                    <div class="team-contact">
-                        <div class="contact-info-team">
-                            <p><i class="fas fa-phone"></i> ९८७६५४३२११</p>
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="team-card">
+                        <img src="/image/t3.jpg" alt="श्री. अजय गोविंदराव काळमेघ - उपसरपंच" class="team-img">
+                        <div class="team-info">
+                            <h3>श्री. अजय गोविंदराव काळमेघ</h3>
+                            <div class="team-role">उपसरपंच</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- ग्रामसेवक -->
-                <div class="team-card">
-                    <div class="team-image">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3>श्री. पी. एम. घुगे</h3>
-                    <div class="position">ग्रामसेवक</div>
-                    <p>ग्रामपंचायत कार्यालयाचे प्रशासकीय प्रमुख</p>
-                    <div class="team-contact">
-                        <div class="contact-info-team">
-                            <p><i class="fas fa-phone"></i> ०७११३-२३४५६</p>
-                            <p><i class="fas fa-envelope"></i> waghodapanchayat@gmail.com</p>
+                <!-- सदस्य 1 - Asha Thakre -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="team-card">
+                        <img src="/image/t4.jpg" alt="सौ. आशा ठाकरे - सदस्या" class="team-img">
+                        <div class="team-info">
+                            <h3>सौ. आशा ठाकरे</h3>
+                            <div class="team-role">सदस्या</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- पंच सदस्य 1 -->
-                <div class="team-card">
-                    <div class="team-image">
-                        <i class="fas fa-user"></i>
+                <!-- सदस्य 2 - Jaishree Ghonge -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="team-card">
+                        <img src="/image/t5.jpg" alt="सौ. जयश्री घोंगे - सदस्या" class="team-img">
+                        <div class="team-info">
+                            <h3>सौ. जयश्री घोंगे</h3>
+                            <div class="team-role">सदस्या</div>
+                        </div>
                     </div>
-                    <h3>सौ. सुनीता बाबुराव वानखेडे</h3>
-                    <div class="position">पंच सदस्य (महिला)</div>
-                    <p>महिला व बाल विकास समिती सदस्य</p>
                 </div>
 
-                <!-- पंच सदस्य 2 -->
-                <div class="team-card">
-                    <div class="team-image">
-                        <i class="fas fa-user"></i>
+                <!-- सदस्य 3 - Vina Sonare -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="team-card">
+                        <img src="/image/t6.jpg" alt="सौ. वीणा सोनारे - सदस्या" class="team-img">
+                        <div class="team-info">
+                            <h3>सौ. वीणा सोनारे</h3>
+                            <div class="team-role">सदस्या</div>
+                        </div>
                     </div>
-                    <h3>श्री. रमेश तुकाराम राऊत</h3>
-                    <div class="position">पंच सदस्य</div>
-                    <p>सार्वजनिक बांधकाम समिती सदस्य</p>
                 </div>
 
-                <!-- पंच सदस्य 3 -->
-                <div class="team-card">
-                    <div class="team-image">
-                        <i class="fas fa-user"></i>
+                <!-- सदस्य 4 - Manisha Meshram -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="team-card">
+                        <img src="/image/t7.jpg" alt="सौ. मनिषा मेश्राम - सदस्या" class="team-img">
+                        <div class="team-info">
+                            <h3>सौ. मनिषा मेश्राम</h3>
+                            <div class="team-role">सदस्या</div>
+                        </div>
                     </div>
-                    <h3>श्रीमती. रेखा संजय भगत</h3>
-                    <div class="position">पंच सदस्य (महिला)</div>
-                    <p>शिक्षण समिती सदस्य</p>
+                </div>
+
+                <!-- सदस्य 5 - Manisha Yadav -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="team-card">
+                        <img src="/image/t8.jpg" alt="सौ. मनिषा यादव - सदस्या" class="team-img">
+                        <div class="team-info">
+                            <h3>सौ. मनिषा यादव</h3>
+                            <div class="team-role">सदस्या</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- सदस्य 6 - Sangita Uikey -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="team-card">
+                        <img src="/image/t9.jpg" alt="सौ. संगीता उईके - सदस्या" class="team-img">
+                        <div class="team-info">
+                            <h3>सौ. संगीता उईके</h3>
+                            <div class="team-role">सदस्या</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- सदस्य 7 - Aswini Gajbhiye -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="team-card">
+                        <img src="/image/t10.jpg" alt="सौ. अश्विनी गजभिये - सदस्या" class="team-img">
+                        <div class="team-info">
+                            <h3>सौ. अश्विनी गजभिये</h3>
+                            <div class="team-role">सदस्या</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- सदस्य 8 - Rupali Bagde -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="team-card">
+                        <img src="/image/t11.jpg" alt="सौ. रुपाली बागडे - सदस्या" class="team-img">
+                        <div class="team-info">
+                            <h3>सौ. रुपाली बागडे</h3>
+                            <div class="team-role">सदस्या</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- सदस्य 9 - Akash Puri -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="team-card">
+                        <img src="/image/t12.jpg" alt="श्री. आकाश पुरी - सदस्य" class="team-img">
+                        <div class="team-info">
+                            <h3>श्री. आकाश पुरी</h3>
+                            <div class="team-role">सदस्य</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- सदस्य 10 - Lata Landge -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="team-card">
+                        <img src="/image/t13.jpg" alt="सौ. लता लांडगे - सदस्या" class="team-img">
+                        <div class="team-info">
+                            <h3>सौ. लता लांडगे</h3>
+                            <div class="team-role">सदस्या</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
 
     <!-- Committee Section -->
     <section class="committee-section">
